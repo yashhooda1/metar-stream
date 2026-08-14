@@ -51,10 +51,10 @@ docker compose up -d
 pip install -r requirements.txt
 
 # terminal 1
-python producer/metar_producer.py
+python metar_producer.py
 
 # terminal 2
-python streaming/metar_stream.py
+python metar_stream.py
 ```
 
 Redpanda Console at http://localhost:8080 to watch the topic fill.
