@@ -144,6 +144,21 @@ Standard practice now before starting the job:
 ps aux | grep "[j]ava" | wc -l    # must be 0
 ```
 
+### 6. Measured before tuning, and did not tune
+
+High p95 ingest lag (3,174 s) suggested the 30-minute watermark was dropping
+late-arriving data. Rather than widening it, the drop rate was measured
+directly — distinct `(station_id, observed_at)` keys in bronze against row
+count in silver:
+Ingest lag and event-time lateness are different quantities. `lag_seconds`
+measures how stale an observation is when it reaches Kafka; a station reporting
+hourly hands over a report that is already ~50 minutes old, but on first arrival
+it is not late relative to the stream's watermark. The republished copies
+inflating p95 were being removed by dedupe, not dropped by the watermark.
+
+Widening to 2 hours would have quadrupled state-store retention to solve a
+problem that did not exist. Configuration left unchanged.
+
 ## Failure recovery demo
 
 1. Run until gold has several closed windows.
@@ -166,13 +181,28 @@ HAVING c > 1;
 
 ## Benchmarks
 
-_To be filled from a 24-hour run:_
+Measured over a 2.78 hour window (2026-08-13 17:25 – 20:12 UTC):
 
-- sustained observations/second
-- p50 / p95 end-to-end latency (`ingested_at` − `observed_at`)
-- state store size under the 30-minute watermark
-- recovery time from broker failure
-- late-arriving records dropped, as a percentage
+| metric | value |
+|---|---|
+| distinct stations | 1,096 |
+| observations retained (silver) | 4,157 |
+| raw messages ingested (bronze) | 99,664 |
+| deduplication ratio | 96% discarded as republished duplicates |
+| duplicate keys surviving | 0 |
+| late-arrival drop rate | 0.0% (2 of 4,179) |
+| ingest lag p50 / p95 / p99 | 291 s / 3,174 s / 4,914 s |
+
+Throughput is source-limited, not pipeline-limited: stations report on a
+20–60 minute cadence, so retained volume reflects the upstream cadence rather
+than any capacity ceiling. The trigger is capped at 50,000 offsets per
+micro-batch.
+
+Ingest lag percentiles are high by design — the API serves each observation
+repeatedly for as long as it remains current, so the tail is dominated by
+re-delivery of already-seen records rather than by pipeline delay.
+
+Still to measure: state store size, and recovery time from broker failure.
 
 ## Next
 
