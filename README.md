@@ -150,6 +150,9 @@ High p95 ingest lag (3,174 s) suggested the 30-minute watermark was dropping
 late-arriving data. Rather than widening it, the drop rate was measured
 directly — distinct `(station_id, observed_at)` keys in bronze against row
 count in silver:
+bronze distinct keys: 4,179
+silver rows: 4,177
+dropped as late: 2 (0.0%)
 Ingest lag and event-time lateness are different quantities. `lag_seconds`
 measures how stale an observation is when it reaches Kafka; a station reporting
 hourly hands over a report that is already ~50 minutes old, but on first arrival
@@ -161,15 +164,25 @@ problem that did not exist. Configuration left unchanged.
 
 ## Failure recovery demo
 
-1. Run until gold has several closed windows.
-2. `docker compose stop redpanda` — the streaming job logs connection failures
-   and does not exit.
-3. Wait ~3 minutes to accumulate a backlog.
-4. `docker compose start redpanda`.
-5. The job resumes from checkpointed offsets and drains the backlog across
-   throttled micro-batches.
+The broker was stopped for 181 seconds under a running streaming job, then
+restarted. `failure_demo.py` automates this and captures the evidence.
 
-Verify no duplicates were introduced:
+| claim | evidence |
+|---|---|
+| job survives broker loss | did not exit during the outage; logged connection failures and continued |
+| resumes from checkpointed offsets | 1,379 rows landed in silver after restart |
+| no duplicates introduced | 0 duplicate `(station_id, observed_at)` keys, before and after |
+| no gap in coverage | latest observation advanced 20:22 → 21:02 across the outage |
+| bronze remained replayable | 110,563 → 156,000 raw messages, append-only throughout |
+
+**Measurement limitation.** Recovery time was not isolated. The producer kept
+polling the upstream API throughout, so row growth after restart mixes backlog
+drain with ordinary ingestion and the two cannot be separated from row counts
+alone. Cleanly measuring drain time would require pausing the producer for the
+duration of the outage, or reading `StreamingQueryProgress.numInputRows` per
+micro-batch rather than table counts.
+
+Duplicate check, run against silver at any time:
 
 ```sql
 SELECT station_id, observed_at, COUNT(*) AS c
@@ -202,7 +215,7 @@ Ingest lag percentiles are high by design — the API serves each observation
 repeatedly for as long as it remains current, so the tail is dominated by
 re-delivery of already-seen records rather than by pipeline delay.
 
-Still to measure: state store size, and recovery time from broker failure.
+Still to measure: state store size, and isolated backlog-drain time\n(see the measurement limitation noted above).
 
 ## Next
 
