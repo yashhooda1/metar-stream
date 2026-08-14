@@ -150,9 +150,13 @@ High p95 ingest lag (3,174 s) suggested the 30-minute watermark was dropping
 late-arriving data. Rather than widening it, the drop rate was measured
 directly — distinct `(station_id, observed_at)` keys in bronze against row
 count in silver:
+
+```
 bronze distinct keys: 4,179
-silver rows: 4,177
-dropped as late: 2 (0.0%)
+silver rows:          4,177
+dropped as late:      2 (0.0%)
+```
+
 Ingest lag and event-time lateness are different quantities. `lag_seconds`
 measures how stale an observation is when it reaches Kafka; a station reporting
 hourly hands over a report that is already ~50 minutes old, but on first arrival
