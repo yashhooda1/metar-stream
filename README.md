@@ -4,8 +4,8 @@ Real-time ingestion of US aviation weather observations into a Delta Lake
 medallion, via Kafka and Spark Structured Streaming.
 
 METAR reports are surface weather observations published by airport stations —
-wind, visibility, temperature, ceiling, flight category. Roughly 1,100 US
-stations report at any given time, most on a 20–60 minute cadence, arriving
+wind, visibility, temperature, ceiling, flight category. Roughly 1,100 North
+American stations report at any given time, most on a 20–60 minute cadence, arriving
 continuously and out of order. That makes them a genuine unbounded stream
 rather than a batch job wearing a streaming costume.
 
@@ -92,6 +92,13 @@ growth surfaces immediately instead of silently losing data.
 
 Silent truncation is among the most common ways pipelines lose data without
 anyone noticing.
+
+**Coverage note.** The tiles extend to latitude 50, which crosses into southern
+Canada, and the southern edge reaches northern Mexico. Grouping station IDs by
+ICAO prefix showed 996 K (US), 90 C (Canada), 18 M (Mexico) — so nearly 10% of
+coverage is non-US. The bounding box was chosen against API result limits, not
+political borders. The extra stations were kept and the description corrected;
+the original "US stations" claim was an assumption the data did not support.
 
 ### 3. Per-tile isolation contains upstream failures
 
