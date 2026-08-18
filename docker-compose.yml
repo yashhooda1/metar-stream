@@ -2,6 +2,7 @@ services:
   redpanda:
     image: redpandadata/redpanda:v24.2.7
     container_name: redpanda
+    restart: unless-stopped
     command:
       - redpanda start
       - --smp 1
@@ -24,6 +25,7 @@ services:
   console:
     image: redpandadata/console:v2.7.2
     container_name: redpanda-console
+    restart: unless-stopped
     depends_on:
       redpanda:
         condition: service_healthy
