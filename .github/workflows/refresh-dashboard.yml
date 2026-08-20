@@ -1,0 +1,86 @@
+name: Refresh METAR dashboard
+
+# Batch refresh for the website dashboard. This is NOT the streaming pipeline
+# — Actions runners are ephemeral, so there is no Kafka, Spark, or Delta here.
+# It maintains its own state on the data branch so deduplication counts and the
+# trend series are real rather than reset each run.
+
+on:
+  schedule:
+    # Hourly. GitHub's scheduled runs are best-effort and can be delayed 15-30
+    # minutes under load, so treat this as "roughly hourly".
+    - cron: '7 * * * *'
+  workflow_dispatch:        # manual trigger, for testing
+
+permissions:
+  contents: write           # needed to push to the data branch
+
+concurrency:
+  # Two runs writing the same branch would race on the state files.
+  group: metar-dashboard
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out main (for the script)
+        uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Check out data branch (for the state)
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+        continue-on-error: true    # first run, before the branch exists
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Refresh
+        working-directory: data
+        run: |
+          mkdir -p docs
+          python ../main/scripts/refresh_dashboard.py
+
+      - name: Commit and push
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "dashboard refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push origin HEAD:data
+          fi
+
+      - name: Summary
+        working-directory: data
+        if: always()
+        run: |
+          if [ -f docs/metar_dashboard.json ]; then
+            python -c "
+          import json
+          d = json.load(open('docs/metar_dashboard.json'))
+          s = d['stats']
+          print(f\"### METAR refresh\n\")
+          print(f\"- stations: {s['stations']}\")
+          print(f\"- cumulative retained: {s['observations_retained']:,}\")
+          print(f\"- cumulative fetched: {s['messages_ingested']:,}\")
+          print(f\"- dedupe: {s['dedupe_pct']}%\")
+          print(f\"- runs: {s['runs']}\")
+          if d.get('warnings'):
+              print(f\"- warnings: {len(d['warnings'])}\")
+          " >> $GITHUB_STEP_SUMMARY
+          fi
