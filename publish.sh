@@ -11,6 +11,12 @@ DATA_DIR="$HOME/metar-data"
 LOG="$PROJECT_DIR/publish.log"
 
 cd "$PROJECT_DIR" || exit 1
+
+# Only one publish at a time. Concurrent Spark sessions contend over the Ivy
+# cache and produce "unknown resolver null" resolution failures.
+exec 9>"$PROJECT_DIR/.publish.lock"
+flock -n 9 || exit 0
+
 log() { echo "[$(date -u +'%Y-%m-%dT%H:%M:%SZ')] $*" >> "$LOG"; }
 log "--- publish start ---"
 

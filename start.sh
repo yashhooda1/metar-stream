@@ -7,14 +7,22 @@ VENV="$PROJECT_DIR/.venv/bin/activate"
 
 cd "$PROJECT_DIR" || { echo "no $PROJECT_DIR"; exit 1; }
 
+# pgrep -c prints "0" and exits non-zero when nothing matches, so a plain
+# `|| echo 0` fallback appends a second zero. Normalise here instead.
+count_procs() {
+    local n
+    n=$(pgrep -fc "$1" 2>/dev/null)
+    echo "${n:-0}"
+}
+
 status() {
     echo "--- docker daemon ---"
     if docker info >/dev/null 2>&1; then echo "  running"; else echo "  DOWN"; fi
     echo "--- containers ---"
     docker compose ps 2>/dev/null | tail -n +2 || echo "  none"
     echo "--- processes ---"
-    echo "  spark job:  $(pgrep -fc metar_stream 2>/dev/null || echo 0)   (must be 0 or 1)"
-    echo "  producer:   $(pgrep -fc metar_producer 2>/dev/null || echo 0)"
+    echo "  spark job:  $(count_procs metar_stream)   (must be 0 or 1)"
+    echo "  producer:   $(count_procs metar_producer)"
     echo "--- tmux ---"
     tmux ls 2>/dev/null || echo "  no sessions"
 }
@@ -25,7 +33,7 @@ stop_procs() {
     pkill -f metar_producer 2>/dev/null
     pkill -f metar_stream 2>/dev/null
     sleep 3
-    echo ">> spark=$(pgrep -fc metar_stream 2>/dev/null || echo 0) producer=$(pgrep -fc metar_producer 2>/dev/null || echo 0)"
+    echo ">> spark=$(count_procs metar_stream) producer=$(count_procs metar_producer)"
 }
 
 case "${1:-start}" in
@@ -48,8 +56,8 @@ for _ in $(seq 1 60); do
     sleep 2
 done
 
-SPARK_RUNNING=$(pgrep -fc metar_stream 2>/dev/null || echo 0)
-PROD_RUNNING=$(pgrep -fc metar_producer 2>/dev/null || echo 0)
+SPARK_RUNNING=$(count_procs metar_stream)
+PROD_RUNNING=$(count_procs metar_producer)
 [ "$SPARK_RUNNING" -gt 0 ] && echo ">> spark already running — leaving it alone"
 [ "$PROD_RUNNING" -gt 0 ] && echo ">> producer already running — leaving it alone"
 
