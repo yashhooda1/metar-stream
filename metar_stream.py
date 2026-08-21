@@ -28,7 +28,10 @@ The parts that matter for interviews, and why:
       keep it and a killed job resumes mid-stream. Every sink gets its own.
 """
 
+import logging
 import os
+import signal
+import threading
 
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
@@ -44,6 +47,9 @@ from pyspark.sql.types import (
 BOOTSTRAP = os.getenv("KAFKA_BOOTSTRAP", "localhost:9092")
 TOPIC = os.getenv("METAR_TOPIC", "metar.raw")
 LAKE = os.getenv("LAKE_PATH", "./lake")
+SHUTDOWN_TIMEOUT_SECONDS = int(os.getenv("SHUTDOWN_TIMEOUT_SECONDS", "30"))
+
+log = logging.getLogger("metar-stream")
 
 METAR_SCHEMA = StructType(
     [
@@ -109,6 +115,7 @@ def write_bronze(raw):
             F.col("timestamp").alias("kafka_timestamp"),
         )
         .writeStream.format("delta")
+        .queryName("bronze-ingestion")
         .outputMode("append")
         .option("checkpointLocation", f"{LAKE}/_checkpoints/bronze")
         .trigger(processingTime="30 seconds")
@@ -258,6 +265,7 @@ def build_quality_metrics(rejected):
 def write_silver(silver):
     return (
         silver.writeStream.format("delta")
+        .queryName("silver-observations")
         .outputMode("append")
         .option("checkpointLocation", f"{LAKE}/_checkpoints/silver")
         .partitionBy("obs_date")
@@ -269,6 +277,7 @@ def write_silver(silver):
 def write_rejected(rejected):
     return (
         rejected.writeStream.format("delta")
+        .queryName("rejected-quarantine")
         .outputMode("append")
         .option("checkpointLocation", f"{LAKE}/_checkpoints/rejected")
         .trigger(processingTime="30 seconds")
@@ -279,6 +288,7 @@ def write_rejected(rejected):
 def write_quality_metrics(metrics):
     return (
         metrics.writeStream.format("delta")
+        .queryName("quality-metrics")
         .outputMode("append")
         .option("checkpointLocation", f"{LAKE}/_checkpoints/quality_metrics")
         .trigger(processingTime="60 seconds")
@@ -314,6 +324,7 @@ def write_gold_windowed(silver):
 
     return (
         agg.writeStream.format("delta")
+        .queryName("gold-windowed")
         .outputMode("append")  # append works because the watermark closes windows
         .option("checkpointLocation", f"{LAKE}/_checkpoints/gold_windowed")
         .trigger(processingTime="60 seconds")
@@ -338,6 +349,7 @@ def write_gold_alerts(silver):
 
     return (
         alerts.writeStream.format("delta")
+        .queryName("weather-alerts")
         .outputMode("append")
         .option("checkpointLocation", f"{LAKE}/_checkpoints/gold_alerts")
         .trigger(processingTime="30 seconds")
@@ -345,29 +357,79 @@ def write_gold_alerts(silver):
     )
 
 
+def _request_shutdown(stop_event: threading.Event, signum, _frame) -> None:
+    log.info("signal %s received; requesting coordinated shutdown", signum)
+    stop_event.set()
+
+
+def install_signal_handlers(stop_event: threading.Event) -> None:
+    for signum in (signal.SIGINT, signal.SIGTERM):
+        signal.signal(
+            signum,
+            lambda received, frame, event=stop_event: _request_shutdown(
+                event, received, frame
+            ),
+        )
+
+
+def await_shutdown(spark, stop_event: threading.Event, poll_seconds: float = 1.0):
+    """Poll query state so Python can respond promptly to termination signals."""
+    while not stop_event.is_set():
+        if spark.streams.awaitAnyTermination(poll_seconds):
+            log.warning("a streaming query terminated; stopping the pipeline")
+            return
+
+
+def stop_queries(queries, timeout_seconds: int = SHUTDOWN_TIMEOUT_SECONDS) -> None:
+    """Stop every active query, continuing cleanup if one query fails."""
+    for query in queries:
+        name = query.name or str(query.id)
+        if not query.isActive:
+            continue
+        try:
+            log.info("stopping query %s", name)
+            query.stop()
+            query.awaitTermination(timeout_seconds)
+        except Exception:
+            log.exception("failed to stop query %s cleanly", name)
+
+
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+    )
+    stop_event = threading.Event()
+    install_signal_handlers(stop_event)
+
     spark = build_spark()
     spark.sparkContext.setLogLevel("WARN")
+    queries = []
 
-    raw = read_kafka(spark)
-    evaluated = evaluate_quality(raw)
-    silver = build_silver(evaluated, quality_evaluated=True)
-    rejected = build_rejected(evaluated, quality_evaluated=True)
-    quality_metrics = build_quality_metrics(rejected)
+    try:
+        raw = read_kafka(spark)
+        evaluated = evaluate_quality(raw)
+        silver = build_silver(evaluated, quality_evaluated=True)
+        rejected = build_rejected(evaluated, quality_evaluated=True)
+        quality_metrics = build_quality_metrics(rejected)
 
-    queries = [
-        write_bronze(raw),
-        write_silver(silver),
-        write_rejected(rejected),
-        write_quality_metrics(quality_metrics),
-        write_gold_windowed(silver),
-        write_gold_alerts(silver),
-    ]
+        queries = [
+            write_bronze(raw),
+            write_silver(silver),
+            write_rejected(rejected),
+            write_quality_metrics(quality_metrics),
+            write_gold_windowed(silver),
+            write_gold_alerts(silver),
+        ]
 
-    for q in queries:
-        print(f"started query: {q.name or q.id}")
+        for query in queries:
+            log.info("started query %s", query.name or query.id)
 
-    spark.streams.awaitAnyTermination()
+        await_shutdown(spark, stop_event)
+    finally:
+        stop_queries(queries)
+        spark.stop()
+        log.info("Spark stopped cleanly")
 
 
 if __name__ == "__main__":
