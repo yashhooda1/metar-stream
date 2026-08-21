@@ -4,7 +4,7 @@ import unittest
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StringType, StructField, StructType
 
-from metar_stream import build_silver
+from metar_stream import build_quality_metrics, build_rejected, build_silver
 
 
 RAW_SCHEMA = StructType([StructField("value", StringType(), False)])
@@ -88,6 +88,43 @@ class SilverTransformationTests(unittest.TestCase):
 
         self.assertIsNone(result.visibility_mi)
         self.assertIsNone(result.wind_gust_kt)
+
+    def test_rejected_records_include_payload_and_reason_codes(self):
+        rows = [
+            payload(station_id="BAD"),
+            payload(lat=91.0),
+            payload(temp_c=-101.0, wind_speed_kt=-1),
+            ("{not-json}",),
+        ]
+        raw = self.spark.createDataFrame(rows, RAW_SCHEMA)
+        rejected = build_rejected(raw)
+        results = rejected.collect()
+
+        self.assertEqual(len(results), 4)
+        self.assertEqual(results[0].quality_errors, ["invalid_station_id"])
+        self.assertEqual(results[1].quality_errors, ["latitude_out_of_range"])
+        self.assertEqual(
+            results[2].quality_errors,
+            ["temperature_out_of_range", "wind_speed_out_of_range"],
+        )
+        self.assertEqual(results[3].quality_errors, ["malformed_payload"])
+        self.assertEqual(results[0].payload, rows[0][0])
+        self.assertIsNotNone(results[0].rejected_at)
+
+    def test_quality_metrics_count_each_rejection_reason(self):
+        rows = [
+            payload(lat=91.0),
+            payload(lat=-91.0),
+            payload(wind_gust_kt=251),
+        ]
+        raw = self.spark.createDataFrame(rows, RAW_SCHEMA)
+        metrics = {
+            row.reason: row.rejected_count
+            for row in build_quality_metrics(build_rejected(raw)).collect()
+        }
+
+        self.assertEqual(metrics["latitude_out_of_range"], 2)
+        self.assertEqual(metrics["wind_gust_out_of_range"], 1)
 
 
 if __name__ == "__main__":
