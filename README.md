@@ -42,13 +42,18 @@ Requires Python 3.12 or lower (PySpark 3.5.1 does not support 3.13+) and a JRE.
 ## Quality gates
 
 Every pull request runs a Python 3.12 CI job that compiles the codebase and
-executes the producer unit tests. The tests cover record normalization,
-malformed timestamps, partial regional API failures, and unexpected response
-shapes without requiring Kafka or a live NOAA request.
+executes both producer unit tests and local Spark transformation tests. The
+suite covers record normalization, malformed timestamps, partial regional API
+failures, the Silver data-quality contract, deduplication, visibility parsing,
+and gust fallback without requiring Kafka, Delta Lake, or a live NOAA request.
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+Silver rejects impossible values while Bronze retains the original Kafka payload
+for replay. Current contract limits are four-character ICAO identifiers, valid
+coordinates, temperatures from -100°C to 70°C, and wind values from 0–250 kt.
 
 ## Design decisions
 
