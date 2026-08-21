@@ -111,6 +111,11 @@ end to end.
 first micro-batch after an outage attempts the entire backlog in one pass and
 the executors die.
 
+**Coordinated shutdown.** Every sink has a stable query name. SIGINT and SIGTERM
+set a shutdown event, the supervisor stops all active queries, waits for their
+checkpoint commits, and then stops Spark. Cleanup continues if any individual
+query throws, preventing one failed sink from stranding the remaining JVM work.
+
 ## Problems found and fixed
 
 Five issues surfaced during development. Each is worth reading as a category of
@@ -278,5 +283,4 @@ Still to measure: state store size, and isolated backlog-drain time\n(see the me
 
 - Schema Registry with Avro instead of JSON (Redpanda exposes it on :8081)
 - Scheduled Delta `OPTIMIZE` and `VACUUM`
-- Graceful shutdown: stop each query before exiting rather than dying on Ctrl-C
 - Surface `gold/metar_alerts` on the ClimatePulse dashboard
