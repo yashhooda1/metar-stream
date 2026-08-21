@@ -116,11 +116,30 @@ def write_bronze(raw):
     )
 
 
+def valid_metar_record():
+    """Column expression for the Silver-layer data-quality contract."""
+    return (
+        F.col("station_id").rlike(r"^[A-Z0-9]{4}$")
+        & F.col("observed_at").isNotNull()
+        & (F.col("lat").isNull() | F.col("lat").between(-90.0, 90.0))
+        & (F.col("lon").isNull() | F.col("lon").between(-180.0, 180.0))
+        & (F.col("temp_c").isNull() | F.col("temp_c").between(-100.0, 70.0))
+        & (
+            F.col("wind_speed_kt").isNull()
+            | F.col("wind_speed_kt").between(0, 250)
+        )
+        & (
+            F.col("wind_gust_kt").isNull()
+            | F.col("wind_gust_kt").between(0, 250)
+        )
+    )
+
+
 def build_silver(raw):
     parsed = (
         raw.select(F.from_json(F.col("value").cast("string"), METAR_SCHEMA).alias("d"))
         .select("d.*")
-        .filter(F.col("station_id").isNotNull())
+        .filter(valid_metar_record())
     )
 
     # "10+" is the API's way of saying "at least 10 statute miles".
