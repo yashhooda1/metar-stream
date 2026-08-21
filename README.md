@@ -22,7 +22,11 @@ NOAA Aviation Weather API
         ▼                     ▼                     ▼
    bronze/metar_raw     silver/metar_observations   gold/
    append-only          parsed, watermarked,        ├─ metar_15min
-   replayable           deduplicated                └─ metar_alerts
+   replayable           deduplicated                ├─ metar_alerts
+                              │                     └─ metar_quality_15min
+                              ▼
+                    quarantine/metar_rejected
+                    payload + rejection reasons
 ```
 
 ## Running it
@@ -54,6 +58,31 @@ python -m unittest discover -s tests -v
 Silver rejects impossible values while Bronze retains the original Kafka payload
 for replay. Current contract limits are four-character ICAO identifiers, valid
 coordinates, temperatures from -100°C to 70°C, and wind values from 0–250 kt.
+
+
+## Data-quality observability
+
+Rejected records are not discarded. Spark writes the original JSON payload,
+parsed identifiers, rejection timestamp, and one or more stable reason codes to
+`quarantine/metar_rejected`. A separate Gold stream explodes those codes into
+15-minute counts at `gold/metar_quality_15min`, ready for dashboards and
+threshold alerts.
+
+Current reason codes:
+
+- `malformed_payload`
+- `invalid_station_id`
+- `missing_observed_at`
+- `latitude_out_of_range` / `longitude_out_of_range`
+- `temperature_out_of_range`
+- `wind_speed_out_of_range` / `wind_gust_out_of_range`
+
+```sql
+SELECT reason, SUM(rejected_count) AS rejected
+FROM delta.`./lake/gold/metar_quality_15min`
+GROUP BY reason
+ORDER BY rejected DESC;
+```
 
 ## Design decisions
 
