@@ -1,0 +1,13 @@
+[Unit]
+Description=Compact and vacuum METAR Delta tables
+Documentation=https://github.com/yashhooda1/metar-stream
+ConditionPathExists=%h/metar-stream/lake
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/metar-stream
+ExecStart=/usr/bin/env bash %h/metar-stream/maintenance.sh
+TimeoutStartSec=6h
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
