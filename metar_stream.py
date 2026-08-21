@@ -131,7 +131,10 @@ def evaluate_quality(raw):
         raw.select(payload.alias("_payload"), parsed.alias("_parsed"))
         .select(
             "_payload",
-            F.col("_parsed").isNull().alias("_malformed"),
+            (
+                F.col("_parsed").isNull()
+                | F.get_json_object("_payload", "$").isNull()
+            ).alias("_malformed"),
             "_parsed.*",
         )
     )
