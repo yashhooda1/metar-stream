@@ -1,0 +1,11 @@
+[Unit]
+Description=Run METAR Delta maintenance weekly
+
+[Timer]
+OnCalendar=Sun *-*-* 03:17:00
+Persistent=true
+RandomizedDelaySec=15m
+Unit=metar-delta-maintenance.service
+
+[Install]
+WantedBy=timers.target
