@@ -38,6 +38,18 @@ python metar_stream.py        # terminal 2
 
 Requires Python 3.12 or lower (PySpark 3.5.1 does not support 3.13+) and a JRE.
 
+
+## Quality gates
+
+Every pull request runs a Python 3.12 CI job that compiles the codebase and
+executes the producer unit tests. The tests cover record normalization,
+malformed timestamps, partial regional API failures, and unexpected response
+shapes without requiring Kafka or a live NOAA request.
+
+```bash
+python -m unittest discover -s tests -v
+```
+
 ## Design decisions
 
 **Redpanda over Kafka.** Kafka API compatible, single binary, no ZooKeeper or
