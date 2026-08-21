@@ -19,7 +19,7 @@ from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
 LAKE = os.getenv("LAKE_PATH", "./lake")
-OUT = pathlib.Path("docs/metar_dashboard.json")
+OUT = pathlib.Path("docs/metar_pipeline.json")
 
 # Canonical FAA flight categories, worst to best.
 CATEGORY_ORDER = ["LIFR", "IFR", "MVFR", "VFR"]
