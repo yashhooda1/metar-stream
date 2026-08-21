@@ -118,15 +118,30 @@ def delivery_report(err, msg):
 
 
 def normalize(obs: dict) -> dict | None:
-    """Flatten the fields we care about. Returns None if the record is unusable."""
+    """Flatten one upstream observation, rejecting malformed records safely."""
+    if not isinstance(obs, dict):
+        return None
+
     station = obs.get("icaoId")
     obs_time = obs.get("obsTime")
-    if not station or obs_time is None:
+    if not isinstance(station, str) or obs_time is None:
+        return None
+
+    station = station.strip().upper()
+    if not station:
+        return None
+
+    try:
+        observed_at = datetime.fromtimestamp(
+            float(obs_time), tz=timezone.utc
+        ).isoformat()
+    except (TypeError, ValueError, OSError, OverflowError):
+        log.warning("station %s has invalid obsTime=%r, skipping", station, obs_time)
         return None
 
     return {
         "station_id": station,
-        "observed_at": datetime.fromtimestamp(obs_time, tz=timezone.utc).isoformat(),
+        "observed_at": observed_at,
         "ingested_at": datetime.now(tz=timezone.utc).isoformat(),
         "name": obs.get("name"),
         "lat": obs.get("lat"),
