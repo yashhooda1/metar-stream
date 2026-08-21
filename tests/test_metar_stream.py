@@ -99,17 +99,26 @@ class SilverTransformationTests(unittest.TestCase):
         raw = self.spark.createDataFrame(rows, RAW_SCHEMA)
         rejected = build_rejected(raw)
         results = rejected.collect()
+        by_payload = {row.payload: row for row in results}
 
         self.assertEqual(len(results), 4)
-        self.assertEqual(results[0].quality_errors, ["invalid_station_id"])
-        self.assertEqual(results[1].quality_errors, ["latitude_out_of_range"])
         self.assertEqual(
-            results[2].quality_errors,
+            by_payload[rows[0][0]].quality_errors,
+            ["invalid_station_id"],
+        )
+        self.assertEqual(
+            by_payload[rows[1][0]].quality_errors,
+            ["latitude_out_of_range"],
+        )
+        self.assertEqual(
+            by_payload[rows[2][0]].quality_errors,
             ["temperature_out_of_range", "wind_speed_out_of_range"],
         )
-        self.assertEqual(results[3].quality_errors, ["malformed_payload"])
-        self.assertEqual(results[0].payload, rows[0][0])
-        self.assertIsNotNone(results[0].rejected_at)
+        self.assertEqual(
+            by_payload[rows[3][0]].quality_errors,
+            ["malformed_payload"],
+        )
+        self.assertIsNotNone(by_payload[rows[0][0]].rejected_at)
 
     def test_quality_metrics_count_each_rejection_reason(self):
         rows = [
