@@ -116,30 +116,84 @@ def write_bronze(raw):
     )
 
 
-def valid_metar_record():
-    """Column expression for the Silver-layer data-quality contract."""
-    return (
-        F.col("station_id").rlike(r"^[A-Z0-9]{4}$")
-        & F.col("observed_at").isNotNull()
-        & (F.col("lat").isNull() | F.col("lat").between(-90.0, 90.0))
-        & (F.col("lon").isNull() | F.col("lon").between(-180.0, 180.0))
-        & (F.col("temp_c").isNull() | F.col("temp_c").between(-100.0, 70.0))
-        & (
-            F.col("wind_speed_kt").isNull()
-            | F.col("wind_speed_kt").between(0, 250)
-        )
-        & (
-            F.col("wind_gust_kt").isNull()
-            | F.col("wind_gust_kt").between(0, 250)
+def _error_if(condition, code: str):
+    """Return a one-item error array when condition is true, else an empty array."""
+    empty = F.array().cast("array<string>")
+    return F.when(condition, F.array(F.lit(code))).otherwise(empty)
+
+
+def evaluate_quality(raw):
+    """Parse raw JSON and attach machine-readable Silver contract failures."""
+    payload = F.col("value").cast("string")
+    parsed = F.from_json(payload, METAR_SCHEMA)
+
+    evaluated = (
+        raw.select(payload.alias("_payload"), parsed.alias("_parsed"))
+        .select(
+            "_payload",
+            (
+                F.col("_parsed").isNull()
+                | F.get_json_object("_payload", "$").isNull()
+            ).alias("_malformed"),
+            "_parsed.*",
         )
     )
 
+    parsed_ok = ~F.col("_malformed")
+    quality_errors = F.concat(
+        _error_if(F.col("_malformed"), "malformed_payload"),
+        _error_if(
+            parsed_ok
+            & (
+                F.col("station_id").isNull()
+                | ~F.col("station_id").rlike(r"^[A-Z0-9]{4}$")
+            ),
+            "invalid_station_id",
+        ),
+        _error_if(
+            parsed_ok & F.col("observed_at").isNull(),
+            "missing_observed_at",
+        ),
+        _error_if(
+            parsed_ok
+            & F.col("lat").isNotNull()
+            & ~F.col("lat").between(-90.0, 90.0),
+            "latitude_out_of_range",
+        ),
+        _error_if(
+            parsed_ok
+            & F.col("lon").isNotNull()
+            & ~F.col("lon").between(-180.0, 180.0),
+            "longitude_out_of_range",
+        ),
+        _error_if(
+            parsed_ok
+            & F.col("temp_c").isNotNull()
+            & ~F.col("temp_c").between(-100.0, 70.0),
+            "temperature_out_of_range",
+        ),
+        _error_if(
+            parsed_ok
+            & F.col("wind_speed_kt").isNotNull()
+            & ~F.col("wind_speed_kt").between(0, 250),
+            "wind_speed_out_of_range",
+        ),
+        _error_if(
+            parsed_ok
+            & F.col("wind_gust_kt").isNotNull()
+            & ~F.col("wind_gust_kt").between(0, 250),
+            "wind_gust_out_of_range",
+        ),
+    )
 
-def build_silver(raw):
+    return evaluated.withColumn("quality_errors", quality_errors)
+
+
+def build_silver(raw, *, quality_evaluated: bool = False):
+    evaluated = raw if quality_evaluated else evaluate_quality(raw)
     parsed = (
-        raw.select(F.from_json(F.col("value").cast("string"), METAR_SCHEMA).alias("d"))
-        .select("d.*")
-        .filter(valid_metar_record())
+        evaluated.filter(F.size("quality_errors") == 0)
+        .drop("_payload", "_malformed", "quality_errors")
     )
 
     # "10+" is the API's way of saying "at least 10 statute miles".
@@ -165,6 +219,42 @@ def build_silver(raw):
     )
 
 
+def build_rejected(raw, *, quality_evaluated: bool = False):
+    """Return rejected records with original payload and categorized failures."""
+    evaluated = raw if quality_evaluated else evaluate_quality(raw)
+    return (
+        evaluated.filter(F.size("quality_errors") > 0)
+        .withColumn("rejected_at", F.current_timestamp())
+        .select(
+            F.col("_payload").alias("payload"),
+            "station_id",
+            "observed_at",
+            "ingested_at",
+            "quality_errors",
+            "rejected_at",
+        )
+    )
+
+
+def build_quality_metrics(rejected):
+    """Count rejection reasons in 15-minute processing-time windows."""
+    return (
+        rejected.select(
+            "rejected_at",
+            F.explode("quality_errors").alias("reason"),
+        )
+        .withWatermark("rejected_at", "30 minutes")
+        .groupBy(F.window("rejected_at", "15 minutes"), "reason")
+        .count()
+        .select(
+            F.col("window.start").alias("window_start"),
+            F.col("window.end").alias("window_end"),
+            "reason",
+            F.col("count").alias("rejected_count"),
+        )
+    )
+
+
 def write_silver(silver):
     return (
         silver.writeStream.format("delta")
@@ -173,6 +263,26 @@ def write_silver(silver):
         .partitionBy("obs_date")
         .trigger(processingTime="30 seconds")
         .start(f"{LAKE}/silver/metar_observations")
+    )
+
+
+def write_rejected(rejected):
+    return (
+        rejected.writeStream.format("delta")
+        .outputMode("append")
+        .option("checkpointLocation", f"{LAKE}/_checkpoints/rejected")
+        .trigger(processingTime="30 seconds")
+        .start(f"{LAKE}/quarantine/metar_rejected")
+    )
+
+
+def write_quality_metrics(metrics):
+    return (
+        metrics.writeStream.format("delta")
+        .outputMode("append")
+        .option("checkpointLocation", f"{LAKE}/_checkpoints/quality_metrics")
+        .trigger(processingTime="60 seconds")
+        .start(f"{LAKE}/gold/metar_quality_15min")
     )
 
 
@@ -240,11 +350,16 @@ def main():
     spark.sparkContext.setLogLevel("WARN")
 
     raw = read_kafka(spark)
-    silver = build_silver(raw)
+    evaluated = evaluate_quality(raw)
+    silver = build_silver(evaluated, quality_evaluated=True)
+    rejected = build_rejected(evaluated, quality_evaluated=True)
+    quality_metrics = build_quality_metrics(rejected)
 
     queries = [
         write_bronze(raw),
         write_silver(silver),
+        write_rejected(rejected),
+        write_quality_metrics(quality_metrics),
         write_gold_windowed(silver),
         write_gold_alerts(silver),
     ]
