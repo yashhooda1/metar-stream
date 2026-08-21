@@ -84,6 +84,59 @@ GROUP BY reason
 ORDER BY rejected DESC;
 ```
 
+## Delta maintenance
+
+Small streaming micro-batches eventually create too many Parquet files. The
+maintenance command compacts those files with Delta `OPTIMIZE`, then removes
+expired files with retention-aware `VACUUM`. It targets only the allow-listed
+Bronze, Silver, quarantine, and Gold table paths beneath the configured lake
+root.
+
+The default is a non-mutating dry run and does not start Spark:
+
+```bash
+python delta_maintenance.py --lake-path ./lake
+python delta_maintenance.py --lake-path ./lake --tables silver quality
+```
+
+Execute the complete plan only on the machine that owns the persistent lake:
+
+```bash
+python delta_maintenance.py --lake-path ./lake --execute
+```
+
+Each run emits JSON with per-table status, duration, and before/after Parquet
+file and byte counts. Missing optional tables are skipped; a table failure is
+reported without hiding results from the remaining targets, and the process
+returns non-zero if any target fails.
+
+VACUUM retains seven days of files by default. Shorter retention is rejected
+because it can delete files still needed by active streams, concurrent readers,
+or time-travel queries. The `--allow-unsafe-vacuum` escape hatch exists for an
+operator who has verified those consumers are stopped; it is intentionally
+never enabled by the scheduler. Use `--skip-vacuum` when compaction alone is
+desired.
+
+A user-level systemd timer runs maintenance weekly on the persistent streaming
+host, with overlap protection and durable logs:
+
+```bash
+bash scripts/install_maintenance_timer.sh
+systemctl --user status metar-delta-maintenance.timer
+journalctl --user -u metar-delta-maintenance.service
+```
+
+The timer runs Sunday at 03:17 in the host's local timezone, adds up to 15
+minutes of randomized delay, and catches missed runs after downtime. Output is
+also appended to
+`~/.local/state/metar-stream/delta-maintenance.log`. Set
+`METAR_STREAM_HOME`, `LAKE_PATH`, or `VACUUM_RETENTION_HOURS` in the user
+service environment when the defaults do not match the host.
+
+GitHub Actions intentionally validates the maintenance code but does not run it:
+hosted runners are ephemeral and do not contain the production Delta transaction
+log or data files.
+
 ## Design decisions
 
 **Redpanda over Kafka.** Kafka API compatible, single binary, no ZooKeeper or
@@ -282,5 +335,4 @@ Still to measure: state store size, and isolated backlog-drain time\n(see the me
 ## Next
 
 - Schema Registry with Avro instead of JSON (Redpanda exposes it on :8081)
-- Scheduled Delta `OPTIMIZE` and `VACUUM`
 - Surface `gold/metar_alerts` on the ClimatePulse dashboard
