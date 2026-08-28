@@ -1,32 +1,26 @@
 {
-  "generated_at": "2026-08-28T18:24:20.893556+00:00",
+  "generated_at": "2026-08-28T18:32:43.057783+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1100,
-    "observations_retained": 138891,
-    "messages_ingested": 145043,
-    "dedupe_pct": 4.2,
-    "runs": 134
+    "stations": 1093,
+    "observations_retained": 139150,
+    "messages_ingested": 146136,
+    "dedupe_pct": 4.8,
+    "runs": 135
   },
   "station_mix": {
-    "K": 992,
-    "C": 91,
+    "K": 986,
+    "C": 90,
     "M": 17
   },
   "flight_categories": {
     "LIFR": 0,
-    "IFR": 9,
-    "MVFR": 31,
-    "VFR": 977
+    "IFR": 8,
+    "MVFR": 32,
+    "VFR": 972
   },
   "top_gusts": [
-    {
-      "station": "KGLD",
-      "name": "Goodland/Renner Fld, KS, US",
-      "gust_kt": 32,
-      "observed_at": "2026-08-28T15:53:00+00:00"
-    },
     {
       "station": "K0CO",
       "name": "Berthoud Pass, CO, US",
@@ -46,6 +40,12 @@
       "observed_at": "2026-08-28T17:53:00+00:00"
     },
     {
+      "station": "KBKV",
+      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
+      "gust_kt": 29,
+      "observed_at": "2026-08-28T18:25:00+00:00"
+    },
+    {
       "station": "KLVM",
       "name": "Livingston/Mission Fld, MT, US",
       "gust_kt": 28,
@@ -60,6 +60,12 @@
     {
       "station": "KELY",
       "name": "Ely/Yelland Fld, NV, US",
+      "gust_kt": 27,
+      "observed_at": "2026-08-28T17:53:00+00:00"
+    },
+    {
+      "station": "KICR",
+      "name": "Winner/Wiley Fld, SD, US",
       "gust_kt": 27,
       "observed_at": "2026-08-28T17:53:00+00:00"
     },
@@ -86,38 +92,32 @@
       "name": "Syracuse/Hamilton Cnty, KS, US",
       "gust_kt": 26,
       "observed_at": "2026-08-28T18:15:00+00:00"
-    },
-    {
-      "station": "KGCK",
-      "name": "Garden City Rgnl, KS, US",
-      "gust_kt": 26,
-      "observed_at": "2026-08-28T17:54:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KBKV",
-      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-08-28T18:21:00+00:00"
-    },
-    {
       "station": "CYQI",
       "name": "Yarmouth Arpt, NS, CA",
       "category": "IFR",
-      "gust_kt": 13,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-08-28T18:21:00+00:00"
+      "gust_kt": 8,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-08-28T18:31:00+00:00"
+    },
+    {
+      "station": "KBKV",
+      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
+      "category": "IFR",
+      "gust_kt": 29,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-08-28T18:25:00+00:00"
     },
     {
       "station": "KWWD",
       "name": "Wildwood/Cape May Cnty, NJ, US",
       "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-08-28T18:18:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-08-28T18:25:00+00:00"
     },
     {
       "station": "K4V1",
@@ -125,14 +125,6 @@
       "category": "IFR",
       "gust_kt": 11,
       "visibility_mi": 1.25,
-      "observed_at": "2026-08-28T18:15:00+00:00"
-    },
-    {
-      "station": "KLCQ",
-      "name": "Lake City/Gateway Arpt, FL, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
       "observed_at": "2026-08-28T18:15:00+00:00"
     },
     {
@@ -144,12 +136,12 @@
       "observed_at": "2026-08-28T18:15:00+00:00"
     },
     {
-      "station": "KGED",
-      "name": "Georgetown/Sussex Cnty, DE, US",
+      "station": "KLCQ",
+      "name": "Lake City/Gateway Arpt, FL, US",
       "category": "IFR",
-      "gust_kt": null,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-08-28T18:14:00+00:00"
+      "gust_kt": 5,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-08-28T18:15:00+00:00"
     },
     {
       "station": "KCEC",
@@ -169,18 +161,6 @@
     }
   ],
   "trend": [
-    {
-      "at": "2026-08-23T17:27:56.228594+00:00",
-      "stations": 1092,
-      "new_observations": 1092,
-      "categories": {
-        "LIFR": 10,
-        "IFR": 17,
-        "MVFR": 56,
-        "VFR": 925
-      },
-      "max_gust_kt": 30
-    },
     {
       "at": "2026-08-23T18:40:47.310559+00:00",
       "stations": 1093,
@@ -1032,6 +1012,18 @@
         "VFR": 977
       },
       "max_gust_kt": 32
+    },
+    {
+      "at": "2026-08-28T18:32:43.057783+00:00",
+      "stations": 1093,
+      "new_observations": 259,
+      "categories": {
+        "LIFR": 0,
+        "IFR": 8,
+        "MVFR": 32,
+        "VFR": 972
+      },
+      "max_gust_kt": 31
     }
   ],
   "warnings": []
