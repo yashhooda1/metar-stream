@@ -28,14 +28,15 @@ source "$PROJECT_DIR/.venv/bin/activate" || { log "venv missing"; exit 1; }
 if ! python export_dashboard.py >> "$LOG" 2>&1; then log "export failed"; exit 1; fi
 [ -f docs/metar_pipeline.json ] || { log "no output"; exit 1; }
 
-mkdir -p "$DATA_DIR/docs"
-cp docs/metar_pipeline.json "$DATA_DIR/docs/metar_pipeline.json"
 
 cd "$DATA_DIR" || { log "cannot enter worktree"; exit 1; }
 
 # GitHub Actions also commits to this branch hourly, so pull before pushing.
 git fetch origin data >> "$LOG" 2>&1
-git rebase origin/data >> "$LOG" 2>&1 || { log "rebase failed"; git rebase --abort; exit 1; }
+git rebase origin/data >> "$LOG" 2>&1 || { log "rebase failed"; git rebase --abort 2>/dev/null; exit 1; }
+
+mkdir -p "$DATA_DIR/docs"
+cp "$PROJECT_DIR/docs/metar_pipeline.json" "$DATA_DIR/docs/metar_pipeline.json"
 
 git add docs/metar_pipeline.json >> "$LOG" 2>&1
 if git diff --cached --quiet; then
