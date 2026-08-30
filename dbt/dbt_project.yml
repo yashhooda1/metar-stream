@@ -1,0 +1,35 @@
+name: metar_dbt
+version: "1.0.0"
+config-version: 2
+
+profile: metar_spark
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  # How far back an incremental run reprocesses. Six hours comfortably covers
+  # the stream's 30-minute watermark plus any republished observations.
+  metar_lookback_hours: 6
+
+models:
+  metar_dbt:
+    +file_format: delta
+    +materialized: view
+    staging:
+      +schema: metar_staging
+    intermediate:
+      +schema: metar_intermediate
+    marts:
+      +schema: metar_gold_dbt
+      +materialized: incremental
+      +incremental_strategy: merge
+      # Keep dbt-built tables inside the lake rather than Spark's default
+      # warehouse dir. Add this path to delta_maintenance.py's allow-list.
+      +location_root: /home/yashh/metar-stream/lake/gold_dbt
+    audit:
+      +schema: metar_audit
+      +materialized: view

@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_metar__observations
+    description: Typed Silver observations with unit conversions. One row per station-observation.
+    columns:
+      - name: observation_key
+        tests: [unique, not_null]
+      - name: station_id
+        tests: [not_null]
+      - name: observed_at
+        tests: [not_null]
+      - name: flight_category_noaa
+        description: NOAA-published category, kept separate from the category derived downstream.
+        tests:
+          - accepted_values:
+              values: ['VFR', 'MVFR', 'IFR', 'LIFR']
+              config:
+                severity: warn   # nulls and unexpected tokens are upstream noise, not a build failure

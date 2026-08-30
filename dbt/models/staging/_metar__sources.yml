@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: metar_silver
+    description: >
+      Parsed, watermarked, deduplicated observations written by metar_stream.py.
+      Registered as an external Delta table over ./lake/silver/metar_observations
+      by bootstrap_catalog.sql; Spark already dedupes on (station_id, observed_at).
+    loaded_at_field: observed_at
+    freshness:
+      warn_after: {count: 90, period: minute}
+      error_after: {count: 180, period: minute}
+    tables:
+      - name: observations
+        identifier: observations
+        columns:
+          - name: station_id
+            description: ICAO identifier. Silver contract enforces four characters.
+            tests: [not_null]
+          - name: observed_at
+            description: Event time of the observation.
+            tests: [not_null]
+          - name: ingested_at
+            description: Arrival time at the stream. observed_at minus this is lag_seconds.
+          - name: visibility_sm
+            description: Raw visibility token as published, e.g. "10+" or "1/2". String by design.
+          - name: visibility_mi
+            description: Parsed numeric visibility in statute miles.
+          - name: flight_category
+            description: Flight category as published by NOAA. Not derived here; see fct_observations.
+          - name: raw_text
+            description: Undecoded METAR. The only source of cloud layers in Silver.
+
+  - name: metar_gold_spark
+    description: Gold tables from the PySpark job. Read-only; parity comparison only.
+    tables:
+      - name: metar_15min
+        description: 15-minute per-station windows.

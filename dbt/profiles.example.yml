@@ -1,0 +1,9 @@
+metar_spark:
+  target: dev
+  outputs:
+    dev:
+      type: spark
+      method: session
+      host: NA
+      schema: metar_gold_dbt
+      threads: 1

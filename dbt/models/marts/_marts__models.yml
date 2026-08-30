@@ -1,0 +1,83 @@
+version: 2
+
+models:
+  - name: fct_observations
+    description: >
+      One row per station-observation, with ceiling parsed from raw_text and
+      flight category derived independently of NOAA's published value.
+    columns:
+      - name: observation_key
+        tests: [unique, not_null]
+      - name: station_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_stations')
+              field: station_id
+      - name: observed_at
+        tests: [not_null]
+      - name: flight_category
+        description: NOAA's category where published, else the derived one.
+        tests:
+          - accepted_values:
+              values: ['VFR', 'MVFR', 'IFR', 'LIFR', 'UNKNOWN']
+      - name: flight_category_derived
+        tests:
+          - accepted_values:
+              values: ['VFR', 'MVFR', 'IFR', 'LIFR', 'UNKNOWN']
+      - name: category_agrees
+        description: >
+          Null when NOAA published no category. False rows are graded in
+          audit_category_agreement rather than failing the build, since some
+          disagreement is expected from unknown-height cloud groups.
+      - name: wind_speed_kt
+        description: Silver's contract already caps this at 250 kt; 150 is a tighter sanity bound.
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 150, inclusive: true}
+      - name: visibility_mi
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 100}
+      - name: relative_humidity_pct
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 100}
+      - name: ceiling_ft_agl
+        description: Lowest BKN/OVC/VV layer in feet AGL. Null means no ceiling was reported.
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0, max_value: 99000}
+      - name: temp_c
+        tests:
+          - dbt_utils.accepted_range: {min_value: -100, max_value: 70, inclusive: true}
+
+  - name: dim_stations
+    description: Stations that have actually reported, with latest known attributes.
+    columns:
+      - name: station_id
+        tests: [unique, not_null]
+      - name: latitude
+        tests:
+          - dbt_utils.accepted_range: {min_value: -90, max_value: 90}
+      - name: longitude
+        tests:
+          - dbt_utils.accepted_range: {min_value: -180, max_value: 180}
+
+  - name: agg_station_hourly
+    description: Hourly per-station rollups. Compared against gold/metar_15min by audit_gold_parity.
+    columns:
+      - name: station_hour_key
+        tests: [unique, not_null]
+      - name: observation_count
+        tests:
+          - dbt_utils.accepted_range: {min_value: 1}
+
+  - name: fct_category_transitions
+    description: Flight category changes per station, with dwell time and direction.
+    columns:
+      - name: transition_key
+        tests: [unique, not_null]
+      - name: transition_direction
+        tests:
+          - accepted_values:
+              values: ['DETERIORATION', 'IMPROVEMENT']
+      - name: previous_state_minutes
+        tests:
+          - dbt_utils.accepted_range: {min_value: 0}
