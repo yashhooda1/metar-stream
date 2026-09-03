@@ -49,7 +49,7 @@ parsed as (
             x -> cast(x as int) * 100
         ) as all_layers_ft,
 
-        body rlike '(CLR|SKC|NCD|NSC|CAVOK)' as is_clear_reported
+        body rlike '\\b(CLR|SKC|NCD|NSC|CAVOK)\\b' as is_clear_reported
 
     from observations
 
