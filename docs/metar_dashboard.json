@@ -1,250 +1,166 @@
 {
-  "generated_at": "2026-09-05T18:08:11.418022+00:00",
+  "generated_at": "2026-09-05T21:06:22.874129+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1104,
-    "observations_retained": 195863,
-    "messages_ingested": 204189,
+    "stations": 1105,
+    "observations_retained": 196968,
+    "messages_ingested": 205294,
     "dedupe_pct": 4.1,
-    "runs": 188
+    "runs": 189
   },
   "station_mix": {
-    "K": 997,
+    "K": 998,
     "C": 89,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 4,
-    "IFR": 13,
-    "MVFR": 87,
-    "VFR": 914
+    "LIFR": 1,
+    "IFR": 3,
+    "MVFR": 40,
+    "VFR": 976
   },
   "top_gusts": [
     {
+      "station": "KFAY",
+      "name": "Fayetteville Rgnl, NC, US",
+      "gust_kt": 56,
+      "observed_at": "2026-09-05T21:00:00+00:00"
+    },
+    {
+      "station": "KTAD",
+      "name": "Trinidad/Stokes Arpt, CO, US",
+      "gust_kt": 39,
+      "observed_at": "2026-09-05T20:54:00+00:00"
+    },
+    {
+      "station": "KGVL",
+      "name": "Gainesville/Gilmer Mem, GA, US",
+      "gust_kt": 37,
+      "observed_at": "2026-09-05T20:55:00+00:00"
+    },
+    {
       "station": "KCDC",
       "name": "Cedar City Muni, UT, US",
-      "gust_kt": 32,
-      "observed_at": "2026-09-05T17:53:00+00:00"
+      "gust_kt": 35,
+      "observed_at": "2026-09-05T20:53:00+00:00"
     },
     {
-      "station": "KVTN",
-      "name": "Valentine/Miller Fld, NE, US",
-      "gust_kt": 32,
-      "observed_at": "2026-09-05T17:52:00+00:00"
+      "station": "KICR",
+      "name": "Winner/Wiley Fld, SD, US",
+      "gust_kt": 35,
+      "observed_at": "2026-09-05T20:53:00+00:00"
     },
     {
-      "station": "KMOT",
-      "name": "Minot Intl, ND, US",
-      "gust_kt": 31,
-      "observed_at": "2026-09-05T17:54:00+00:00"
+      "station": "KLAS",
+      "name": "Las Vegas/Reid Intl, NV, US",
+      "gust_kt": 33,
+      "observed_at": "2026-09-05T20:56:00+00:00"
     },
     {
       "station": "KMLF",
       "name": "Milford Muni, UT, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-05T17:52:00+00:00"
+      "gust_kt": 33,
+      "observed_at": "2026-09-05T20:52:00+00:00"
     },
     {
-      "station": "K06D",
-      "name": "Rolla Muni, ND, US",
-      "gust_kt": 29,
-      "observed_at": "2026-09-05T17:55:00+00:00"
+      "station": "KEVW",
+      "name": "Evanston/Uinta Cnty, WY, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-05T20:53:00+00:00"
     },
     {
-      "station": "CYQI",
-      "name": "Yarmouth Arpt, NS, CA",
-      "gust_kt": 29,
-      "observed_at": "2026-09-05T18:00:00+00:00"
+      "station": "KGLD",
+      "name": "Goodland/Renner Fld, KS, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-05T20:53:00+00:00"
+    },
+    {
+      "station": "KGSB",
+      "name": "Goldsboro/Johnson AFB, NC, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-05T20:55:00+00:00"
     },
     {
       "station": "KIGM",
       "name": "Kingman Arpt, AZ, US",
-      "gust_kt": 28,
-      "observed_at": "2026-09-05T17:51:00+00:00"
+      "gust_kt": 30,
+      "observed_at": "2026-09-05T20:51:00+00:00"
     },
     {
-      "station": "CYYY",
-      "name": "Mont Joli Arpt, QC, CA",
-      "gust_kt": 28,
-      "observed_at": "2026-09-05T18:00:00+00:00"
-    },
-    {
-      "station": "KBPI",
-      "name": "Big Piney Arpt, WY, US",
-      "gust_kt": 27,
-      "observed_at": "2026-09-05T17:53:00+00:00"
-    },
-    {
-      "station": "KCAG",
-      "name": "Craig-Moffat Arpt, CO, US",
-      "gust_kt": 27,
-      "observed_at": "2026-09-05T17:53:00+00:00"
-    },
-    {
-      "station": "KSUX",
-      "name": "Sioux City/Day Fld, IA, US",
-      "gust_kt": 27,
-      "observed_at": "2026-09-05T17:52:00+00:00"
-    },
-    {
-      "station": "CYFC",
-      "name": "Fredericton Intl, NB, CA",
-      "gust_kt": 27,
-      "observed_at": "2026-09-05T18:00:00+00:00"
+      "station": "KAIA",
+      "name": "Alliance Muni, NE, US",
+      "gust_kt": 30,
+      "observed_at": "2026-09-05T21:01:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KLEE",
-      "name": "Leesburg Muni, FL, US",
+      "station": "KFAY",
+      "name": "Fayetteville Rgnl, NC, US",
       "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-09-05T18:03:00+00:00"
+      "gust_kt": 56,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-09-05T21:00:00+00:00"
     },
     {
-      "station": "KCSG",
-      "name": "Columbus Arpt, GA, US",
+      "station": "KMKE",
+      "name": "Milwaukee/Mitchell Intl, WI, US",
       "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-09-05T18:02:00+00:00"
-    },
-    {
-      "station": "CZPC",
-      "name": "Pincher Creek Arpt, AB, CA",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 8.0,
-      "observed_at": "2026-09-05T18:00:00+00:00"
-    },
-    {
-      "station": "CYQL",
-      "name": "Lethbridge Cnty Arpt, AB, CA",
-      "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-05T18:00:00+00:00"
-    },
-    {
-      "station": "KSEM",
-      "name": "Selma/Craig Fld, AL, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-05T18:00:00+00:00"
-    },
-    {
-      "station": "KPVC",
-      "name": "Provincetown Muni, MA, US",
-      "category": "IFR",
-      "gust_kt": 21,
+      "gust_kt": 12,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:56:00+00:00"
+      "observed_at": "2026-09-05T20:59:00+00:00"
     },
     {
-      "station": "KONP",
-      "name": "Newport Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KAGI",
-      "name": "Garden Banks 426, LA, US",
+      "station": "KBJJ",
+      "name": "Wooster/Wayne Cnty, OH, US",
       "category": "IFR",
-      "gust_kt": 13,
+      "gust_kt": 20,
       "visibility_mi": 1.75,
-      "observed_at": "2026-09-05T17:55:00+00:00"
+      "observed_at": "2026-09-05T20:58:00+00:00"
     },
     {
-      "station": "KDYA",
-      "name": "Demopolis Muni, AL, US",
+      "station": "KGVL",
+      "name": "Gainesville/Gilmer Mem, GA, US",
+      "category": "VFR",
+      "gust_kt": 37,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-09-05T20:55:00+00:00"
+    },
+    {
+      "station": "KDDC",
+      "name": "Dodge City Arpt, KS, US",
       "category": "IFR",
-      "gust_kt": null,
+      "gust_kt": 19,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-09-05T20:54:00+00:00"
+    },
+    {
+      "station": "KTAD",
+      "name": "Trinidad/Stokes Arpt, CO, US",
+      "category": "VFR",
+      "gust_kt": 39,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
+      "observed_at": "2026-09-05T20:54:00+00:00"
     },
     {
-      "station": "K11R",
-      "name": "Brenham Muni, TX, US",
-      "category": "LIFR",
-      "gust_kt": 3,
+      "station": "KCDC",
+      "name": "Cedar City Muni, UT, US",
+      "category": "VFR",
+      "gust_kt": 35,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
+      "observed_at": "2026-09-05T20:53:00+00:00"
     },
     {
-      "station": "KTAH",
-      "name": "Green Canyon Blk 641, LA, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KCCY",
-      "name": "Charles City/NE Iowa Rgnl, IA, US",
-      "category": "IFR",
-      "gust_kt": 5,
+      "station": "KICR",
+      "name": "Winner/Wiley Fld, SD, US",
+      "category": "VFR",
+      "gust_kt": 35,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KAEL",
-      "name": "Albert Lea Muni, MN, US",
-      "category": "LIFR",
-      "gust_kt": 6,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KMKG",
-      "name": "Muskegon Cnty Arpt, MI, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KDLH",
-      "name": "Duluth Intl Arpt, MN, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-09-05T17:55:00+00:00"
-    },
-    {
-      "station": "KRST",
-      "name": "Rochester Intl, MN, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-05T17:54:00+00:00"
-    },
-    {
-      "station": "KSBM",
-      "name": "Sheboygan Cnty Mem, WI, US",
-      "category": "IFR",
-      "gust_kt": 10,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-05T17:53:00+00:00"
+      "observed_at": "2026-09-05T20:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-08-29T18:20:16.326394+00:00",
-      "stations": 1099,
-      "new_observations": 1099,
-      "categories": {
-        "LIFR": 3,
-        "IFR": 12,
-        "MVFR": 39,
-        "VFR": 963
-      },
-      "max_gust_kt": 45
-    },
     {
       "at": "2026-08-29T21:39:25.005306+00:00",
       "stations": 1095,
@@ -796,6 +712,18 @@
         "VFR": 914
       },
       "max_gust_kt": 32
+    },
+    {
+      "at": "2026-09-05T21:06:22.874129+00:00",
+      "stations": 1105,
+      "new_observations": 1105,
+      "categories": {
+        "LIFR": 1,
+        "IFR": 3,
+        "MVFR": 40,
+        "VFR": 976
+      },
+      "max_gust_kt": 56
     }
   ],
   "warnings": []
