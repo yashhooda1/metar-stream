@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-09-08T21:41:34.342413+00:00",
+  "generated_at": "2026-09-08T21:46:03.434645+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1101,
-    "observations_retained": 218965,
-    "messages_ingested": 228072,
-    "dedupe_pct": 4.0,
-    "runs": 210
+    "stations": 1102,
+    "observations_retained": 218994,
+    "messages_ingested": 229174,
+    "dedupe_pct": 4.4,
+    "runs": 211
   },
   "station_mix": {
-    "K": 993,
+    "K": 994,
     "C": 91,
     "M": 17
   },
   "flight_categories": {
     "LIFR": 3,
-    "IFR": 4,
+    "IFR": 5,
     "MVFR": 24,
     "VFR": 993
   },
@@ -70,14 +70,14 @@
       "observed_at": "2026-09-08T21:00:00+00:00"
     },
     {
-      "station": "KJMS",
-      "name": "Jamestown Rgnl, ND, US",
+      "station": "KTVF",
+      "name": "Thief River Rgnl, MN, US",
       "gust_kt": 33,
       "observed_at": "2026-09-08T20:56:00+00:00"
     },
     {
-      "station": "KTVF",
-      "name": "Thief River Rgnl, MN, US",
+      "station": "KJMS",
+      "name": "Jamestown Rgnl, ND, US",
       "gust_kt": 33,
       "observed_at": "2026-09-08T20:56:00+00:00"
     },
@@ -96,6 +96,14 @@
   ],
   "alerts": [
     {
+      "station": "KBKV",
+      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-09-08T21:43:00+00:00"
+    },
+    {
       "station": "KCMH",
       "name": "Columbus/Glenn Intl, OH, US",
       "category": "IFR",
@@ -104,19 +112,19 @@
       "observed_at": "2026-09-08T21:36:00+00:00"
     },
     {
-      "station": "KEZP",
-      "name": "E Cameron 321A, LA, US",
-      "category": "LIFR",
-      "gust_kt": 12,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-09-08T21:35:00+00:00"
-    },
-    {
       "station": "K11R",
       "name": "Brenham Muni, TX, US",
       "category": "LIFR",
       "gust_kt": 5,
       "visibility_mi": 10.0,
+      "observed_at": "2026-09-08T21:35:00+00:00"
+    },
+    {
+      "station": "KEZP",
+      "name": "E Cameron 321A, LA, US",
+      "category": "LIFR",
+      "gust_kt": 12,
+      "visibility_mi": 0.5,
       "observed_at": "2026-09-08T21:35:00+00:00"
     },
     {
@@ -756,6 +764,18 @@
       "categories": {
         "LIFR": 3,
         "IFR": 4,
+        "MVFR": 24,
+        "VFR": 993
+      },
+      "max_gust_kt": 40
+    },
+    {
+      "at": "2026-09-08T21:46:03.434645+00:00",
+      "stations": 1102,
+      "new_observations": 29,
+      "categories": {
+        "LIFR": 3,
+        "IFR": 5,
         "MVFR": 24,
         "VFR": 993
       },
