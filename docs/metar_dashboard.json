@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-09-13T23:00:58.940195+00:00",
+  "generated_at": "2026-09-13T23:17:16.180189+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
     "stations": 1103,
-    "observations_retained": 311815,
-    "messages_ingested": 327532,
-    "dedupe_pct": 4.8,
-    "runs": 301
+    "observations_retained": 312085,
+    "messages_ingested": 328635,
+    "dedupe_pct": 5.0,
+    "runs": 302
   },
   "station_mix": {
     "K": 997,
@@ -15,12 +15,18 @@
     "M": 17
   },
   "flight_categories": {
-    "LIFR": 11,
-    "IFR": 11,
-    "MVFR": 40,
+    "LIFR": 10,
+    "IFR": 16,
+    "MVFR": 38,
     "VFR": 959
   },
   "top_gusts": [
+    {
+      "station": "KMCB",
+      "name": "McComb/Lewis Fld, MS, US",
+      "gust_kt": 41,
+      "observed_at": "2026-09-13T23:10:00+00:00"
+    },
     {
       "station": "KEKS",
       "name": "Ennis/Big Sky Arpt, MT, US",
@@ -48,8 +54,8 @@
     {
       "station": "KLVS",
       "name": "Las Vegas Muni, NM, US",
-      "gust_kt": 34,
-      "observed_at": "2026-09-13T22:53:00+00:00"
+      "gust_kt": 35,
+      "observed_at": "2026-09-13T23:02:00+00:00"
     },
     {
       "station": "KDTA",
@@ -70,12 +76,6 @@
       "observed_at": "2026-09-13T22:56:00+00:00"
     },
     {
-      "station": "KRKS",
-      "name": "Rock Springs/SW Wyoming Rgnl, WY, US",
-      "gust_kt": 32,
-      "observed_at": "2026-09-13T22:54:00+00:00"
-    },
-    {
       "station": "KCAG",
       "name": "Craig-Moffat Arpt, CO, US",
       "gust_kt": 32,
@@ -88,13 +88,109 @@
       "observed_at": "2026-09-13T22:55:00+00:00"
     },
     {
-      "station": "KNSI",
-      "name": "San Nicholas Island Arpt, CA, US",
+      "station": "KRCV",
+      "name": "Del Norte Muni, CO, US",
       "gust_kt": 30,
-      "observed_at": "2026-09-13T22:53:00+00:00"
+      "observed_at": "2026-09-13T22:55:00+00:00"
     }
   ],
   "alerts": [
+    {
+      "station": "KGCN",
+      "name": "Grand Canyon Park Arpt, AZ, US",
+      "category": "LIFR",
+      "gust_kt": 27,
+      "visibility_mi": 0.5,
+      "observed_at": "2026-09-13T23:11:00+00:00"
+    },
+    {
+      "station": "KMCB",
+      "name": "McComb/Lewis Fld, MS, US",
+      "category": null,
+      "gust_kt": 41,
+      "visibility_mi": null,
+      "observed_at": "2026-09-13T23:10:00+00:00"
+    },
+    {
+      "station": "KDUJ",
+      "name": "Du Bois Rgnl, PA, US",
+      "category": "LIFR",
+      "gust_kt": 28,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-09-13T23:10:00+00:00"
+    },
+    {
+      "station": "KCON",
+      "name": "Concord Muni, NH, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T23:09:00+00:00"
+    },
+    {
+      "station": "KIZG",
+      "name": "Fryeburg/Eastern Slopes Rgnl, ME, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-09-13T23:08:00+00:00"
+    },
+    {
+      "station": "CYBC",
+      "name": "Baie Comeau Arpt, QC, CA",
+      "category": "LIFR",
+      "gust_kt": 3,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-09-13T23:08:00+00:00"
+    },
+    {
+      "station": "KMLT",
+      "name": "Millinocket Muni, ME, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T23:07:00+00:00"
+    },
+    {
+      "station": "KCQX",
+      "name": "Chatham Muni, MA, US",
+      "category": "LIFR",
+      "gust_kt": 5,
+      "visibility_mi": 6.0,
+      "observed_at": "2026-09-13T23:06:00+00:00"
+    },
+    {
+      "station": "KCAR",
+      "name": "Caribou Muni, ME, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T23:05:00+00:00"
+    },
+    {
+      "station": "KBGR",
+      "name": "Bangor Intl Arpt, ME, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-09-13T23:03:00+00:00"
+    },
+    {
+      "station": "KLVS",
+      "name": "Las Vegas Muni, NM, US",
+      "category": null,
+      "gust_kt": 35,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T23:02:00+00:00"
+    },
+    {
+      "station": "KMVY",
+      "name": "Marthas Vineyard Arpt, MA, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T23:00:00+00:00"
+    },
     {
       "station": "KAUG",
       "name": "Augusta/State Arpt, ME, US",
@@ -102,6 +198,14 @@
       "gust_kt": 6,
       "visibility_mi": 0.25,
       "observed_at": "2026-09-13T22:57:00+00:00"
+    },
+    {
+      "station": "KSMP",
+      "name": "Stampede Pass, WA, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-09-13T22:56:00+00:00"
     },
     {
       "station": "K2WX",
@@ -128,14 +232,6 @@
       "observed_at": "2026-09-13T22:56:00+00:00"
     },
     {
-      "station": "KEKS",
-      "name": "Ennis/Big Sky Arpt, MT, US",
-      "category": "VFR",
-      "gust_kt": 39,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-09-13T22:55:00+00:00"
-    },
-    {
       "station": "K4S1",
       "name": "Gold Beach Muni, OR, US",
       "category": "IFR",
@@ -144,131 +240,23 @@
       "observed_at": "2026-09-13T22:55:00+00:00"
     },
     {
-      "station": "KORH",
-      "name": "Worcester Muni, MA, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-09-13T22:54:00+00:00"
+      "station": "KEKS",
+      "name": "Ennis/Big Sky Arpt, MT, US",
+      "category": "VFR",
+      "gust_kt": 39,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-09-13T22:55:00+00:00"
     },
     {
-      "station": "KBOS",
-      "name": "Boston/Logan Intl, MA, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-09-13T22:54:00+00:00"
-    },
-    {
-      "station": "KPAE",
-      "name": "Everett/Paine Fld, WA, US",
-      "category": "IFR",
-      "gust_kt": 11,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KBBW",
-      "name": "Broken Bow Muni, NE, US",
+      "station": "KM08",
+      "name": "Bolivar/Whitehurst Fld, TN, US",
       "category": "IFR",
       "gust_kt": 18,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KMLT",
-      "name": "Millinocket Muni, ME, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KACK",
-      "name": "Nantucket Mem Arpt, MA, US",
-      "category": "LIFR",
-      "gust_kt": 15,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KEWB",
-      "name": "New Bedford Rgnl, MA, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KHUL",
-      "name": "Houlton Intl, ME, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KBGR",
-      "name": "Bangor Intl Arpt, ME, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-09-13T22:53:00+00:00"
-    },
-    {
-      "station": "KMLF",
-      "name": "Milford Muni, UT, US",
-      "category": "VFR",
-      "gust_kt": 36,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:52:00+00:00"
-    },
-    {
-      "station": "KCQX",
-      "name": "Chatham Muni, MA, US",
-      "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-13T22:52:00+00:00"
-    },
-    {
-      "station": "KBHK",
-      "name": "Baker Muni, MT, US",
-      "category": "VFR",
-      "gust_kt": 36,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:51:00+00:00"
-    },
-    {
-      "station": "KPWM",
-      "name": "Portland Intl, ME, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T22:51:00+00:00"
-    },
-    {
-      "station": "KSUA",
-      "name": "Stuart/Witham Fld, FL, US",
-      "category": "LIFR",
-      "gust_kt": 25,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-09-13T22:50:00+00:00"
+      "visibility_mi": 2.0,
+      "observed_at": "2026-09-13T22:55:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-09-10T23:59:22.019439+00:00",
-      "stations": 1105,
-      "new_observations": 1105,
-      "categories": {
-        "LIFR": 3,
-        "IFR": 4,
-        "MVFR": 21,
-        "VFR": 999
-      },
-      "max_gust_kt": 35
-    },
     {
       "at": "2026-09-11T03:18:16.878219+00:00",
       "stations": 1094,
@@ -1120,6 +1108,18 @@
         "VFR": 959
       },
       "max_gust_kt": 39
+    },
+    {
+      "at": "2026-09-13T23:17:16.180189+00:00",
+      "stations": 1103,
+      "new_observations": 270,
+      "categories": {
+        "LIFR": 10,
+        "IFR": 16,
+        "MVFR": 38,
+        "VFR": 959
+      },
+      "max_gust_kt": 41
     }
   ],
   "warnings": []
