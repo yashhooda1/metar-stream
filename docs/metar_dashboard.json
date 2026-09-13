@@ -1,32 +1,26 @@
 {
-  "generated_at": "2026-09-13T01:00:17.254900+00:00",
+  "generated_at": "2026-09-13T01:33:44.925138+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1102,
-    "observations_retained": 287600,
-    "messages_ingested": 302473,
-    "dedupe_pct": 4.9,
-    "runs": 278
+    "stations": 1090,
+    "observations_retained": 288075,
+    "messages_ingested": 303563,
+    "dedupe_pct": 5.1,
+    "runs": 279
   },
   "station_mix": {
-    "K": 998,
-    "C": 87,
-    "M": 17
+    "K": 990,
+    "C": 85,
+    "M": 15
   },
   "flight_categories": {
-    "LIFR": 5,
-    "IFR": 13,
-    "MVFR": 41,
-    "VFR": 964
+    "LIFR": 4,
+    "IFR": 12,
+    "MVFR": 51,
+    "VFR": 948
   },
   "top_gusts": [
-    {
-      "station": "KLAR",
-      "name": "Laramie Rgnl, WY, US",
-      "gust_kt": 49,
-      "observed_at": "2026-09-13T00:53:00+00:00"
-    },
     {
       "station": "KRNO",
       "name": "Reno/Tahoe Intl, NV, US",
@@ -38,6 +32,12 @@
       "name": "Lakeview/Lake Cnty, OR, US",
       "gust_kt": 35,
       "observed_at": "2026-09-13T00:53:00+00:00"
+    },
+    {
+      "station": "KPTT",
+      "name": "Pratt Rgnl, KS, US",
+      "gust_kt": 35,
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
       "station": "KBNO",
@@ -52,12 +52,6 @@
       "observed_at": "2026-09-13T00:53:00+00:00"
     },
     {
-      "station": "KICT",
-      "name": "Wichita/Eisenhower Arpt, KS, US",
-      "gust_kt": 33,
-      "observed_at": "2026-09-13T00:53:00+00:00"
-    },
-    {
       "station": "KDRA",
       "name": "Mercury/Desert Rock, NV, US",
       "gust_kt": 32,
@@ -66,14 +60,8 @@
     {
       "station": "KDTA",
       "name": "Delta Muni, UT, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-13T00:55:00+00:00"
-    },
-    {
-      "station": "KSVE",
-      "name": "Susanville Muni, CA, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-13T00:35:00+00:00"
+      "gust_kt": 32,
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
       "station": "KMLF",
@@ -92,48 +80,84 @@
       "name": "Corpus Christi Intl, TX, US",
       "gust_kt": 29,
       "observed_at": "2026-09-13T00:51:00+00:00"
+    },
+    {
+      "station": "KSFO",
+      "name": "San Francisco Intl, CA, US",
+      "gust_kt": 28,
+      "observed_at": "2026-09-13T00:56:00+00:00"
+    },
+    {
+      "station": "KICT",
+      "name": "Wichita/Eisenhower Arpt, KS, US",
+      "gust_kt": 28,
+      "observed_at": "2026-09-13T01:09:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KELD",
-      "name": "El Dorado/S Arkansas Rgnl, AR, US",
+      "station": "KMBL",
+      "name": "Manistee/Blacker Arpt, MI, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-09-13T01:31:00+00:00"
+    },
+    {
+      "station": "KDUJ",
+      "name": "Du Bois Rgnl, PA, US",
       "category": "IFR",
-      "gust_kt": 12,
+      "gust_kt": 0,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-09-13T01:31:00+00:00"
+    },
+    {
+      "station": "KHLG",
+      "name": "Wheeling/Ohio Cnty, WV, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-09-13T01:24:00+00:00"
+    },
+    {
+      "station": "KDVL",
+      "name": "Devils Lake Rgnl, ND, US",
+      "category": "IFR",
+      "gust_kt": 8,
       "visibility_mi": 2.0,
-      "observed_at": "2026-09-13T00:56:00+00:00"
+      "observed_at": "2026-09-13T01:22:00+00:00"
     },
     {
-      "station": "KONP",
-      "name": "Newport Muni, OR, US",
+      "station": "CYXU",
+      "name": "London Intl, ON, CA",
       "category": "IFR",
-      "gust_kt": 20,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:55:00+00:00"
+      "gust_kt": 7,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-09-13T01:20:00+00:00"
     },
     {
-      "station": "KRNO",
-      "name": "Reno/Tahoe Intl, NV, US",
+      "station": "KDAN",
+      "name": "Danville Rgnl, VA, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-09-13T01:16:00+00:00"
+    },
+    {
+      "station": "KPTT",
+      "name": "Pratt Rgnl, KS, US",
       "category": "VFR",
       "gust_kt": 35,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:55:00+00:00"
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
-      "station": "KGEV",
-      "name": "Jefferson/Ashe Cnty, NC, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:55:00+00:00"
-    },
-    {
-      "station": "KFVX",
-      "name": "Farmville Muni, VA, US",
+      "station": "KAVC",
+      "name": "Mecklenburg/Brunswick Rgnl, VA, US",
       "category": "IFR",
       "gust_kt": 0,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-13T00:55:00+00:00"
+      "visibility_mi": 3.0,
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
       "station": "KFQD",
@@ -141,22 +165,46 @@
       "category": "IFR",
       "gust_kt": 0,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:55:00+00:00"
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
-      "station": "K6L4",
-      "name": "Logan Cnty, WV, US",
+      "station": "KGEV",
+      "name": "Jefferson/Ashe Cnty, NC, US",
       "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-09-13T00:55:00+00:00"
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T01:15:00+00:00"
+    },
+    {
+      "station": "KRHP",
+      "name": "Andrews/W Carolina Rgnl, NC, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-13T01:15:00+00:00"
+    },
+    {
+      "station": "KUNI",
+      "name": "Albany/Ohio Univ Arpt, OH, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-09-13T01:15:00+00:00"
     },
     {
       "station": "KIDI",
       "name": "Indiana/Stewart Arpt, PA, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.5,
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-09-13T01:15:00+00:00"
+    },
+    {
+      "station": "KRNO",
+      "name": "Reno/Tahoe Intl, NV, US",
+      "category": "VFR",
+      "gust_kt": 35,
+      "visibility_mi": 10.0,
       "observed_at": "2026-09-13T00:55:00+00:00"
     },
     {
@@ -168,35 +216,11 @@
       "observed_at": "2026-09-13T00:53:00+00:00"
     },
     {
-      "station": "KLAR",
-      "name": "Laramie Rgnl, WY, US",
-      "category": "VFR",
-      "gust_kt": 49,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:53:00+00:00"
-    },
-    {
-      "station": "KJKL",
-      "name": "Jackson/Carroll Arpt, KY, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 8.0,
-      "observed_at": "2026-09-13T00:53:00+00:00"
-    },
-    {
       "station": "KZZV",
       "name": "Zanesville Muni, OH, US",
       "category": "IFR",
       "gust_kt": 4,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-13T00:53:00+00:00"
-    },
-    {
-      "station": "KDUJ",
-      "name": "Du Bois Rgnl, PA, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 1.0,
       "observed_at": "2026-09-13T00:53:00+00:00"
     },
     {
@@ -216,59 +240,15 @@
       "observed_at": "2026-09-13T00:53:00+00:00"
     },
     {
-      "station": "KCLT",
-      "name": "Charlotte/Douglas Intl, NC, US",
-      "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-09-13T00:52:00+00:00"
-    },
-    {
-      "station": "CYNM",
-      "name": "Matagami Arpt, QC, CA",
-      "category": "IFR",
-      "gust_kt": 19,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-13T00:52:00+00:00"
-    },
-    {
       "station": "KPIT",
       "name": "Pittsburgh Intl, PA, US",
       "category": "LIFR",
       "gust_kt": 3,
       "visibility_mi": 4.0,
       "observed_at": "2026-09-13T00:51:00+00:00"
-    },
-    {
-      "station": "CYXU",
-      "name": "London Intl, ON, CA",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 8.0,
-      "observed_at": "2026-09-13T00:41:00+00:00"
-    },
-    {
-      "station": "KPTT",
-      "name": "Pratt Rgnl, KS, US",
-      "category": "IFR",
-      "gust_kt": 25,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-09-13T00:35:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-09-08T14:23:01.206498+00:00",
-      "stations": 1103,
-      "new_observations": 1103,
-      "categories": {
-        "LIFR": 6,
-        "IFR": 23,
-        "MVFR": 54,
-        "VFR": 937
-      },
-      "max_gust_kt": 38
-    },
     {
       "at": "2026-09-08T18:30:45.975729+00:00",
       "stations": 1100,
@@ -1120,6 +1100,18 @@
         "VFR": 964
       },
       "max_gust_kt": 49
+    },
+    {
+      "at": "2026-09-13T01:33:44.925138+00:00",
+      "stations": 1090,
+      "new_observations": 475,
+      "categories": {
+        "LIFR": 4,
+        "IFR": 12,
+        "MVFR": 51,
+        "VFR": 948
+      },
+      "max_gust_kt": 35
     }
   ],
   "warnings": []
