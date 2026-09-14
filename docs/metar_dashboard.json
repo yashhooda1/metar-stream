@@ -1,37 +1,31 @@
 {
-  "generated_at": "2026-09-14T10:22:09.946856+00:00",
+  "generated_at": "2026-09-14T11:20:15.561496+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1064,
-    "observations_retained": 323282,
-    "messages_ingested": 340470,
+    "stations": 1075,
+    "observations_retained": 324349,
+    "messages_ingested": 341545,
     "dedupe_pct": 5.0,
-    "runs": 313
+    "runs": 314
   },
   "station_mix": {
-    "K": 975,
-    "C": 85,
-    "M": 4
+    "K": 980,
+    "C": 89,
+    "M": 6
   },
   "flight_categories": {
-    "LIFR": 28,
-    "IFR": 32,
-    "MVFR": 58,
-    "VFR": 868
+    "LIFR": 31,
+    "IFR": 28,
+    "MVFR": 76,
+    "VFR": 860
   },
   "top_gusts": [
     {
       "station": "K0CO",
       "name": "Berthoud Pass, CO, US",
-      "gust_kt": 52,
-      "observed_at": "2026-09-14T10:15:00+00:00"
-    },
-    {
-      "station": "KHEI",
-      "name": "Hettinger Muni, ND, US",
-      "gust_kt": 38,
-      "observed_at": "2026-09-14T09:53:00+00:00"
+      "gust_kt": 51,
+      "observed_at": "2026-09-14T10:55:00+00:00"
     },
     {
       "station": "K2WX",
@@ -40,235 +34,229 @@
       "observed_at": "2026-09-14T09:56:00+00:00"
     },
     {
-      "station": "CYBG",
-      "name": "Bagotville, QC, CA",
-      "gust_kt": 36,
-      "observed_at": "2026-09-14T10:00:00+00:00"
-    },
-    {
-      "station": "KBIS",
-      "name": "Bismarck Arpt, ND, US",
+      "station": "KD57",
+      "name": "Glen Ullin Rgnl, ND, US",
       "gust_kt": 33,
-      "observed_at": "2026-09-14T09:52:00+00:00"
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
-      "station": "KM75",
-      "name": "Malta Arpt, MT, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-14T10:10:00+00:00"
-    },
-    {
-      "station": "KSHR",
-      "name": "Sheridan Cnty Arpt, WY, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-14T09:53:00+00:00"
-    },
-    {
-      "station": "KITR",
-      "name": "Burlington/Kit Carson Cnty, CO, US",
-      "gust_kt": 30,
-      "observed_at": "2026-09-14T09:53:00+00:00"
-    },
-    {
-      "station": "KIDA",
-      "name": "Idaho Falls Rgnl, ID, US",
-      "gust_kt": 29,
-      "observed_at": "2026-09-14T09:53:00+00:00"
+      "station": "KHON",
+      "name": "Huron Rgnl, SD, US",
+      "gust_kt": 32,
+      "observed_at": "2026-09-14T11:14:00+00:00"
     },
     {
       "station": "KSTJ",
       "name": "St Joseph/Rosecrans Mem, MO, US",
-      "gust_kt": 28,
-      "observed_at": "2026-09-14T10:09:00+00:00"
+      "gust_kt": 32,
+      "observed_at": "2026-09-14T11:09:00+00:00"
     },
     {
-      "station": "KFSD",
-      "name": "Sioux Falls/Foss Fld, SD, US",
-      "gust_kt": 28,
-      "observed_at": "2026-09-14T09:56:00+00:00"
+      "station": "KGLD",
+      "name": "Goodland/Renner Fld, KS, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-14T10:53:00+00:00"
     },
     {
-      "station": "KM46",
-      "name": "Colstrip Arpt, MT, US",
+      "station": "KHEI",
+      "name": "Hettinger Muni, ND, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-14T10:53:00+00:00"
+    },
+    {
+      "station": "KBIS",
+      "name": "Bismarck Arpt, ND, US",
+      "gust_kt": 31,
+      "observed_at": "2026-09-14T10:52:00+00:00"
+    },
+    {
+      "station": "KC08",
+      "name": "Westcliffe/Silver West Arpt, CO, US",
+      "gust_kt": 28,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KRWL",
+      "name": "Rawlins Muni, WY, US",
+      "gust_kt": 28,
+      "observed_at": "2026-09-14T10:53:00+00:00"
+    },
+    {
+      "station": "K9V9",
+      "name": "Chamberlain Muni, SD, US",
+      "gust_kt": 28,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KD07",
+      "name": "Faith Muni, SD, US",
       "gust_kt": 27,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "observed_at": "2026-09-14T10:56:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KLPC",
-      "name": "Lompoc Arpt, CA, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-14T10:19:00+00:00"
-    },
-    {
-      "station": "KRHI",
-      "name": "Rhinelander/Oneida Cnty, WI, US",
-      "category": "IFR",
-      "gust_kt": 0,
+      "station": "KRBG",
+      "name": "Roseburg Rgnl, OR, US",
+      "category": "LIFR",
+      "gust_kt": 5,
       "visibility_mi": 1.5,
-      "observed_at": "2026-09-14T10:19:00+00:00"
+      "observed_at": "2026-09-14T11:17:00+00:00"
     },
     {
-      "station": "KGSH",
-      "name": "Goshen Muni, IN, US",
+      "station": "KBHB",
+      "name": "Bar Harbor/Hancock Cnty, ME, US",
       "category": "LIFR",
-      "gust_kt": 0,
+      "gust_kt": 3,
       "visibility_mi": 0.5,
-      "observed_at": "2026-09-14T10:19:00+00:00"
+      "observed_at": "2026-09-14T11:17:00+00:00"
     },
     {
-      "station": "KBKW",
-      "name": "Beckley/Raleigh Cnty, WV, US",
+      "station": "KBLF",
+      "name": "Bluefield/Mercer Cnty, WV, US",
       "category": "LIFR",
-      "gust_kt": 10,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-14T10:19:00+00:00"
-    },
-    {
-      "station": "KLNR",
-      "name": "Lone Rock/Tri Cnty Rgnl, WI, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-09-14T10:18:00+00:00"
-    },
-    {
-      "station": "KLFT",
-      "name": "Lafayette Rgnl, LA, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-14T10:17:00+00:00"
+      "gust_kt": 4,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-09-14T11:16:00+00:00"
     },
     {
       "station": "KF70",
       "name": "Murrieta/French Valley Arpt, CA, US",
       "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
-      "station": "K0CO",
-      "name": "Berthoud Pass, CO, US",
-      "category": "VFR",
-      "gust_kt": 52,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
-    },
-    {
-      "station": "KS52",
-      "name": "Methow Valley State Arpt, WA, US",
+      "station": "KEAT",
+      "name": "Wenatchee/Pangborn Mem, WA, US",
       "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "visibility_mi": 1.5,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
-      "station": "KT20",
-      "name": "Gonzales Muni, TX, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
-    },
-    {
-      "station": "KTIF",
-      "name": "Thedford/Thomas Cnty, NE, US",
+      "station": "KEGV",
+      "name": "Eagle River/Union Arpt, WI, US",
       "category": "LIFR",
-      "gust_kt": 10,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-14T10:15:00+00:00"
-    },
-    {
-      "station": "KOGA",
-      "name": "Ogalla/Searle Fld, NE, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
       "station": "KBVN",
       "name": "Albion Muni, NE, US",
-      "category": "IFR",
-      "gust_kt": 14,
+      "category": "LIFR",
+      "gust_kt": 21,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "K9V9",
+      "name": "Chamberlain Muni, SD, US",
+      "category": "IFR",
+      "gust_kt": 28,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
       "station": "KONL",
       "name": "O'Neill Muni, NE, US",
       "category": "IFR",
-      "gust_kt": 20,
+      "gust_kt": 10,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KOGA",
+      "name": "Ogalla/Searle Fld, NE, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
       "station": "KCAD",
       "name": "Cadillac/Wexford Cnty, MI, US",
       "category": "LIFR",
       "gust_kt": 1,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "visibility_mi": 0.25,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
       "station": "KBWW",
       "name": "Bowman Rgnl, ND, US",
       "category": "IFR",
-      "gust_kt": 26,
+      "gust_kt": 25,
       "visibility_mi": 10.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
-      "station": "KOBE",
-      "name": "Okeechobee Cnty Arpt, FL, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "station": "KAIA",
+      "name": "Alliance Muni, NE, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
-      "station": "K1A6",
-      "name": "Middlesboro/Bell Cnty, KY, US",
-      "category": "LIFR",
+      "station": "KVOK",
+      "name": "Camp Douglas/Volk Fld, WI, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KCLI",
+      "name": "Clintonville Muni, WI, US",
+      "category": "IFR",
       "gust_kt": 0,
       "visibility_mi": 1.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
-    },
-    {
-      "station": "K24J",
-      "name": "Live Oak/Suwannee Cnty, FL, US",
-      "category": "IFR",
-      "gust_kt": null,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "observed_at": "2026-09-14T11:15:00+00:00"
     },
     {
       "station": "KLNP",
       "name": "Wise/Lonesome Pine Arpt, VA, US",
       "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-14T10:15:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KACZ",
+      "name": "Wallace/Henderson Fld, NC, US",
+      "category": "LIFR",
+      "gust_kt": 3,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KFPY",
+      "name": "Perry-Foley Arpt, FL, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KMFV",
+      "name": "Melfa/Accomack Cnty, VA, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-09-14T11:15:00+00:00"
+    },
+    {
+      "station": "KW99",
+      "name": "Petersburg/Grant Cnty, WV, US",
+      "category": "IFR",
+      "gust_kt": 6,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-09-14T11:15:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-09-11T13:20:49.338785+00:00",
-      "stations": 1105,
-      "new_observations": 351,
-      "categories": {
-        "LIFR": 61,
-        "IFR": 37,
-        "MVFR": 50,
-        "VFR": 875
-      },
-      "max_gust_kt": 38
-    },
     {
       "at": "2026-09-11T14:21:43.595503+00:00",
       "stations": 1109,
@@ -1120,6 +1108,18 @@
         "VFR": 868
       },
       "max_gust_kt": 52
+    },
+    {
+      "at": "2026-09-14T11:20:15.561496+00:00",
+      "stations": 1075,
+      "new_observations": 1067,
+      "categories": {
+        "LIFR": 31,
+        "IFR": 28,
+        "MVFR": 76,
+        "VFR": 860
+      },
+      "max_gust_kt": 51
     }
   ],
   "warnings": []
