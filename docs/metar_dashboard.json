@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-09-15T00:55:54.522826+00:00",
+  "generated_at": "2026-09-15T01:33:04.996391+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1099,
-    "observations_retained": 337682,
-    "messages_ingested": 355677,
-    "dedupe_pct": 5.1,
-    "runs": 327
+    "stations": 1093,
+    "observations_retained": 338367,
+    "messages_ingested": 356770,
+    "dedupe_pct": 5.2,
+    "runs": 328
   },
   "station_mix": {
-    "K": 992,
-    "C": 90,
-    "M": 17
+    "K": 989,
+    "C": 88,
+    "M": 16
   },
   "flight_categories": {
     "LIFR": 5,
-    "IFR": 21,
+    "IFR": 26,
     "MVFR": 36,
-    "VFR": 956
+    "VFR": 945
   },
   "top_gusts": [
     {
@@ -28,10 +28,28 @@
       "observed_at": "2026-09-15T00:53:00+00:00"
     },
     {
+      "station": "K9Y1",
+      "name": "Killdeer/Dunn Cnty, ND, US",
+      "gust_kt": 45,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KLSB",
+      "name": "Lordsburg Muni, NM, US",
+      "gust_kt": 44,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KDIK",
+      "name": "Dickinson/Roosevelt , ND, US",
+      "gust_kt": 44,
+      "observed_at": "2026-09-15T00:56:00+00:00"
+    },
+    {
       "station": "K2WX",
       "name": "Buffalo/Harding Cnty, SD, US",
-      "gust_kt": 44,
-      "observed_at": "2026-09-14T23:56:00+00:00"
+      "gust_kt": 43,
+      "observed_at": "2026-09-15T00:56:00+00:00"
     },
     {
       "station": "KXWA",
@@ -46,22 +64,10 @@
       "observed_at": "2026-09-15T00:51:00+00:00"
     },
     {
-      "station": "KBWW",
-      "name": "Bowman Rgnl, ND, US",
-      "gust_kt": 40,
-      "observed_at": "2026-09-15T00:35:00+00:00"
-    },
-    {
-      "station": "KGDV",
-      "name": "Glendive/Dawson Arpt, MT, US",
-      "gust_kt": 39,
-      "observed_at": "2026-09-14T23:56:00+00:00"
-    },
-    {
-      "station": "CWKO",
-      "name": "Rockglen , SK, CA",
-      "gust_kt": 38,
-      "observed_at": "2026-09-15T00:00:00+00:00"
+      "station": "KCNM",
+      "name": "Carlsbad/Cavern City Air Term, NM, US",
+      "gust_kt": 37,
+      "observed_at": "2026-09-15T01:29:00+00:00"
     },
     {
       "station": "KN60",
@@ -70,46 +76,48 @@
       "observed_at": "2026-09-15T00:54:00+00:00"
     },
     {
-      "station": "KDIK",
-      "name": "Dickinson/Roosevelt , ND, US",
-      "gust_kt": 37,
-      "observed_at": "2026-09-14T23:56:00+00:00"
+      "station": "KCAO",
+      "name": "Clayton Muni, NM, US",
+      "gust_kt": 36,
+      "observed_at": "2026-09-15T00:55:00+00:00"
     },
     {
-      "station": "K9Y1",
-      "name": "Killdeer/Dunn Cnty, ND, US",
+      "station": "KAIO",
+      "name": "Atlantic Muni, IA, US",
       "gust_kt": 36,
-      "observed_at": "2026-09-15T00:35:00+00:00"
+      "observed_at": "2026-09-15T01:15:00+00:00"
     },
     {
-      "station": "KSDY",
-      "name": "Sidney/Richland Muni, MT, US",
-      "gust_kt": 36,
-      "observed_at": "2026-09-14T23:56:00+00:00"
-    },
-    {
-      "station": "KMOT",
-      "name": "Minot Intl, ND, US",
-      "gust_kt": 36,
-      "observed_at": "2026-09-14T23:54:00+00:00"
+      "station": "KSHR",
+      "name": "Sheridan Cnty Arpt, WY, US",
+      "gust_kt": 35,
+      "observed_at": "2026-09-15T00:53:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KN60",
-      "name": "Garrison Muni, ND, US",
+      "station": "KCNM",
+      "name": "Carlsbad/Cavern City Air Term, NM, US",
       "category": null,
       "gust_kt": 37,
-      "visibility_mi": null,
-      "observed_at": "2026-09-15T00:54:00+00:00"
+      "visibility_mi": 6.0,
+      "observed_at": "2026-09-15T01:29:00+00:00"
     },
     {
-      "station": "KMLS",
-      "name": "Miles City/Wiley Fld, MT, US",
-      "category": "VFR",
-      "gust_kt": 45,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
+      "station": "KASX",
+      "name": "Ashland/Kennedy Mem Arpt, WI, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-09-15T01:29:00+00:00"
+    },
+    {
+      "station": "KFOD",
+      "name": "Fort Dodge Rgnl, IA, US",
+      "category": "IFR",
+      "gust_kt": 11,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-09-15T01:26:00+00:00"
     },
     {
       "station": "KMLP",
@@ -117,158 +125,138 @@
       "category": "LIFR",
       "gust_kt": 0,
       "visibility_mi": 0.25,
-      "observed_at": "2026-09-15T00:53:00+00:00"
+      "observed_at": "2026-09-15T01:20:00+00:00"
     },
     {
-      "station": "KSHR",
-      "name": "Sheridan Cnty Arpt, WY, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "KBRD",
-      "name": "Brainerd/Lakes Rgnl, MN, US",
+      "station": "CYHD",
+      "name": "Dryden Rgnl, ON, CA",
       "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-09-15T00:53:00+00:00"
+      "gust_kt": 30,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-09-15T01:20:00+00:00"
     },
     {
-      "station": "KAXN",
-      "name": "Alexandria/Chandler Fld, MN, US",
+      "station": "KHYR",
+      "name": "Hayward Muni, WI, US",
       "category": "IFR",
-      "gust_kt": 10,
+      "gust_kt": 6,
       "visibility_mi": 3.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
+      "observed_at": "2026-09-15T01:18:00+00:00"
     },
     {
-      "station": "KASX",
-      "name": "Ashland/Kennedy Mem Arpt, WI, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "KSTC",
-      "name": "St Cloud Rgnl, MN, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "KRHI",
-      "name": "Rhinelander/Oneida Cnty, WI, US",
-      "category": "IFR",
-      "gust_kt": 19,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "KPKD",
-      "name": "Park Rapids/Konshok Fld, MN, US",
-      "category": "LIFR",
-      "gust_kt": 10,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "KFAR",
-      "name": "Fargo/Hector Intl, ND, US",
-      "category": "IFR",
-      "gust_kt": 10,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:53:00+00:00"
-    },
-    {
-      "station": "CYEN",
-      "name": "Estevan Arpt, SK, CA",
-      "category": "IFR",
-      "gust_kt": 24,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-09-15T00:52:00+00:00"
-    },
-    {
-      "station": "KBHK",
-      "name": "Baker Muni, MT, US",
-      "category": "VFR",
-      "gust_kt": 42,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:51:00+00:00"
-    },
-    {
-      "station": "KXWA",
-      "name": "Williston/Basin Intl, ND, US",
+      "station": "KLSB",
+      "name": "Lordsburg Muni, NM, US",
       "category": "MVFR",
-      "gust_kt": 43,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:51:00+00:00"
+      "gust_kt": 44,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
     },
     {
-      "station": "KVOK",
-      "name": "Camp Douglas/Volk Fld, WI, US",
-      "category": "LIFR",
-      "gust_kt": 21,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-09-15T00:41:00+00:00"
-    },
-    {
-      "station": "KADC",
-      "name": "Wadena Muni, MN, US",
+      "station": "KBDH",
+      "name": "Willmar Muni, MN, US",
       "category": "IFR",
       "gust_kt": 9,
       "visibility_mi": 4.0,
-      "observed_at": "2026-09-15T00:36:00+00:00"
-    },
-    {
-      "station": "CYQK",
-      "name": "Kenora Arpt, ON, CA",
-      "category": "IFR",
-      "gust_kt": 26,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-09-15T00:36:00+00:00"
-    },
-    {
-      "station": "KFOZ",
-      "name": "Bigfork Muni, MN, US",
-      "category": "IFR",
-      "gust_kt": 16,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-09-15T00:35:00+00:00"
-    },
-    {
-      "station": "KPWC",
-      "name": "Pine River Rgnl, MN, US",
-      "category": "IFR",
-      "gust_kt": 11,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-09-15T00:35:00+00:00"
+      "observed_at": "2026-09-15T01:15:00+00:00"
     },
     {
       "station": "KBJI",
       "name": "Bemidji Municip, MN, US",
       "category": "IFR",
-      "gust_kt": 14,
+      "gust_kt": 12,
       "visibility_mi": 5.0,
-      "observed_at": "2026-09-15T00:35:00+00:00"
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KADC",
+      "name": "Wadena Muni, MN, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KMDZ",
+      "name": "Medford/Taylor Cnty, WI, US",
+      "category": "IFR",
+      "gust_kt": 21,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KEGV",
+      "name": "Eagle River/Union Arpt, WI, US",
+      "category": "IFR",
+      "gust_kt": 14,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KAIO",
+      "name": "Atlantic Muni, IA, US",
+      "category": "IFR",
+      "gust_kt": 36,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KAFK",
+      "name": "Nebraska City Muni, NE, US",
+      "category": "IFR",
+      "gust_kt": 31,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KRPD",
+      "name": "Rice Lake Rgnl, WI, US",
+      "category": "IFR",
+      "gust_kt": 6,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KRZN",
+      "name": "Siren/Burnett Cnty, WI, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KFOZ",
+      "name": "Bigfork Muni, MN, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KPWC",
+      "name": "Pine River Rgnl, MN, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "K9Y1",
+      "name": "Killdeer/Dunn Cnty, ND, US",
+      "category": "VFR",
+      "gust_kt": 45,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
+    },
+    {
+      "station": "KAQP",
+      "name": "Appleton Muni, MN, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-09-15T01:15:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-09-12T03:23:18.350448+00:00",
-      "stations": 1095,
-      "new_observations": 1095,
-      "categories": {
-        "LIFR": 4,
-        "IFR": 10,
-        "MVFR": 20,
-        "VFR": 980
-      },
-      "max_gust_kt": 40
-    },
     {
       "at": "2026-09-12T04:22:39.069855+00:00",
       "stations": 1102,
@@ -1118,6 +1106,18 @@
         "IFR": 21,
         "MVFR": 36,
         "VFR": 956
+      },
+      "max_gust_kt": 45
+    },
+    {
+      "at": "2026-09-15T01:33:04.996391+00:00",
+      "stations": 1093,
+      "new_observations": 685,
+      "categories": {
+        "LIFR": 5,
+        "IFR": 26,
+        "MVFR": 36,
+        "VFR": 945
       },
       "max_gust_kt": 45
     }
