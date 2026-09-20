@@ -84,3 +84,36 @@ jobs:
               print(f\"- warnings: {len(d['warnings'])}\")
           " >> $GITHUB_STEP_SUMMARY
           fi
+  heartbeat:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Gate on heartbeat day
+        id: gate
+        run: |
+          if [ "$(date -u +%d)" = "15" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "not heartbeat day — skipping"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+
+      - name: Touch main
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          date -u +'%Y-%m-%d' > .keepalive
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .keepalive
+          if git diff --staged --quiet; then
+            echo "already heartbeat this day"
+          else
+            git commit -m "chore: keepalive heartbeat [skip ci]"
+            git pull --rebase --autostash
+            git push
+          fi
