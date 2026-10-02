@@ -1,274 +1,262 @@
 {
-  "generated_at": "2026-10-02T13:23:12.564800+00:00",
+  "generated_at": "2026-10-02T14:24:46.148955+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1009,
-    "observations_retained": 778782,
-    "messages_ingested": 806031,
+    "stations": 1071,
+    "observations_retained": 779851,
+    "messages_ingested": 807102,
     "dedupe_pct": 3.4,
-    "runs": 745
+    "runs": 746
   },
   "station_mix": {
-    "K": 906,
+    "K": 964,
     "C": 90,
-    "M": 13
+    "M": 17
   },
   "flight_categories": {
-    "LIFR": 48,
-    "IFR": 75,
-    "MVFR": 104,
-    "VFR": 708
+    "LIFR": 40,
+    "IFR": 82,
+    "MVFR": 113,
+    "VFR": 758
   },
   "top_gusts": [
     {
-      "station": "KCSM",
-      "name": "Clinton/Sherman Arpt, OK, US",
-      "gust_kt": 27,
-      "observed_at": "2026-10-02T12:53:00+00:00"
-    },
-    {
-      "station": "KERI",
-      "name": "Erie Intl, PA, US",
-      "gust_kt": 27,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KELZ",
-      "name": "Wellsville/Tarantine Fld, NY, US",
-      "gust_kt": 27,
-      "observed_at": "2026-10-02T13:19:00+00:00"
+      "station": "KBPG",
+      "name": "Big Springs/McMahon , TX, US",
+      "gust_kt": 31,
+      "observed_at": "2026-10-02T14:15:00+00:00"
     },
     {
       "station": "KGCC",
       "name": "Gillette/Campbell Cnty, WY, US",
+      "gust_kt": 28,
+      "observed_at": "2026-10-02T13:53:00+00:00"
+    },
+    {
+      "station": "KPZZ",
+      "name": "Ship Shoal 241, LA, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KAIA",
+      "name": "Alliance Muni, NE, US",
       "gust_kt": 25,
-      "observed_at": "2026-10-02T12:53:00+00:00"
-    },
-    {
-      "station": "KBPG",
-      "name": "Big Springs/McMahon , TX, US",
-      "gust_kt": 25,
-      "observed_at": "2026-10-02T13:15:00+00:00"
-    },
-    {
-      "station": "KAMA",
-      "name": "Amarillo Intl Arpt, TX, US",
-      "gust_kt": 24,
-      "observed_at": "2026-10-02T13:18:00+00:00"
-    },
-    {
-      "station": "KCDS",
-      "name": "Childress Muni, TX, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-02T12:53:00+00:00"
-    },
-    {
-      "station": "KHBR",
-      "name": "Hobart Muni, OK, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-02T12:53:00+00:00"
-    },
-    {
-      "station": "KHOB",
-      "name": "Hobbs Arpt, NM, US",
-      "gust_kt": 22,
-      "observed_at": "2026-10-02T12:50:00+00:00"
-    },
-    {
-      "station": "KP59",
-      "name": "Copper Harbor, MI, US",
-      "gust_kt": 22,
-      "observed_at": "2026-10-02T12:51:00+00:00"
-    },
-    {
-      "station": "KLBE",
-      "name": "Latrobe/Palmer Rgnl, PA, US",
-      "gust_kt": 22,
-      "observed_at": "2026-10-02T12:47:00+00:00"
+      "observed_at": "2026-10-02T13:53:00+00:00"
     },
     {
       "station": "KDMN",
       "name": "Deming Muni, NM, US",
-      "gust_kt": 21,
-      "observed_at": "2026-10-02T12:53:00+00:00"
+      "gust_kt": 24,
+      "observed_at": "2026-10-02T13:53:00+00:00"
+    },
+    {
+      "station": "KCSM",
+      "name": "Clinton/Sherman Arpt, OK, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-02T13:53:00+00:00"
+    },
+    {
+      "station": "KP59",
+      "name": "Copper Harbor, MI, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-02T13:51:00+00:00"
+    },
+    {
+      "station": "KEYW",
+      "name": "Key West Intl, FL, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-02T13:53:00+00:00"
+    },
+    {
+      "station": "KMPV",
+      "name": "Montpelier/Knapp Arpt, VT, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-02T13:58:00+00:00"
+    },
+    {
+      "station": "KWLD",
+      "name": "Winfield/Strother Fld, KS, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-02T13:54:00+00:00"
+    },
+    {
+      "station": "KPNC",
+      "name": "Ponca City Rgnl, OK, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-02T13:53:00+00:00"
+    },
+    {
+      "station": "KBWW",
+      "name": "Bowman Rgnl, ND, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-02T14:15:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KPNS",
-      "name": "Pensacola Intl, FL, US",
-      "category": "IFR",
+      "station": "KSGT",
+      "name": "Stuttgart Muni, AR, US",
+      "category": "LIFR",
       "gust_kt": 10,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-02T13:21:00+00:00"
-    },
-    {
-      "station": "KTXK",
-      "name": "Texarkana Rgnl, AR, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-02T13:21:00+00:00"
-    },
-    {
-      "station": "KOWB",
-      "name": "Owensboro/Daviess Cnty, KY, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-02T13:21:00+00:00"
-    },
-    {
-      "station": "KCOS",
-      "name": "Colorado Spring Arpt, CO, US",
-      "category": "LIFR",
-      "gust_kt": 8,
-      "visibility_mi": 0.13,
-      "observed_at": "2026-10-02T13:21:00+00:00"
-    },
-    {
-      "station": "KEVV",
-      "name": "Evansville Rgnl, IN, US",
-      "category": "IFR",
-      "gust_kt": 16,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-02T13:21:00+00:00"
-    },
-    {
-      "station": "KUDG",
-      "name": "Darlington Cnty, SC, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-02T13:20:00+00:00"
-    },
-    {
-      "station": "KLBT",
-      "name": "Lumberton Muni, NC, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-02T13:20:00+00:00"
-    },
-    {
-      "station": "KPAH",
-      "name": "Paducah/Barkley Rgnl, KY, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KVIH",
-      "name": "Vichy/Rolla Arpt, MO, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KERI",
-      "name": "Erie Intl, PA, US",
-      "category": "IFR",
-      "gust_kt": 27,
       "visibility_mi": 5.0,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KELZ",
-      "name": "Wellsville/Tarantine Fld, NY, US",
-      "category": "IFR",
-      "gust_kt": 27,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KART",
-      "name": "Watertown Intl, NY, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-02T13:19:00+00:00"
-    },
-    {
-      "station": "KMCB",
-      "name": "McComb/Lewis Fld, MS, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-02T13:18:00+00:00"
+      "observed_at": "2026-10-02T14:23:00+00:00"
     },
     {
       "station": "KAMA",
       "name": "Amarillo Intl Arpt, TX, US",
       "category": "LIFR",
-      "gust_kt": 24,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-02T13:18:00+00:00"
-    },
-    {
-      "station": "KUTS",
-      "name": "Huntsville Muni, TX, US",
-      "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-02T13:18:00+00:00"
-    },
-    {
-      "station": "KFSM",
-      "name": "Fort Smith Rgnl, AR, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-02T13:17:00+00:00"
-    },
-    {
-      "station": "KOTH",
-      "name": "North Bend/SW Oregon Rgnl, OR, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-02T13:16:00+00:00"
-    },
-    {
-      "station": "KTYR",
-      "name": "Tyler/Pounds Fld, TX, US",
-      "category": "LIFR",
-      "gust_kt": 5,
+      "gust_kt": 17,
       "visibility_mi": 2.5,
-      "observed_at": "2026-10-02T13:16:00+00:00"
+      "observed_at": "2026-10-02T14:21:00+00:00"
     },
     {
-      "station": "KSRC",
-      "name": "Searcy Muni, AR, US",
-      "category": "LIFR",
+      "station": "KACT",
+      "name": "Waco Rgnl, TX, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:20:00+00:00"
+    },
+    {
+      "station": "KLBT",
+      "name": "Lumberton Muni, NC, US",
+      "category": "IFR",
       "gust_kt": 6,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-02T13:16:00+00:00"
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:20:00+00:00"
+    },
+    {
+      "station": "KGAG",
+      "name": "Gage Arpt, OK, US",
+      "category": "LIFR",
+      "gust_kt": 10,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:18:00+00:00"
     },
     {
       "station": "KHRO",
       "name": "Harrison/Boone Cnty, AR, US",
+      "category": "LIFR",
+      "gust_kt": 9,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-02T14:18:00+00:00"
+    },
+    {
+      "station": "KMSS",
+      "name": "Massena Intl, NY, US",
       "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-02T13:16:00+00:00"
+      "gust_kt": 4,
+      "visibility_mi": 6.0,
+      "observed_at": "2026-10-02T14:18:00+00:00"
+    },
+    {
+      "station": "KACV",
+      "name": "Arcata Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-02T14:17:00+00:00"
+    },
+    {
+      "station": "KCAO",
+      "name": "Clayton Muni, NM, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:17:00+00:00"
+    },
+    {
+      "station": "KLPC",
+      "name": "Lompoc Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-02T14:16:00+00:00"
+    },
+    {
+      "station": "KILN",
+      "name": "Wilmington Arpt, OH, US",
+      "category": "LIFR",
+      "gust_kt": 9,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-10-02T14:16:00+00:00"
+    },
+    {
+      "station": "KSRR",
+      "name": "Ruidoso Rgnl, NM, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "K6S2",
+      "name": "Florence Muni, OR, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "K1R7",
+      "name": "Brookhaven/Lincoln Cnty Arpt, MS, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 6.0,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "K1F0",
+      "name": "Ardmore/Downtown Exec, OK, US",
+      "category": "IFR",
+      "gust_kt": 6,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KDRP",
+      "name": "Colt/Delta Rgnl, AR, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KBXA",
+      "name": "Bogalusa/Carr Arfld, LA, US",
+      "category": "LIFR",
+      "gust_kt": 5,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KATP",
+      "name": "Green Canyon 787, LA, US",
+      "category": "LIFR",
+      "gust_kt": 10,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KMNZ",
+      "name": "Hamilton Muni, TX, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-10-02T14:15:00+00:00"
+    },
+    {
+      "station": "KGDA",
+      "name": "Marion/Crittenden Cnty, KY, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-10-02T14:15:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-09-29T13:27:20.086847+00:00",
-      "stations": 1091,
-      "new_observations": 1090,
-      "categories": {
-        "LIFR": 46,
-        "IFR": 51,
-        "MVFR": 104,
-        "VFR": 801
-      },
-      "max_gust_kt": 38
-    },
     {
       "at": "2026-09-29T14:22:54.162336+00:00",
       "stations": 1098,
@@ -1120,6 +1108,18 @@
         "VFR": 708
       },
       "max_gust_kt": 27
+    },
+    {
+      "at": "2026-10-02T14:24:46.148955+00:00",
+      "stations": 1071,
+      "new_observations": 1069,
+      "categories": {
+        "LIFR": 40,
+        "IFR": 82,
+        "MVFR": 113,
+        "VFR": 758
+      },
+      "max_gust_kt": 31
     }
   ],
   "warnings": []
