@@ -1,5 +1,6 @@
+from pathlib import Path
 from pyspark.sql import SparkSession
-LAKE = "/home/yashh/metar-stream/lake"
+LAKE = str(Path(__file__).resolve().parent.parent / "lake")
 s = (SparkSession.builder
      .config("spark.jars.packages", "io.delta:delta-spark_2.12:3.2.0")
      .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
