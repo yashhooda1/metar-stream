@@ -1,195 +1,179 @@
 {
-  "generated_at": "2026-10-07T20:24:15.107422+00:00",
+  "generated_at": "2026-10-07T21:21:32.059628+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1075,
-    "observations_retained": 895005,
-    "messages_ingested": 925910,
+    "stations": 1100,
+    "observations_retained": 896104,
+    "messages_ingested": 927010,
     "dedupe_pct": 3.3,
-    "runs": 856
+    "runs": 857
   },
   "station_mix": {
-    "K": 967,
-    "C": 90,
+    "K": 991,
+    "C": 91,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 5,
+    "LIFR": 1,
     "IFR": 8,
-    "MVFR": 24,
-    "VFR": 954
+    "MVFR": 23,
+    "VFR": 985
   },
   "top_gusts": [
-    {
-      "station": "CYQT",
-      "name": "Thunder Bay Intl, ON, CA",
-      "gust_kt": 38,
-      "observed_at": "2026-10-07T20:00:00+00:00"
-    },
     {
       "station": "KAUW",
       "name": "Wausau Downtown, WI, US",
       "gust_kt": 37,
-      "observed_at": "2026-10-07T19:54:00+00:00"
-    },
-    {
-      "station": "KDKK",
-      "name": "Dunkirk/Chautauqua Cnty, NY, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-07T19:53:00+00:00"
-    },
-    {
-      "station": "KEAU",
-      "name": "Eau Claire/Chippewa Valley Rgnl, WI, US",
-      "gust_kt": 34,
-      "observed_at": "2026-10-07T19:56:00+00:00"
+      "observed_at": "2026-10-07T20:54:00+00:00"
     },
     {
       "station": "KRPD",
       "name": "Rice Lake Rgnl, WI, US",
+      "gust_kt": 36,
+      "observed_at": "2026-10-07T21:15:00+00:00"
+    },
+    {
+      "station": "KFAR",
+      "name": "Fargo/Hector Intl, ND, US",
+      "gust_kt": 36,
+      "observed_at": "2026-10-07T20:53:00+00:00"
+    },
+    {
+      "station": "KIMT",
+      "name": "Iron Mountain/Ford Arpt, MI, US",
       "gust_kt": 33,
-      "observed_at": "2026-10-07T20:15:00+00:00"
+      "observed_at": "2026-10-07T20:54:00+00:00"
     },
     {
-      "station": "KSTC",
-      "name": "St Cloud Rgnl, MN, US",
+      "station": "CYQT",
+      "name": "Thunder Bay Intl, ON, CA",
       "gust_kt": 32,
-      "observed_at": "2026-10-07T19:53:00+00:00"
+      "observed_at": "2026-10-07T21:00:00+00:00"
     },
     {
-      "station": "KGFK",
-      "name": "Grand Forks Intl, ND, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-07T19:53:00+00:00"
+      "station": "KRNH",
+      "name": "New Richmond Muni, WI, US",
+      "gust_kt": 30,
+      "observed_at": "2026-10-07T21:15:00+00:00"
     },
     {
-      "station": "KBUF",
-      "name": "Buffalo-Niagara Intl, NY, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-07T19:54:00+00:00"
+      "station": "KFOZ",
+      "name": "Bigfork Muni, MN, US",
+      "gust_kt": 30,
+      "observed_at": "2026-10-07T21:14:00+00:00"
     },
     {
       "station": "CYBR",
       "name": "Brandon Arpt, MB, CA",
       "gust_kt": 30,
-      "observed_at": "2026-10-07T20:00:00+00:00"
+      "observed_at": "2026-10-07T21:00:00+00:00"
     },
     {
-      "station": "KFAR",
-      "name": "Fargo/Hector Intl, ND, US",
-      "gust_kt": 30,
-      "observed_at": "2026-10-07T19:53:00+00:00"
-    },
-    {
-      "station": "KDVL",
-      "name": "Devils Lake Rgnl, ND, US",
+      "station": "KGLX",
+      "name": "Mississippi Canyon 724, LA, US",
       "gust_kt": 29,
-      "observed_at": "2026-10-07T19:56:00+00:00"
+      "observed_at": "2026-10-07T21:20:00+00:00"
     },
     {
-      "station": "KIMT",
-      "name": "Iron Mountain/Ford Arpt, MI, US",
+      "station": "KMDZ",
+      "name": "Medford/Taylor Cnty, WI, US",
       "gust_kt": 29,
-      "observed_at": "2026-10-07T19:54:00+00:00"
+      "observed_at": "2026-10-07T21:15:00+00:00"
+    },
+    {
+      "station": "KGFK",
+      "name": "Grand Forks Intl, ND, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-07T20:53:00+00:00"
+    },
+    {
+      "station": "KPSO",
+      "name": "Pagosa Springs/Stevens Fld, CO, US",
+      "gust_kt": 28,
+      "observed_at": "2026-10-07T21:15:00+00:00"
     }
   ],
   "alerts": [
     {
+      "station": "KNUW",
+      "name": "Whidbey Island, WA, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-07T21:16:00+00:00"
+    },
+    {
+      "station": "KMLB",
+      "name": "Melbourne Intl, FL, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-07T21:16:00+00:00"
+    },
+    {
+      "station": "KATP",
+      "name": "Green Canyon 787, LA, US",
+      "category": "IFR",
+      "gust_kt": 20,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-07T21:15:00+00:00"
+    },
+    {
+      "station": "KRPD",
+      "name": "Rice Lake Rgnl, WI, US",
+      "category": "VFR",
+      "gust_kt": 36,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-07T21:15:00+00:00"
+    },
+    {
       "station": "KBKV",
       "name": "Brooksville-Tampa Bay Rgnl, FL, US",
       "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-07T20:18:00+00:00"
-    },
-    {
-      "station": "KDAB",
-      "name": "Daytona Beach Intl, FL, US",
-      "category": "IFR",
-      "gust_kt": 9,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-07T20:17:00+00:00"
-    },
-    {
-      "station": "KGHB",
-      "name": "Garden Banks 172, LA, US",
-      "category": "LIFR",
-      "gust_kt": 23,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-10-07T20:15:00+00:00"
-    },
-    {
-      "station": "KSEF",
-      "name": "Sebring Rgnl, FL, US",
-      "category": "IFR",
-      "gust_kt": 23,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-07T20:15:00+00:00"
-    },
-    {
-      "station": "KXMR",
-      "name": "Cape Kennedy AF Skid, FL, US",
-      "category": "LIFR",
-      "gust_kt": 22,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-07T20:15:00+00:00"
-    },
-    {
-      "station": "KPAE",
-      "name": "Everett/Paine Fld, WA, US",
-      "category": "LIFR",
       "gust_kt": 6,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-07T20:14:00+00:00"
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-07T21:12:00+00:00"
     },
     {
       "station": "KLEE",
       "name": "Leesburg Muni, FL, US",
       "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-07T20:10:00+00:00"
-    },
-    {
-      "station": "KOCF",
-      "name": "Ocala Rgnl, FL, US",
-      "category": "IFR",
       "gust_kt": 4,
-      "visibility_mi": 8.0,
-      "observed_at": "2026-10-07T20:10:00+00:00"
-    },
-    {
-      "station": "KMLB",
-      "name": "Melbourne Intl, FL, US",
-      "category": "LIFR",
-      "gust_kt": 6,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-07T20:04:00+00:00"
-    },
-    {
-      "station": "CYVR",
-      "name": "Vancouver Intl, BC, CA",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-07T20:00:00+00:00"
-    },
-    {
-      "station": "CYQT",
-      "name": "Thunder Bay Intl, ON, CA",
-      "category": "VFR",
-      "gust_kt": 38,
-      "visibility_mi": 20.0,
-      "observed_at": "2026-10-07T20:00:00+00:00"
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-07T21:08:00+00:00"
     },
     {
       "station": "CYMT",
       "name": "Chibougamau Arpt, QC, CA",
       "category": "IFR",
+      "gust_kt": 5,
+      "visibility_mi": 6.0,
+      "observed_at": "2026-10-07T21:07:00+00:00"
+    },
+    {
+      "station": "KDAB",
+      "name": "Daytona Beach Intl, FL, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-07T21:01:00+00:00"
+    },
+    {
+      "station": "KGIF",
+      "name": "Winter Haven Rgnl, FL, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-07T20:57:00+00:00"
+    },
+    {
+      "station": "KBLI",
+      "name": "Bellingham Intl, WA, US",
+      "category": "IFR",
       "gust_kt": 6,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-07T20:00:00+00:00"
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-07T20:56:00+00:00"
     },
     {
       "station": "KAUW",
@@ -197,46 +181,18 @@
       "category": "VFR",
       "gust_kt": 37,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-07T19:54:00+00:00"
+      "observed_at": "2026-10-07T20:54:00+00:00"
     },
     {
-      "station": "KNUW",
-      "name": "Whidbey Island, WA, US",
-      "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-07T19:53:00+00:00"
-    },
-    {
-      "station": "KAPF",
-      "name": "Naples Muni, FL, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-07T19:53:00+00:00"
-    },
-    {
-      "station": "KDKK",
-      "name": "Dunkirk/Chautauqua Cnty, NY, US",
+      "station": "KFAR",
+      "name": "Fargo/Hector Intl, ND, US",
       "category": "VFR",
-      "gust_kt": 35,
+      "gust_kt": 36,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-07T19:53:00+00:00"
+      "observed_at": "2026-10-07T20:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-04T19:10:10.777058+00:00",
-      "stations": 1095,
-      "new_observations": 1095,
-      "categories": {
-        "LIFR": 14,
-        "IFR": 77,
-        "MVFR": 145,
-        "VFR": 779
-      },
-      "max_gust_kt": 39
-    },
     {
       "at": "2026-10-04T21:02:03.141383+00:00",
       "stations": 1094,
@@ -1088,6 +1044,18 @@
         "VFR": 954
       },
       "max_gust_kt": 38
+    },
+    {
+      "at": "2026-10-07T21:21:32.059628+00:00",
+      "stations": 1100,
+      "new_observations": 1099,
+      "categories": {
+        "LIFR": 1,
+        "IFR": 8,
+        "MVFR": 23,
+        "VFR": 985
+      },
+      "max_gust_kt": 37
     }
   ],
   "warnings": []
