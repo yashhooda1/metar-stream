@@ -109,6 +109,12 @@ class WeatherModelTests(unittest.TestCase):
         self.assertIsNone(m["mw_per_heating_degree"])
         self.assertAlmostEqual(m["mw_per_cooling_degree"], 900, delta=1)
 
+    def test_sparse_heating_hours_are_not_fitted(self):
+        warm = [(float(t), 40000 + 900 * (t - 65)) for t in range(66, 100)] * 2
+        cool = [(60.0, 39000.0)] * 5  # a few cool nights
+        m = fit_degree_day_model(warm + cool)
+        self.assertIsNone(m["mw_per_heating_degree"])
+
     def test_too_few_points(self):
         self.assertIsNone(fit_degree_day_model([(80.0, 50000.0)] * 10))
 

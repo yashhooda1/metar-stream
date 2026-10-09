@@ -308,9 +308,12 @@ def fit_degree_day_model(points: Iterable[tuple[float, float]], min_points: int 
     rows = [(1.0, max(t - BALANCE_POINT_F, 0.0), max(BALANCE_POINT_F - t, 0.0)) for t, _ in pts]
     ys = [d for _, d in pts]
 
-    # Drop a column that never varies (all-cooling or all-heating season) so
-    # the normal equations stay solvable; report it as not estimated.
-    active = [0] + [j for j in (1, 2) if any(r[j] > 0 for r in rows)]
+    # Estimate a degree-day term only when there are enough hours on that side
+    # of the balance point. In a Texas October, a handful of cool nights would
+    # otherwise produce a noisy (even negative) heating slope. Report a term
+    # that was not estimated as None rather than as a number.
+    min_regime = 24
+    active = [0] + [j for j in (1, 2) if sum(r[j] > 0 for r in rows) >= min_regime]
     X = [[r[j] for j in active] for r in rows]
     k = len(active)
     xtx = [[sum(x[i] * x[j] for x in X) for j in range(k)] for i in range(k)]
