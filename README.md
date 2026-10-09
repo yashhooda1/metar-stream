@@ -332,6 +332,96 @@ re-delivery of already-seen records rather than by pipeline delay.
 
 Still to measure: state store size, and isolated backlog-drain time\n(see the measurement limitation noted above).
 
+## ERCOT grid
+
+The same Kafka → Spark → Delta pattern, applied to the Texas power grid, and
+joined back to METAR weather for a weather-versus-load model.
+
+```
+ERCOT public dashboards (no key)                NOAA METAR (this repo)
+  supply-demand  · 5-min demand + capacity              │
+  fuel-mix       · 5-min generation by fuel             │
+  systemWidePrices · 15-min RT, hourly DA prices        │
+        │  every 2 min                                  │
+        ▼                                               │
+  ercot_producer.py ──▶ Redpanda topic: ercot.raw       │
+                              │  keyed by feed|series   │
+                              ▼                         │
+                 Spark Structured Streaming             │
+        ┌─────────────────────┼──────────────────┐      │
+        ▼                     ▼                  ▼      │
+  bronze/ercot_raw   silver/ercot_observations   quarantine/ercot_rejected
+  append-only        latest revision per key          │
+                              │                         │
+                              ▼                         ▼
+                ercot_gold.py (batch) ◀── silver/metar_observations
+                ├─ gold/ercot_grid_15min      demand, margin, fuel mix, net load
+                ├─ gold/ercot_prices_hourly   RT vs DA per hub and load zone
+                ├─ gold/ercot_alerts          price spikes, thin margins
+                └─ gold/ercot_weather_load    hourly demand × weighted temperature
+```
+
+```bash
+docker compose up -d
+python ercot_producer.py     # terminal 3
+python ercot_stream.py       # terminal 4
+python ercot_gold.py         # on a timer; every 15 minutes is plenty
+```
+
+`ercot_feeds.py` is the only module that knows ERCOT's document shapes. The
+producer and the hourly GitHub Actions refresh (`scripts/refresh_ercot.py`)
+both use it, so the streaming and batch paths cannot drift apart.
+
+### Design decisions
+
+**Public dashboards, not the ERCOT Public API.** api.ercot.com needs a
+registered subscription key; the JSON behind ercot.com's dashboards does not.
+The cost is that those documents are undocumented and can change. Parsers
+reject anything they do not recognise, and a feed that parses to zero records
+raises a warning instead of publishing nothing quietly. Moving to the official
+API is a change to `ercot_feeds.py` alone.
+
+**Upsert, not dropDuplicates.** METAR observations never change once issued,
+so METAR silver keeps the first copy under a watermark. ERCOT revises recent
+intervals, so ERCOT silver is written through `foreachBatch`: each batch is
+reduced to the newest revision per key (by the document's `lastUpdated`), then
+MERGEd into Delta, replacing a stored row only when the incoming revision is
+newer. Replaying old offsets cannot overwrite newer numbers. The hourly refresh
+counts revised values per run so the size of the effect is visible.
+
+**Gold is batch.** Pivoting fuels into columns is a batch operation, and a
+streaming read of a table that receives MERGE updates needs Delta change data
+feed. Gold is cheap to recompute from silver, so it is rebuilt and overwritten.
+
+**Interval endings.** Real-time prices are stamped at the END of their 15-minute
+interval and day-ahead prices at hour ending, so 14:15 through 15:00 belong to
+the 14:00 hour. METAR routine reports land around :53 and are rounded to the
+nearest hour. Getting either wrong shifts the weather join by an hour.
+
+**Storage counted once.** fuel-mix reports storage as net, charging and
+discharging. Only net is kept; summing all three double-counts it.
+
+### Weather vs load
+
+Demand is joined to a population-weighted temperature across six ERCOT
+airports (DFW, IAH, SAT, AUS, CRP, MAF; weights are approximate 2020 metro
+populations, renormalised over whichever stations reported that hour) and fit
+with a degree-day regression:
+
+    demand = b0 + b1·CDD + b2·HDD      CDD = max(T − 65°F, 0), HDD = max(65°F − T, 0)
+
+The fit is published once 48 hours have accumulated. It is deliberately simple:
+it ignores time of day and weekday, which carry much of the variation in hourly
+load, so read R² as how much temperature alone explains, not as a forecast.
+
+### Tests
+
+`tests/test_ercot_feeds.py` (parsers, quality contract, model),
+`tests/test_ercot_stream.py` (Spark contract parity, latest-revision reduction,
+gold builders, weather join) and `tests/test_refresh_ercot.py` (hourly refresh,
+including partial feed failure). The Delta MERGE itself needs the Delta jars and
+is exercised by running the stream, not in unit tests.
+
 ## Next
 
 - Schema Registry with Avro instead of JSON (Redpanda exposes it on :8081)
