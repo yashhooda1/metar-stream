@@ -1,274 +1,262 @@
 {
-  "generated_at": "2026-10-09T04:29:18.622543+00:00",
+  "generated_at": "2026-10-09T05:25:20.832845+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1084,
-    "observations_retained": 928382,
-    "messages_ingested": 960659,
+    "stations": 1076,
+    "observations_retained": 929373,
+    "messages_ingested": 961735,
     "dedupe_pct": 3.4,
-    "runs": 888
+    "runs": 889
   },
   "station_mix": {
-    "K": 987,
-    "C": 86,
-    "M": 11
+    "K": 982,
+    "C": 85,
+    "M": 9
   },
   "flight_categories": {
-    "LIFR": 8,
-    "IFR": 12,
-    "MVFR": 25,
-    "VFR": 952
+    "LIFR": 11,
+    "IFR": 15,
+    "MVFR": 24,
+    "VFR": 935
   },
   "top_gusts": [
     {
-      "station": "KPZZ",
-      "name": "Ship Shoal 241, LA, US",
-      "gust_kt": 44,
-      "observed_at": "2026-10-09T04:10:00+00:00"
-    },
-    {
       "station": "KATP",
       "name": "Green Canyon 787, LA, US",
-      "gust_kt": 37,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KEKE",
-      "name": "Eugene Island 251A, LA, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KTAH",
-      "name": "Green Canyon Blk 641, LA, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KANR",
-      "name": "Green Canyon Blk 763, LA, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-09T04:15:00+00:00"
+      "gust_kt": 42,
+      "observed_at": "2026-10-09T05:15:00+00:00"
     },
     {
       "station": "KMZM",
       "name": "Main Pass Blk 69P, LA, US",
-      "gust_kt": 30,
-      "observed_at": "2026-10-09T04:20:00+00:00"
+      "gust_kt": 36,
+      "observed_at": "2026-10-09T05:20:00+00:00"
+    },
+    {
+      "station": "KTAH",
+      "name": "Green Canyon Blk 641, LA, US",
+      "gust_kt": 31,
+      "observed_at": "2026-10-09T05:15:00+00:00"
     },
     {
       "station": "KGHB",
       "name": "Garden Banks 172, LA, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KAGI",
-      "name": "Garden Banks 426, LA, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KGBK",
-      "name": "Garden Banks 783, LA, US",
-      "gust_kt": 26,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "CWGM",
-      "name": "Waterton Park Gate, AB, CA",
-      "gust_kt": 24,
-      "observed_at": "2026-10-09T04:00:00+00:00"
-    },
-    {
-      "station": "KOTH",
-      "name": "North Bend/SW Oregon Rgnl, OR, US",
-      "gust_kt": 22,
-      "observed_at": "2026-10-09T03:56:00+00:00"
-    },
-    {
-      "station": "KDAB",
-      "name": "Daytona Beach Intl, FL, US",
-      "gust_kt": 22,
-      "observed_at": "2026-10-09T03:53:00+00:00"
-    }
-  ],
-  "alerts": [
-    {
-      "station": "KRME",
-      "name": "Rome/Griffiss Intl, NY, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-10-09T04:22:00+00:00"
-    },
-    {
-      "station": "KAIB",
-      "name": "Nucla/Hopkins Fld, CO, US",
-      "category": "IFR",
-      "gust_kt": 13,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KONP",
-      "name": "Newport Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "K4S1",
-      "name": "Gold Beach Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "K6S2",
-      "name": "Florence Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 8,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KTMK",
-      "name": "Tillamook Arpt, OR, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KATP",
-      "name": "Green Canyon 787, LA, US",
-      "category": "MVFR",
-      "gust_kt": 37,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KBTN",
-      "name": "Britton Muni, SD, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "K2C8",
-      "name": "Cavalier Muni, ND, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KSUA",
-      "name": "Stuart/Witham Fld, FL, US",
-      "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-09T04:15:00+00:00"
-    },
-    {
-      "station": "KMCO",
-      "name": "Orlando Intl, FL, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-09T04:15:00+00:00"
+      "gust_kt": 31,
+      "observed_at": "2026-10-09T05:15:00+00:00"
     },
     {
       "station": "KPZZ",
       "name": "Ship Shoal 241, LA, US",
-      "category": "MVFR",
-      "gust_kt": 44,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-09T04:10:00+00:00"
+      "gust_kt": 31,
+      "observed_at": "2026-10-09T05:10:00+00:00"
+    },
+    {
+      "station": "KGBK",
+      "name": "Garden Banks 783, LA, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KANR",
+      "name": "Green Canyon Blk 763, LA, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KEKE",
+      "name": "Eugene Island 251A, LA, US",
+      "gust_kt": 28,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KCNC",
+      "name": "Chariton Muni, IA, US",
+      "gust_kt": 28,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KAGI",
+      "name": "Garden Banks 426, LA, US",
+      "gust_kt": 24,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KCDC",
+      "name": "Cedar City Muni, UT, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-09T04:53:00+00:00"
+    },
+    {
+      "station": "CWMQ",
+      "name": "Maplecreek Arpt, SK, CA",
+      "gust_kt": 23,
+      "observed_at": "2026-10-09T05:00:00+00:00"
+    }
+  ],
+  "alerts": [
+    {
+      "station": "CYMT",
+      "name": "Chibougamau Arpt, QC, CA",
+      "category": "IFR",
+      "gust_kt": 15,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-10-09T05:25:00+00:00"
+    },
+    {
+      "station": "KSMP",
+      "name": "Stampede Pass, WA, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-09T05:23:00+00:00"
+    },
+    {
+      "station": "KMBL",
+      "name": "Manistee/Blacker Arpt, MI, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-10-09T05:21:00+00:00"
+    },
+    {
+      "station": "KMZM",
+      "name": "Main Pass Blk 69P, LA, US",
+      "category": null,
+      "gust_kt": 36,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-09T05:20:00+00:00"
     },
     {
       "station": "CYBC",
       "name": "Baie Comeau Arpt, QC, CA",
       "category": "LIFR",
       "gust_kt": 9,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-09T04:00:00+00:00"
-    },
-    {
-      "station": "KNUC",
-      "name": "San Clemente, CA, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-09T03:56:00+00:00"
-    },
-    {
-      "station": "KCEC",
-      "name": "Crescent City/McNama, CA, US",
-      "category": "LIFR",
-      "gust_kt": 6,
       "visibility_mi": 0.5,
-      "observed_at": "2026-10-09T03:56:00+00:00"
-    },
-    {
-      "station": "KOTH",
-      "name": "North Bend/SW Oregon Rgnl, OR, US",
-      "category": "LIFR",
-      "gust_kt": 22,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-09T03:56:00+00:00"
-    },
-    {
-      "station": "KMUO",
-      "name": "Mountain Home AFB, ID, US",
-      "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 1.88,
-      "observed_at": "2026-10-09T03:55:00+00:00"
-    },
-    {
-      "station": "KSNS",
-      "name": "Salinas Muni, CA, US",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-09T03:53:00+00:00"
-    },
-    {
-      "station": "KACV",
-      "name": "Arcata Arpt, CA, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-09T03:53:00+00:00"
+      "observed_at": "2026-10-09T05:17:00+00:00"
     },
     {
       "station": "KUIL",
       "name": "Quillayute State Arpt, WA, US",
       "category": "IFR",
       "gust_kt": 0,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-09T05:16:00+00:00"
+    },
+    {
+      "station": "KLPC",
+      "name": "Lompoc Arpt, CA, US",
+      "category": "IFR",
+      "gust_kt": 3,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-09T03:53:00+00:00"
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KTMK",
+      "name": "Tillamook Arpt, OR, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KONP",
+      "name": "Newport Muni, OR, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "K41U",
+      "name": "Manti-Ephraim Arpt, UT, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "K4S1",
+      "name": "Gold Beach Muni, OR, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KATP",
+      "name": "Green Canyon 787, LA, US",
+      "category": "MVFR",
+      "gust_kt": 42,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KAEL",
+      "name": "Albert Lea Muni, MN, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KSEF",
+      "name": "Sebring Rgnl, FL, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KOBE",
+      "name": "Okeechobee Cnty Arpt, FL, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KCTY",
+      "name": "Cross City Arpt, FL, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KCPC",
+      "name": "Whiteville/Columbus Cnty, NC, US",
+      "category": "IFR",
+      "gust_kt": 1,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-09T05:15:00+00:00"
+    },
+    {
+      "station": "KGIF",
+      "name": "Winter Haven Rgnl, FL, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-09T05:10:00+00:00"
+    },
+    {
+      "station": "KACV",
+      "name": "Arcata Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 3,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-09T05:04:00+00:00"
+    },
+    {
+      "station": "KCEC",
+      "name": "Crescent City/McNama, CA, US",
+      "category": "LIFR",
+      "gust_kt": 7,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-09T04:56:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-06T05:23:53.392589+00:00",
-      "stations": 1077,
-      "new_observations": 1075,
-      "categories": {
-        "LIFR": 18,
-        "IFR": 16,
-        "MVFR": 33,
-        "VFR": 921
-      },
-      "max_gust_kt": 35
-    },
     {
       "at": "2026-10-06T06:38:45.262671+00:00",
       "stations": 1067,
@@ -1120,6 +1108,18 @@
         "VFR": 952
       },
       "max_gust_kt": 44
+    },
+    {
+      "at": "2026-10-09T05:25:20.832845+00:00",
+      "stations": 1076,
+      "new_observations": 991,
+      "categories": {
+        "LIFR": 11,
+        "IFR": 15,
+        "MVFR": 24,
+        "VFR": 935
+      },
+      "max_gust_kt": 42
     }
   ],
   "warnings": []
