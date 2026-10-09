@@ -1,0 +1,85 @@
+name: Refresh ERCOT dashboard
+
+# Batch refresh for the yashhooda.ai ERCOT section. Like the METAR refresh,
+# this is NOT the streaming pipeline: no Kafka, Spark or Delta on an ephemeral
+# runner. State (hourly history, run totals) lives on the data branch.
+
+on:
+  schedule:
+    # Hourly at :37, away from the METAR refresh at :07.
+    - cron: '37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  # Same group as the METAR refresh: both commit to the data branch, so they
+  # must never push at the same time.
+  group: metar-dashboard
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out main (for the scripts)
+        uses: actions/checkout@v4
+        with:
+          path: main
+
+      - name: Check out data branch (for the state)
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Refresh
+        working-directory: data
+        run: |
+          mkdir -p docs
+          python ../main/scripts/refresh_ercot.py
+
+      - name: Commit and push
+        working-directory: data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/ercot_*.json
+          if git diff --cached --quiet; then
+            echo "no change"
+          else
+            git commit -m "ercot refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git pull --rebase origin data
+            git push origin HEAD:data
+          fi
+
+      - name: Summary
+        working-directory: data
+        if: always()
+        run: |
+          if [ -f docs/ercot_dashboard.json ]; then
+            python -c "
+          import json
+          d = json.load(open('docs/ercot_dashboard.json'))
+          s, l, m = d['stats'], d.get('latest') or {}, d['weather_load']['model']
+          print('### ERCOT refresh\n')
+          print(f\"- demand: {l.get('demand_mw')} MW at {l.get('demand_at')}\")
+          print(f\"- records: {s['records_this_run']}\")
+          print(f\"- rejected: {s['rejected_this_run'] or 'none'}\")
+          print(f\"- revised cells: {s['revised_cells_this_run']}\")
+          print(f\"- history: {s['history_hours']} h\")
+          print(f\"- weather model: {('n=%d, R2=%s' % (m['n'], m['r2'])) if m else 'collecting'}\")
+          for w in d.get('warnings', []): print(f'- warning: {w}')
+          " >> $GITHUB_STEP_SUMMARY
+          fi
