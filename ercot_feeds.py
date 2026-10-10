@@ -134,12 +134,17 @@ def parse_supply_demand(doc: dict, ingested: str) -> tuple[list[dict], int]:
     mixed into the actual series."""
     out, skipped = [], 0
     updated = _updated(doc)
+    updated_dt = parse_ercot_time(doc.get("lastUpdated"))
     for row in doc.get("data") or []:
         if not isinstance(row, dict):
             skipped += 1
             continue
         ts = parse_ercot_time(row.get("timestamp"))
         demand = _num(row.get("demand"))
+        # The document spans the whole operating day, so intervals later than
+        # lastUpdated have no demand yet. Those are not parse failures.
+        if demand is None and ts is not None and updated_dt is not None and ts > updated_dt:
+            continue
         if ts is None or demand is None or row.get("forecast") not in (0, "0", None, False):
             skipped += 1
             continue

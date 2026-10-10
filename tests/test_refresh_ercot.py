@@ -103,6 +103,17 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(d["stats"]["records_this_run"]["price"], 18)
         json.dumps(d)  # serialisable
 
+    def test_future_forecast_hours_do_not_crowd_out_the_past(self):
+        recs = records()
+        history, revised = rr.merge_history({}, rr.hourly_rows(recs), {}, NOW)
+        # A week of forecast-only hours ahead of now, as the real feed provides.
+        for k in range(1, 170):
+            history[(NOW.replace(minute=0) + rr.timedelta(hours=k)).isoformat()] = {"forecast_mw": 50000.0}
+        d = rr.build_dashboard(recs, [], history, {"runs": 1, "revised": 0}, NOW, revised)
+        self.assertTrue(d["fuel_hourly"])
+        self.assertTrue(all(r["t"] <= NOW.isoformat() for r in d["fuel_hourly"]))
+        self.assertLess(d["stats"]["history_hours"], 10)
+
     def test_main_end_to_end_with_partial_feed_failure(self):
         session = FakeSession({
             "supply-demand": SUPPLY_DEMAND,

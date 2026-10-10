@@ -11,6 +11,8 @@ SUPPLY_DEMAND = {
         {"capacity": 0, "demand": 61000, "forecast": 1, "timestamp": "2026-10-08 23:55:00-0500"},
         {"capacity": 70000, "demand": None, "forecast": 0, "timestamp": "2026-10-08 00:10:00-0500"},
         {"capacity": 70000, "demand": 50000, "forecast": 0, "timestamp": "not a time"},
+        # later today, after lastUpdated: no demand yet, and not an error
+        {"capacity": 0, "demand": None, "forecast": 0, "timestamp": "2026-10-08 22:00:00-0500"},
     ],
     "forecast": [
         {"deliveryDate": "2026-10-09", "dstFlag": "N", "hourEnding": 1,
