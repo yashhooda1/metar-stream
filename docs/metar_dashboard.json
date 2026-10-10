@@ -1,226 +1,230 @@
 {
-  "generated_at": "2026-10-10T05:22:26.341954+00:00",
+  "generated_at": "2026-10-10T06:35:47.243919+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1047,
-    "observations_retained": 954071,
-    "messages_ingested": 987605,
+    "stations": 1042,
+    "observations_retained": 955112,
+    "messages_ingested": 988647,
     "dedupe_pct": 3.4,
-    "runs": 913
+    "runs": 914
   },
   "station_mix": {
-    "K": 954,
-    "C": 85,
-    "M": 8
+    "K": 951,
+    "C": 84,
+    "M": 7
   },
   "flight_categories": {
-    "LIFR": 3,
-    "IFR": 8,
-    "MVFR": 32,
-    "VFR": 916
+    "LIFR": 2,
+    "IFR": 12,
+    "MVFR": 28,
+    "VFR": 907
   },
   "top_gusts": [
     {
-      "station": "KEVW",
-      "name": "Evanston/Uinta Cnty, WY, US",
-      "gust_kt": 45,
-      "observed_at": "2026-10-10T04:53:00+00:00"
-    },
-    {
       "station": "KMCN",
       "name": "Macon/Middle Georgia Rgnl, GA, US",
-      "gust_kt": 39,
-      "observed_at": "2026-10-10T04:53:00+00:00"
-    },
-    {
-      "station": "KMGM",
-      "name": "Montgomery Rgnl, AL, US",
-      "gust_kt": 36,
-      "observed_at": "2026-10-10T04:53:00+00:00"
+      "gust_kt": 57,
+      "observed_at": "2026-10-10T06:16:00+00:00"
     },
     {
       "station": "K0CO",
       "name": "Berthoud Pass, CO, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-10T05:15:00+00:00"
+      "gust_kt": 44,
+      "observed_at": "2026-10-10T06:15:00+00:00"
     },
     {
-      "station": "KAAF",
-      "name": "Apalachicola Muni, FL, US",
-      "gust_kt": 34,
-      "observed_at": "2026-10-10T04:53:00+00:00"
+      "station": "KBHM",
+      "name": "Birmingham Intl, AL, US",
+      "gust_kt": 40,
+      "observed_at": "2026-10-10T05:53:00+00:00"
     },
     {
       "station": "KCSG",
       "name": "Columbus Arpt, GA, US",
-      "gust_kt": 34,
-      "observed_at": "2026-10-10T05:16:00+00:00"
+      "gust_kt": 36,
+      "observed_at": "2026-10-10T06:25:00+00:00"
+    },
+    {
+      "station": "KTLH",
+      "name": "Tallahassee Intl, FL, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-10T06:32:00+00:00"
     },
     {
       "station": "CWSG",
       "name": "Cap Chat, QC, CA",
-      "gust_kt": 34,
-      "observed_at": "2026-10-10T05:00:00+00:00"
-    },
-    {
-      "station": "KCTB",
-      "name": "Cut Bank Muni, MT, US",
       "gust_kt": 33,
-      "observed_at": "2026-10-10T04:56:00+00:00"
-    },
-    {
-      "station": "KSUU",
-      "name": "Fairfield/Travis AFB, CA, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-10T04:55:00+00:00"
-    },
-    {
-      "station": "KEPH",
-      "name": "Ephrata Muni, WA, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-10T04:53:00+00:00"
+      "observed_at": "2026-10-10T06:00:00+00:00"
     },
     {
       "station": "CWQV",
       "name": "Puinte Claveau, QC, CA",
-      "gust_kt": 31,
-      "observed_at": "2026-10-10T05:00:00+00:00"
+      "gust_kt": 32,
+      "observed_at": "2026-10-10T06:00:00+00:00"
     },
     {
-      "station": "KONO",
-      "name": "Ontario Muni, OR, US",
+      "station": "KMGM",
+      "name": "Montgomery Rgnl, AL, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-10T05:19:00+00:00"
+      "observed_at": "2026-10-10T06:10:00+00:00"
+    },
+    {
+      "station": "CWEH",
+      "name": "Eastend Cypress, SK, CA",
+      "gust_kt": 29,
+      "observed_at": "2026-10-10T06:00:00+00:00"
+    },
+    {
+      "station": "KGCC",
+      "name": "Gillette/Campbell Cnty, WY, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-10T05:53:00+00:00"
+    },
+    {
+      "station": "KPZZ",
+      "name": "Ship Shoal 241, LA, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-10T06:10:00+00:00"
+    },
+    {
+      "station": "KSPF",
+      "name": "Spearfish/Clyde Fld, SD, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-10T06:15:00+00:00"
     }
   ],
   "alerts": [
     {
+      "station": "KSMP",
+      "name": "Stampede Pass, WA, US",
+      "category": "IFR",
+      "gust_kt": 20,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-10T06:33:00+00:00"
+    },
+    {
       "station": "KCSG",
       "name": "Columbus Arpt, GA, US",
       "category": "IFR",
-      "gust_kt": 34,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-10T05:16:00+00:00"
+      "gust_kt": 36,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-10-10T06:25:00+00:00"
     },
     {
-      "station": "KAIB",
-      "name": "Nucla/Hopkins Fld, CO, US",
+      "station": "KEUF",
+      "name": "Eufaula/Weedon Fld, AL, US",
       "category": "IFR",
-      "gust_kt": 10,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-10T05:15:00+00:00"
+      "gust_kt": null,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-10-10T06:23:00+00:00"
+    },
+    {
+      "station": "KMCN",
+      "name": "Macon/Middle Georgia Rgnl, GA, US",
+      "category": "IFR",
+      "gust_kt": 57,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T06:16:00+00:00"
     },
     {
       "station": "K0CO",
       "name": "Berthoud Pass, CO, US",
       "category": "VFR",
-      "gust_kt": 35,
+      "gust_kt": 44,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T05:15:00+00:00"
+      "observed_at": "2026-10-10T06:15:00+00:00"
     },
     {
-      "station": "KSMP",
-      "name": "Stampede Pass, WA, US",
-      "category": "LIFR",
-      "gust_kt": 20,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-10T05:14:00+00:00"
-    },
-    {
-      "station": "KNUC",
-      "name": "San Clemente, CA, US",
+      "station": "KAIB",
+      "name": "Nucla/Hopkins Fld, CO, US",
       "category": "IFR",
-      "gust_kt": 9,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T05:09:00+00:00"
+      "gust_kt": 7,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-10T06:15:00+00:00"
     },
     {
-      "station": "KART",
-      "name": "Watertown Intl, NY, US",
+      "station": "KLGC",
+      "name": "La Grange/Callaway Arpt, GA, US",
+      "category": "IFR",
+      "gust_kt": 15,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-10T06:15:00+00:00"
+    },
+    {
+      "station": "KSSI",
+      "name": "Brunswick/McKinnon St Simons Arpt, GA, US",
       "category": "LIFR",
+      "gust_kt": 18,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-10T06:15:00+00:00"
+    },
+    {
+      "station": "KMGR",
+      "name": "Moultrie Muni, GA, US",
+      "category": "IFR",
+      "gust_kt": 22,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-10T06:15:00+00:00"
+    },
+    {
+      "station": "KGGE",
+      "name": "Georgetown Cnty, SC, US",
+      "category": "IFR",
+      "gust_kt": 5,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-10T06:15:00+00:00"
+    },
+    {
+      "station": "KCHS",
+      "name": "Charleston Intl, SC, US",
+      "category": "IFR",
+      "gust_kt": 17,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-10T06:11:00+00:00"
+    },
+    {
+      "station": "KMGM",
+      "name": "Montgomery Rgnl, AL, US",
+      "category": "IFR",
+      "gust_kt": 30,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-10T06:10:00+00:00"
+    },
+    {
+      "station": "KBAB",
+      "name": "Beale AFB, CA, US",
+      "category": "IFR",
+      "gust_kt": 14,
+      "visibility_mi": 2.25,
+      "observed_at": "2026-10-10T05:55:00+00:00"
+    },
+    {
+      "station": "KSTS",
+      "name": "Santa Rosa/Schulz Arpt, CA, US",
+      "category": "IFR",
       "gust_kt": 3,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-10-10T05:09:00+00:00"
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-10T05:53:00+00:00"
+    },
+    {
+      "station": "KBHM",
+      "name": "Birmingham Intl, AL, US",
+      "category": "MVFR",
+      "gust_kt": 40,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-10T05:53:00+00:00"
     },
     {
       "station": "KMSS",
       "name": "Massena Intl, NY, US",
       "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-10T05:07:00+00:00"
-    },
-    {
-      "station": "KEUF",
-      "name": "Eufaula/Weedon Fld, AL, US",
-      "category": "IFR",
-      "gust_kt": 26,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-10T05:04:00+00:00"
-    },
-    {
-      "station": "KDTS",
-      "name": "Destin Arpt, FL, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T04:56:00+00:00"
-    },
-    {
-      "station": "KBAB",
-      "name": "Beale AFB, CA, US",
-      "category": "IFR",
-      "gust_kt": 11,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-10T04:55:00+00:00"
-    },
-    {
-      "station": "KSTS",
-      "name": "Santa Rosa/Schulz Arpt, CA, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T04:53:00+00:00"
-    },
-    {
-      "station": "KEVW",
-      "name": "Evanston/Uinta Cnty, WY, US",
-      "category": "VFR",
-      "gust_kt": 45,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T04:53:00+00:00"
-    },
-    {
-      "station": "KMGM",
-      "name": "Montgomery Rgnl, AL, US",
-      "category": "IFR",
-      "gust_kt": 36,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-10T04:53:00+00:00"
-    },
-    {
-      "station": "KMCN",
-      "name": "Macon/Middle Georgia Rgnl, GA, US",
-      "category": "MVFR",
-      "gust_kt": 39,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-10T04:53:00+00:00"
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-10T05:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-07T06:37:31.201844+00:00",
-      "stations": 1075,
-      "new_observations": 1075,
-      "categories": {
-        "LIFR": 23,
-        "IFR": 8,
-        "MVFR": 21,
-        "VFR": 933
-      },
-      "max_gust_kt": 27
-    },
     {
       "at": "2026-10-07T07:30:40.942328+00:00",
       "stations": 1070,
@@ -1072,6 +1076,18 @@
         "VFR": 916
       },
       "max_gust_kt": 45
+    },
+    {
+      "at": "2026-10-10T06:35:47.243919+00:00",
+      "stations": 1042,
+      "new_observations": 1041,
+      "categories": {
+        "LIFR": 2,
+        "IFR": 12,
+        "MVFR": 28,
+        "VFR": 907
+      },
+      "max_gust_kt": 57
     }
   ],
   "warnings": []
