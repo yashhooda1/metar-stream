@@ -1,49 +1,61 @@
 {
-  "generated_at": "2026-10-10T01:40:37.121070+00:00",
+  "generated_at": "2026-10-10T02:35:21.597602+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1079,
-    "observations_retained": 949874,
-    "messages_ingested": 983394,
+    "stations": 1067,
+    "observations_retained": 950931,
+    "messages_ingested": 984461,
     "dedupe_pct": 3.4,
-    "runs": 909
+    "runs": 910
   },
   "station_mix": {
-    "K": 975,
-    "C": 88,
+    "K": 965,
+    "C": 86,
     "M": 16
   },
   "flight_categories": {
-    "LIFR": 1,
+    "LIFR": 3,
     "IFR": 11,
-    "MVFR": 27,
-    "VFR": 956
+    "MVFR": 16,
+    "VFR": 951
   },
   "top_gusts": [
     {
       "station": "KPNS",
       "name": "Pensacola Intl, FL, US",
-      "gust_kt": 73,
-      "observed_at": "2026-10-10T01:06:00+00:00"
+      "gust_kt": 47,
+      "observed_at": "2026-10-10T02:18:00+00:00"
     },
     {
-      "station": "KECP",
-      "name": "Panama City/NW Florida Beaches Intl, FL, US",
-      "gust_kt": 50,
-      "observed_at": "2026-10-10T00:32:00+00:00"
-    },
-    {
-      "station": "KDHN",
-      "name": "Dothan Rgnl, AL, US",
-      "gust_kt": 50,
-      "observed_at": "2026-10-10T00:24:00+00:00"
+      "station": "KMOB",
+      "name": "Mobile Rgnl, AL, US",
+      "gust_kt": 45,
+      "observed_at": "2026-10-10T01:56:00+00:00"
     },
     {
       "station": "KDTS",
       "name": "Destin Arpt, FL, US",
-      "gust_kt": 47,
-      "observed_at": "2026-10-10T01:30:00+00:00"
+      "gust_kt": 44,
+      "observed_at": "2026-10-10T02:00:00+00:00"
+    },
+    {
+      "station": "KEKE",
+      "name": "Eugene Island 251A, LA, US",
+      "gust_kt": 39,
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
+      "station": "K79J",
+      "name": "Andalusia/Benton Fld, AL, US",
+      "gust_kt": 38,
+      "observed_at": "2026-10-10T01:56:00+00:00"
+    },
+    {
+      "station": "KTOI",
+      "name": "Troy Muni, AL, US",
+      "gust_kt": 37,
+      "observed_at": "2026-10-10T02:03:00+00:00"
     },
     {
       "station": "KSEM",
@@ -52,96 +64,172 @@
       "observed_at": "2026-10-10T01:30:00+00:00"
     },
     {
+      "station": "K0CO",
+      "name": "Berthoud Pass, CO, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
       "station": "KBGE",
       "name": "Bainbridge/Decatur Cnty, GA, US",
-      "gust_kt": 37,
-      "observed_at": "2026-10-10T01:35:00+00:00"
-    },
-    {
-      "station": "KNFL",
-      "name": "Fallon , NV, US",
-      "gust_kt": 36,
-      "observed_at": "2026-10-10T00:57:00+00:00"
-    },
-    {
-      "station": "KMOB",
-      "name": "Mobile Rgnl, AL, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-10T00:56:00+00:00"
-    },
-    {
-      "station": "K79J",
-      "name": "Andalusia/Benton Fld, AL, US",
       "gust_kt": 34,
-      "observed_at": "2026-10-10T01:17:00+00:00"
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
+      "station": "KCTB",
+      "name": "Cut Bank Muni, MT, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-10T01:56:00+00:00"
     },
     {
       "station": "KAAF",
       "name": "Apalachicola Muni, FL, US",
       "gust_kt": 33,
-      "observed_at": "2026-10-10T01:12:00+00:00"
+      "observed_at": "2026-10-10T02:25:00+00:00"
     },
     {
-      "station": "K4S1",
-      "name": "Gold Beach Muni, OR, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-10T00:55:00+00:00"
-    },
-    {
-      "station": "KPZZ",
-      "name": "Ship Shoal 241, LA, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-10T01:30:00+00:00"
+      "station": "KTAD",
+      "name": "Trinidad/Stokes Arpt, CO, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-10T01:54:00+00:00"
     }
   ],
   "alerts": [
     {
+      "station": "KMSS",
+      "name": "Massena Intl, NY, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-10T02:32:00+00:00"
+    },
+    {
+      "station": "KBAB",
+      "name": "Beale AFB, CA, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 2.25,
+      "observed_at": "2026-10-10T02:25:00+00:00"
+    },
+    {
+      "station": "KPNS",
+      "name": "Pensacola Intl, FL, US",
+      "category": "VFR",
+      "gust_kt": 47,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T02:18:00+00:00"
+    },
+    {
       "station": "KAIB",
       "name": "Nucla/Hopkins Fld, CO, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-10T01:35:00+00:00"
+      "category": "LIFR",
+      "gust_kt": 7,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-10T02:15:00+00:00"
     },
     {
-      "station": "KLCQ",
-      "name": "Lake City/Gateway Arpt, FL, US",
-      "category": "IFR",
-      "gust_kt": 5,
+      "station": "KLLR",
+      "name": "Little River Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
+      "station": "KEKE",
+      "name": "Eugene Island 251A, LA, US",
+      "category": "VFR",
+      "gust_kt": 39,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T01:35:00+00:00"
+      "observed_at": "2026-10-10T02:15:00+00:00"
     },
     {
-      "station": "KFPY",
-      "name": "Perry-Foley Arpt, FL, US",
+      "station": "KPSN",
+      "name": "Palestine Muni, TX, US",
       "category": "IFR",
-      "gust_kt": 19,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-10T01:35:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 1.75,
+      "observed_at": "2026-10-10T02:15:00+00:00"
     },
     {
       "station": "KMGR",
       "name": "Moultrie Muni, GA, US",
       "category": "IFR",
-      "gust_kt": 24,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-10-10T01:35:00+00:00"
+      "gust_kt": 25,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-10T02:15:00+00:00"
     },
     {
-      "station": "KBGE",
-      "name": "Bainbridge/Decatur Cnty, GA, US",
-      "category": null,
-      "gust_kt": 37,
-      "visibility_mi": null,
-      "observed_at": "2026-10-10T01:35:00+00:00"
+      "station": "KFPY",
+      "name": "Perry-Foley Arpt, FL, US",
+      "category": "IFR",
+      "gust_kt": 17,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T02:15:00+00:00"
     },
     {
-      "station": "KMUO",
-      "name": "Mountain Home AFB, ID, US",
+      "station": "KLCQ",
+      "name": "Lake City/Gateway Arpt, FL, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
+      "station": "K24J",
+      "name": "Live Oak/Suwannee Cnty, FL, US",
+      "category": "IFR",
+      "gust_kt": 15,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-10T02:15:00+00:00"
+    },
+    {
+      "station": "KOKB",
+      "name": "Oceanside Muni, CA, US",
       "category": "IFR",
       "gust_kt": 0,
-      "visibility_mi": 1.88,
-      "observed_at": "2026-10-10T01:30:00+00:00"
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-10T02:03:00+00:00"
+    },
+    {
+      "station": "KTOI",
+      "name": "Troy Muni, AL, US",
+      "category": "IFR",
+      "gust_kt": 37,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-10T02:03:00+00:00"
+    },
+    {
+      "station": "KDTS",
+      "name": "Destin Arpt, FL, US",
+      "category": "MVFR",
+      "gust_kt": 44,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-10T02:00:00+00:00"
+    },
+    {
+      "station": "KMOB",
+      "name": "Mobile Rgnl, AL, US",
+      "category": "VFR",
+      "gust_kt": 45,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T01:56:00+00:00"
+    },
+    {
+      "station": "K79J",
+      "name": "Andalusia/Benton Fld, AL, US",
+      "category": "IFR",
+      "gust_kt": 38,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-10-10T01:56:00+00:00"
+    },
+    {
+      "station": "KSTS",
+      "name": "Santa Rosa/Schulz Arpt, CA, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-10T01:53:00+00:00"
     },
     {
       "station": "KSEM",
@@ -150,54 +238,6 @@
       "gust_kt": 37,
       "visibility_mi": null,
       "observed_at": "2026-10-10T01:30:00+00:00"
-    },
-    {
-      "station": "KDTS",
-      "name": "Destin Arpt, FL, US",
-      "category": "MVFR",
-      "gust_kt": 47,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-10T01:30:00+00:00"
-    },
-    {
-      "station": "KCEW",
-      "name": "Crestview/Sikes Arpt, FL, US",
-      "category": "LIFR",
-      "gust_kt": null,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-10-10T01:21:00+00:00"
-    },
-    {
-      "station": "K79J",
-      "name": "Andalusia/Benton Fld, AL, US",
-      "category": "IFR",
-      "gust_kt": 34,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-10-10T01:17:00+00:00"
-    },
-    {
-      "station": "KSTS",
-      "name": "Santa Rosa/Schulz Arpt, CA, US",
-      "category": "IFR",
-      "gust_kt": 11,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T01:13:00+00:00"
-    },
-    {
-      "station": "KBAB",
-      "name": "Beale AFB, CA, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 1.63,
-      "observed_at": "2026-10-10T01:10:00+00:00"
-    },
-    {
-      "station": "KPNS",
-      "name": "Pensacola Intl, FL, US",
-      "category": "MVFR",
-      "gust_kt": 73,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-10T01:06:00+00:00"
     },
     {
       "station": "KPMH",
@@ -206,69 +246,9 @@
       "gust_kt": 2,
       "visibility_mi": 1.75,
       "observed_at": "2026-10-10T01:06:00+00:00"
-    },
-    {
-      "station": "KNFL",
-      "name": "Fallon , NV, US",
-      "category": "MVFR",
-      "gust_kt": 36,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-10T00:57:00+00:00"
-    },
-    {
-      "station": "KMOB",
-      "name": "Mobile Rgnl, AL, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T00:56:00+00:00"
-    },
-    {
-      "station": "KVDI",
-      "name": "Vidalia Rgnl, GA, US",
-      "category": "IFR",
-      "gust_kt": 15,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-10T00:55:00+00:00"
-    },
-    {
-      "station": "KTLH",
-      "name": "Tallahassee Intl, FL, US",
-      "category": "IFR",
-      "gust_kt": 18,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-10T00:53:00+00:00"
-    },
-    {
-      "station": "KECP",
-      "name": "Panama City/NW Florida Beaches Intl, FL, US",
-      "category": "MVFR",
-      "gust_kt": 50,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-10T00:32:00+00:00"
-    },
-    {
-      "station": "KDHN",
-      "name": "Dothan Rgnl, AL, US",
-      "category": "MVFR",
-      "gust_kt": 50,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-10T00:24:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-07T02:37:15.609914+00:00",
-      "stations": 1090,
-      "new_observations": 1088,
-      "categories": {
-        "LIFR": 7,
-        "IFR": 8,
-        "MVFR": 24,
-        "VFR": 969
-      },
-      "max_gust_kt": 31
-    },
     {
       "at": "2026-10-07T03:29:35.051058+00:00",
       "stations": 1082,
@@ -1120,6 +1100,18 @@
         "VFR": 956
       },
       "max_gust_kt": 73
+    },
+    {
+      "at": "2026-10-10T02:35:21.597602+00:00",
+      "stations": 1067,
+      "new_observations": 1057,
+      "categories": {
+        "LIFR": 3,
+        "IFR": 11,
+        "MVFR": 16,
+        "VFR": 951
+      },
+      "max_gust_kt": 47
     }
   ],
   "warnings": []
