@@ -219,10 +219,13 @@ def build_dashboard(records, warnings, history, totals, now, revised) -> dict:
               if row.get("temp_f") is not None and row.get("demand_mw") is not None]
     model = fit_degree_day_model(points)
 
+    # History also holds ERCOT's forecast for the week ahead, so anything that
+    # describes the past (fuel mix, history length) must stop at "now".
     hours = sorted(history)
+    past = [h for h in hours if h <= now.isoformat()]
     fuel_hourly = [
         {"t": h, **{f: history[h].get(f"fuel:{f}") for f in FUELS}}
-        for h in hours[-48:] if any(history[h].get(f"fuel:{f}") is not None for f in FUELS)
+        for h in past[-48:] if any(history[h].get(f"fuel:{f}") is not None for f in FUELS)
     ]
     return {
         "generated_at": now.isoformat(),
@@ -244,8 +247,8 @@ def build_dashboard(records, warnings, history, totals, now, revised) -> dict:
             "rejected_this_run": dict(rejected),
             "revised_cells_this_run": revised,
             "revised_cells_total": totals["revised"],
-            "history_hours": len(history),
-            "history_from": hours[0] if hours else None,
+            "history_hours": len(past),
+            "history_from": past[0] if past else None,
         },
         "warnings": warnings,
     }
