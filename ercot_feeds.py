@@ -145,7 +145,9 @@ def parse_supply_demand(doc: dict, ingested: str) -> tuple[list[dict], int]:
         # lastUpdated have no demand yet. Those are not parse failures.
         if demand is None and ts is not None and updated_dt is not None and ts > updated_dt:
             continue
-        if ts is None or demand is None or row.get("forecast") not in (0, "0", None, False):
+        if row.get("forecast") not in (0, "0", None, False):
+            continue  # ERCOT's intraday forecast for the rest of the day, not an actual
+        if ts is None or demand is None:
             skipped += 1
             continue
         out.append(_record("demand", "system", ts, demand, "MW", updated, ingested,

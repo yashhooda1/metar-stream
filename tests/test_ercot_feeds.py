@@ -30,8 +30,8 @@ class ParseTests(unittest.TestCase):
         forecast = [r for r in recs if r["series"] == "forecast"]
         self.assertEqual(len(system), 2)
         self.assertEqual(len(forecast), 1)
-        # forecast-flagged row, null demand, bad timestamp
-        self.assertEqual(skipped, 3)
+        # null demand and bad timestamp; forecast-flagged rows are not failures
+        self.assertEqual(skipped, 2)
         self.assertEqual(system[0]["observed_at"], "2026-10-08T05:00:00+00:00")
         self.assertEqual(system[0]["capacity_mw"], 73115.0)
         self.assertEqual(system[1]["available_mw"], 97637.0)
