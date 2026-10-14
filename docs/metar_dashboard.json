@@ -1,78 +1,73 @@
 {
-  "generated_at": "2026-10-14T13:20:26.705176+00:00",
+  "generated_at": "2026-10-14T14:21:33.035375+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 843,
-    "observations_retained": 1062093,
-    "messages_ingested": 1098450,
+    "stations": 1097,
+    "observations_retained": 1062992,
+    "messages_ingested": 1099547,
     "dedupe_pct": 3.3,
-    "runs": 1017
+    "runs": 1018
   },
   "station_mix": {
-    "K": 752,
-    "C": 91
+    "K": 990,
+    "C": 91,
+    "M": 16
   },
   "flight_categories": {
-    "LIFR": 37,
-    "IFR": 46,
-    "MVFR": 185,
-    "VFR": 502
+    "LIFR": 63,
+    "IFR": 67,
+    "MVFR": 215,
+    "VFR": 669
   },
   "top_gusts": [
     {
-      "station": "KGUP",
-      "name": "Gallup Muni, NM, US",
-      "gust_kt": 40,
-      "observed_at": "2026-10-14T12:53:00+00:00"
+      "station": "KCEZ",
+      "name": "Cortez/Montezuma Cnt, CO, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-14T14:15:00+00:00"
     },
     {
       "station": "CZPC",
       "name": "Pincher Creek Arpt, AB, CA",
-      "gust_kt": 39,
-      "observed_at": "2026-10-14T13:00:00+00:00"
-    },
-    {
-      "station": "K0CO",
-      "name": "Berthoud Pass, CO, US",
-      "gust_kt": 38,
-      "observed_at": "2026-10-14T12:55:00+00:00"
+      "gust_kt": 32,
+      "observed_at": "2026-10-14T14:00:00+00:00"
     },
     {
       "station": "CWGM",
       "name": "Waterton Park Gate, AB, CA",
-      "gust_kt": 30,
-      "observed_at": "2026-10-14T13:00:00+00:00"
+      "gust_kt": 31,
+      "observed_at": "2026-10-14T14:00:00+00:00"
     },
     {
-      "station": "KSJN",
-      "name": "St Johns Ind Arpt, AZ, US",
-      "gust_kt": 26,
-      "observed_at": "2026-10-14T12:54:00+00:00"
-    },
-    {
-      "station": "KC08",
-      "name": "Westcliffe/Silver West Arpt, CO, US",
-      "gust_kt": 25,
-      "observed_at": "2026-10-14T13:10:00+00:00"
-    },
-    {
-      "station": "KBCE",
-      "name": "Bryce Canyon Arpt, UT, US",
-      "gust_kt": 24,
-      "observed_at": "2026-10-14T12:53:00+00:00"
-    },
-    {
-      "station": "KENV",
-      "name": "Wendover Arpt, UT, US",
-      "gust_kt": 24,
-      "observed_at": "2026-10-14T12:56:00+00:00"
+      "station": "KAXS",
+      "name": "Altus/Quartz Mtn Rgnl, OK, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-14T13:54:00+00:00"
     },
     {
       "station": "CYQL",
       "name": "Lethbridge Cnty Arpt, AB, CA",
+      "gust_kt": 25,
+      "observed_at": "2026-10-14T14:00:00+00:00"
+    },
+    {
+      "station": "KBCE",
+      "name": "Bryce Canyon Arpt, UT, US",
       "gust_kt": 23,
-      "observed_at": "2026-10-14T13:00:00+00:00"
+      "observed_at": "2026-10-14T13:53:00+00:00"
+    },
+    {
+      "station": "CWKK",
+      "name": "Katatota Island, ON, CA",
+      "gust_kt": 23,
+      "observed_at": "2026-10-14T14:00:00+00:00"
+    },
+    {
+      "station": "KMSP",
+      "name": "Minneapolis-St Paul Intl, MN, US",
+      "gust_kt": 23,
+      "observed_at": "2026-10-14T13:53:00+00:00"
     },
     {
       "station": "CYBC",
@@ -87,6 +82,12 @@
       "observed_at": "2026-10-14T12:53:00+00:00"
     },
     {
+      "station": "KP53",
+      "name": "Munising Lakeshore, MI, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-14T13:56:00+00:00"
+    },
+    {
       "station": "CYZE",
       "name": "Gore Bay/Manitoulin Arpt, ON, CA",
       "gust_kt": 21,
@@ -95,68 +96,108 @@
   ],
   "alerts": [
     {
-      "station": "KFNL",
-      "name": "Fort Collins/N Colorado Rgnl, CO, US",
-      "category": "IFR",
-      "gust_kt": 10,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:18:00+00:00"
-    },
-    {
-      "station": "KDFI",
-      "name": "Defiance Mem Arpt, OH, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-14T13:18:00+00:00"
-    },
-    {
-      "station": "CYRQ",
-      "name": "Trois-Rivi\u00e8res, QC, CA",
+      "station": "KDHT",
+      "name": "Dalhart Muni, TX, US",
       "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.25,
-      "observed_at": "2026-10-14T13:18:00+00:00"
+      "gust_kt": 13,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-14T14:19:00+00:00"
     },
     {
       "station": "KLAA",
       "name": "Lamar Muni, CO, US",
-      "category": "IFR",
-      "gust_kt": 10,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-14T13:17:00+00:00"
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-14T14:19:00+00:00"
     },
     {
       "station": "KEMP",
       "name": "Emporia Muni, KS, US",
       "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-14T13:16:00+00:00"
-    },
-    {
-      "station": "CYUY",
-      "name": "Rouyn/Noranda Arpt, QC, CA",
-      "category": "LIFR",
-      "gust_kt": 2,
-      "visibility_mi": 15.0,
-      "observed_at": "2026-10-14T13:16:00+00:00"
-    },
-    {
-      "station": "KCON",
-      "name": "Concord Muni, NH, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-14T13:16:00+00:00"
-    },
-    {
-      "station": "KASH",
-      "name": "Nashua/Boire Fld, NH, US",
-      "category": "LIFR",
       "gust_kt": 0,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-14T14:19:00+00:00"
+    },
+    {
+      "station": "KSTL",
+      "name": "St Louis/Lambert Intl, MO, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-14T14:19:00+00:00"
+    },
+    {
+      "station": "KSBN",
+      "name": "South Bend Rgnl, IN, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-10-14T14:18:00+00:00"
+    },
+    {
+      "station": "KHRO",
+      "name": "Harrison/Boone Cnty, AR, US",
+      "category": "IFR",
+      "gust_kt": null,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-10-14T14:17:00+00:00"
+    },
+    {
+      "station": "KCOS",
+      "name": "Colorado Spring Arpt, CO, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-14T14:17:00+00:00"
+    },
+    {
+      "station": "KPUB",
+      "name": "Pueblo Mem Arpt, CO, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-14T14:17:00+00:00"
+    },
+    {
+      "station": "KMKO",
+      "name": "Muskogee/Davis Fld, OK, US",
+      "category": "LIFR",
+      "gust_kt": null,
+      "visibility_mi": 0.75,
+      "observed_at": "2026-10-14T14:16:00+00:00"
+    },
+    {
+      "station": "KGLD",
+      "name": "Goodland/Renner Fld, KS, US",
+      "category": "IFR",
+      "gust_kt": 9,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-14T14:16:00+00:00"
+    },
+    {
+      "station": "KRHI",
+      "name": "Rhinelander/Oneida Cnty, WI, US",
+      "category": "IFR",
+      "gust_kt": 6,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-14T14:16:00+00:00"
+    },
+    {
+      "station": "KC24",
+      "name": "Creede/Mineral Cnty, CO, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-14T14:15:00+00:00"
+    },
+    {
+      "station": "KCEZ",
+      "name": "Cortez/Montezuma Cnt, CO, US",
+      "category": "IFR",
+      "gust_kt": 32,
       "visibility_mi": 1.25,
-      "observed_at": "2026-10-14T13:16:00+00:00"
+      "observed_at": "2026-10-14T14:15:00+00:00"
     },
     {
       "station": "KVTP",
@@ -164,110 +205,58 @@
       "category": "LIFR",
       "gust_kt": 4,
       "visibility_mi": 0.25,
-      "observed_at": "2026-10-14T13:15:00+00:00"
+      "observed_at": "2026-10-14T14:15:00+00:00"
     },
     {
-      "station": "KOLF",
-      "name": "Wolf Point/Clayton Arpt, MT, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "K33V",
-      "name": "Walden/Jackson Cnty, CO, US",
+      "station": "KFBR",
+      "name": "Fort Bridger Arpt, WY, US",
       "category": "IFR",
-      "gust_kt": 3,
+      "gust_kt": 6,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
+      "observed_at": "2026-10-14T14:15:00+00:00"
     },
     {
       "station": "KWYS",
       "name": "West Yellowstone Arpt, MT, US",
       "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "KANQ",
-      "name": "Angola/Tri-State Arpt, IN, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "K9V9",
-      "name": "Chamberlain Muni, SD, US",
-      "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "KFGN",
-      "name": "Flag Island, MN, US",
-      "category": "IFR",
-      "gust_kt": 9,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
+      "observed_at": "2026-10-14T14:15:00+00:00"
     },
     {
-      "station": "KMBY",
-      "name": "Moberly/Bradley Arpt, MO, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "K06D",
-      "name": "Rolla Muni, ND, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "KPPQ",
-      "name": "Pittsfield/Penstone Muni, IL, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "KEGV",
-      "name": "Eagle River/Union Arpt, WI, US",
-      "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-14T13:15:00+00:00"
-    },
-    {
-      "station": "KFMM",
-      "name": "Fort Morgan Muni, CO, US",
+      "station": "K0CO",
+      "name": "Berthoud Pass, CO, US",
       "category": "LIFR",
-      "gust_kt": 9,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-14T13:15:00+00:00"
+      "gust_kt": null,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-14T14:15:00+00:00"
+    },
+    {
+      "station": "KT20",
+      "name": "Gonzales Muni, TX, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-14T14:15:00+00:00"
+    },
+    {
+      "station": "K8V7",
+      "name": "Springfield Muni, CO, US",
+      "category": "LIFR",
+      "gust_kt": 10,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-10-14T14:15:00+00:00"
+    },
+    {
+      "station": "K4V1",
+      "name": "Walsenburg/Spanish Peaks Arfld, CO, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-14T14:15:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-11T13:21:01.777826+00:00",
-      "stations": 1081,
-      "new_observations": 1076,
-      "categories": {
-        "LIFR": 56,
-        "IFR": 119,
-        "MVFR": 117,
-        "VFR": 702
-      },
-      "max_gust_kt": 45
-    },
     {
       "at": "2026-10-11T14:21:15.254683+00:00",
       "stations": 1085,
@@ -1119,9 +1108,19 @@
         "VFR": 502
       },
       "max_gust_kt": 40
+    },
+    {
+      "at": "2026-10-14T14:21:33.035375+00:00",
+      "stations": 1097,
+      "new_observations": 899,
+      "categories": {
+        "LIFR": 63,
+        "IFR": 67,
+        "MVFR": 215,
+        "VFR": 669
+      },
+      "max_gust_kt": 32
     }
   ],
-  "warnings": [
-    "tile 24,-105,38,-85: 504 Server Error: Gateway Time-out for url: https://aviationweather.gov/api/data/metar?format=json&bbox=24%2C-105%2C38%2C-85"
-  ]
+  "warnings": []
 }
