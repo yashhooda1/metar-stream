@@ -43,7 +43,13 @@ UA = {"User-Agent": "metar-stream-ercot/1.0 (github actions; portfolio project)"
 
 HISTORY_RETENTION_DAYS = 60
 WEATHER_LOOKBACK_HOURS = 6
-TODAY_HUBS = ["HB_HOUSTON", "HB_NORTH", "HB_WEST", "HB_HUBAVG"]
+# Hubs are trading points; load zones (LZ_*) are what consumers in an area are
+# settled at. LZ_AEN is Austin Energy's zone, LZ_HOUSTON its Houston counterpart.
+TODAY_HUBS = ["HB_HOUSTON", "HB_NORTH", "HB_WEST", "HB_HUBAVG", "LZ_AEN", "LZ_HOUSTON"]
+
+# Home city for the dashboard: Austin. Contrasted against Houston.
+HOME = {"name": "Austin", "load_zone": "LZ_AEN", "station": "KAUS"}
+HOME_REF = {"name": "Houston", "load_zone": "LZ_HOUSTON", "station": "KIAH"}
 FUELS = ["Natural Gas", "Wind", "Solar", "Nuclear", "Coal and Lignite", "Power Storage", "Hydro", "Other"]
 
 
@@ -210,6 +216,39 @@ def latest_snapshot(records: list[dict]) -> dict | None:
     }
 
 
+def latest_station_temp(history: dict[str, dict], station: str, now: datetime) -> dict | None:
+    """Most recent hourly METAR temperature for one airport, from history."""
+    for h in sorted(history, reverse=True):
+        if h > now.isoformat():
+            continue
+        c = (history[h].get("temps_c") or {}).get(station)
+        if isinstance(c, (int, float)):
+            return {"t": h, "temp_f": round(c * 9 / 5 + 32, 1)}
+    return None
+
+
+def zone_compare(records: list[dict], now: datetime, zones: list[str]) -> dict:
+    """Last-24h real-time price stats per load zone, plus the mean spread
+    between the first two (home minus reference) over matching intervals."""
+    since = now - timedelta(hours=24)
+    by_zone: dict[str, dict[str, float]] = defaultdict(dict)
+    for r in records:
+        if r["feed"] == "price" and r["market"] == "RT" and r["series"] in zones:
+            if parse_iso(r["observed_at"]) >= since:
+                by_zone[r["series"]][r["observed_at"]] = r["value"]
+    out: dict = {}
+    for z in zones:
+        vals = list(by_zone[z].values())
+        out[z] = ({"avg": round(sum(vals) / len(vals), 2), "max": round(max(vals), 2),
+                   "min": round(min(vals), 2), "n": len(vals)} if vals else None)
+    if len(zones) >= 2:
+        a, b = by_zone[zones[0]], by_zone[zones[1]]
+        common = sorted(set(a) & set(b))
+        out["spread_avg"] = round(sum(a[t] - b[t] for t in common) / len(common), 2) if common else None
+        out["spread_n"] = len(common)
+    return out
+
+
 def build_dashboard(records, warnings, history, totals, now, revised) -> dict:
     rejected = Counter(e for r in records for e in quality_errors(r))
     clean = [r for r in records if not quality_errors(r)]
@@ -234,6 +273,13 @@ def build_dashboard(records, warnings, history, totals, now, revised) -> dict:
         "latest": latest_snapshot(clean),
         "today": today_series(clean, now),
         "fuel_hourly": fuel_hourly,
+        "home": {
+            **HOME,
+            "ref": HOME_REF,
+            "temp_now": latest_station_temp(history, HOME["station"], now),
+            "ref_temp_now": latest_station_temp(history, HOME_REF["station"], now),
+            "zones_24h": zone_compare(clean, now, [HOME["load_zone"], HOME_REF["load_zone"]]),
+        },
         "weather_load": {
             "points": [{"t": h, "temp_f": history[h]["temp_f"], "demand_mw": history[h]["demand_mw"]}
                        for h in hours if history[h].get("temp_f") is not None

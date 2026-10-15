@@ -103,6 +103,30 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(d["stats"]["records_this_run"]["price"], 18)
         json.dumps(d)  # serialisable
 
+    def test_home_block_austin_vs_houston(self):
+        recs = records()
+        temps = {"2026-10-09T05:00:00+00:00": {"KAUS": 20.0, "KIAH": 25.0}}
+        history, revised = rr.merge_history({}, rr.hourly_rows(recs), temps, NOW)
+        d = rr.build_dashboard(recs, [], history, {"runs": 1, "revised": 0}, NOW, revised)
+        home = d["home"]
+        self.assertEqual(home["load_zone"], "LZ_AEN")
+        # load zones are kept, not dropped
+        self.assertEqual(d["latest"]["rt_prices"]["LZ_AEN"], 47.93)
+        self.assertEqual(d["latest"]["rt_prices"]["LZ_HOUSTON"], 40.7)
+        self.assertEqual(history["2026-10-09T05:00:00+00:00"]["rt:LZ_AEN"], 47.93)
+        z = home["zones_24h"]
+        self.assertEqual(z["LZ_AEN"]["avg"], 47.93)
+        self.assertEqual(z["spread_avg"], round(47.93 - 40.7, 2))
+        self.assertEqual(home["temp_now"]["temp_f"], 68.0)
+        self.assertEqual(home["ref_temp_now"]["temp_f"], 77.0)
+        json.dumps(d)
+
+    def test_home_block_tolerates_missing_data(self):
+        d = rr.build_dashboard([], [], {}, {"runs": 1, "revised": 0}, NOW, 0)
+        self.assertIsNone(d["home"]["temp_now"])
+        self.assertIsNone(d["home"]["zones_24h"]["LZ_AEN"])
+        self.assertIsNone(d["home"]["zones_24h"]["spread_avg"])
+
     def test_future_forecast_hours_do_not_crowd_out_the_past(self):
         recs = records()
         history, revised = rr.merge_history({}, rr.hourly_rows(recs), {}, NOW)
