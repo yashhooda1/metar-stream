@@ -1,0 +1,40 @@
+name: TEMP — Austin ERCOT real-data check (throwaway branch, never pushes to data)
+
+on:
+  push:
+    branches: [austin-ercot-check]
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: main
+      - name: Read-only copy of real history from the data branch
+        uses: actions/checkout@v4
+        with:
+          ref: data
+          path: data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Run the new refresh against live ERCOT + METAR
+        run: |
+          mkdir -p work/docs
+          cp data/docs/ercot_history.json data/docs/ercot_totals.json work/docs/ 2>/dev/null || true
+          cd work && python ../main/scripts/refresh_ercot.py
+      - name: Commit output to this throwaway branch only
+        working-directory: main
+        run: |
+          mkdir -p check && cp ../work/docs/ercot_dashboard.json check/
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add check/ercot_dashboard.json
+          git commit -m "chore: real ERCOT check output [skip ci]" || echo "nothing to commit"
+          git push origin HEAD:austin-ercot-check
