@@ -1,123 +1,139 @@
 {
-  "generated_at": "2026-10-17T07:19:59.154863+00:00",
+  "generated_at": "2026-10-17T08:23:57.249375+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1072,
-    "observations_retained": 1131163,
-    "messages_ingested": 1169608,
+    "stations": 1071,
+    "observations_retained": 1132232,
+    "messages_ingested": 1170679,
     "dedupe_pct": 3.3,
-    "runs": 1083
+    "runs": 1084
   },
   "station_mix": {
     "K": 984,
-    "C": 82,
+    "C": 81,
     "M": 6
   },
   "flight_categories": {
-    "LIFR": 9,
+    "LIFR": 7,
     "IFR": 11,
-    "MVFR": 88,
-    "VFR": 879
+    "MVFR": 90,
+    "VFR": 878
   },
   "top_gusts": [
     {
-      "station": "KGYF",
-      "name": "Alaminos Canyon Blk 857, TX, US",
-      "gust_kt": 48,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
       "station": "KTUS",
       "name": "Tucson Intl Arpt, AZ, US",
-      "gust_kt": 45,
-      "observed_at": "2026-10-17T06:53:00+00:00"
+      "gust_kt": 49,
+      "observed_at": "2026-10-17T07:53:00+00:00"
     },
     {
       "station": "K18H",
       "name": "Lucius, LA, US",
       "gust_kt": 45,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
-      "station": "KGVW",
-      "name": "Galveston 209B, TX, US",
-      "gust_kt": 44,
-      "observed_at": "2026-10-17T07:20:00+00:00"
-    },
-    {
-      "station": "KLVM",
-      "name": "Livingston/Mission Fld, MT, US",
+      "station": "KGYF",
+      "name": "Alaminos Canyon Blk 857, TX, US",
       "gust_kt": 43,
-      "observed_at": "2026-10-17T06:53:00+00:00"
-    },
-    {
-      "station": "KBQX",
-      "name": "Brazos 538, TX, US",
-      "gust_kt": 43,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KPZZ",
       "name": "Ship Shoal 241, LA, US",
       "gust_kt": 43,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:10:00+00:00"
+    },
+    {
+      "station": "KGVW",
+      "name": "Galveston 209B, TX, US",
+      "gust_kt": 42,
+      "observed_at": "2026-10-17T08:20:00+00:00"
+    },
+    {
+      "station": "KGLX",
+      "name": "Mississippi Canyon 724, LA, US",
+      "gust_kt": 42,
+      "observed_at": "2026-10-17T08:20:00+00:00"
     },
     {
       "station": "KEKE",
       "name": "Eugene Island 251A, LA, US",
       "gust_kt": 42,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "KLVM",
+      "name": "Livingston/Mission Fld, MT, US",
+      "gust_kt": 41,
+      "observed_at": "2026-10-17T07:53:00+00:00"
+    },
+    {
+      "station": "KBQX",
+      "name": "Brazos 538, TX, US",
+      "gust_kt": 41,
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "KGHB",
+      "name": "Garden Banks 172, LA, US",
+      "gust_kt": 41,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KEZP",
       "name": "E Cameron 321A, LA, US",
       "gust_kt": 40,
-      "observed_at": "2026-10-17T07:10:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
-      "station": "KMCN",
-      "name": "Macon/Middle Georgia Rgnl, GA, US",
-      "gust_kt": 40,
-      "observed_at": "2026-10-17T06:53:00+00:00"
-    },
-    {
-      "station": "KGAO",
-      "name": "Galliano/Miller Arpt, LA, US",
+      "station": "KGRY",
+      "name": "Green Canyon 338, LA, US",
       "gust_kt": 39,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "KGHB",
-      "name": "Garden Banks 172, LA, US",
-      "gust_kt": 39,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:10:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "category": "MVFR",
-      "gust_kt": 37,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:20:00+00:00"
+      "station": "KHQM",
+      "name": "Hoquiam/Bowerman Arpt, WA, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-17T08:21:00+00:00"
     },
     {
       "station": "KGVW",
       "name": "Galveston 209B, TX, US",
       "category": "VFR",
-      "gust_kt": 44,
+      "gust_kt": 42,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:20:00+00:00"
+      "observed_at": "2026-10-17T08:20:00+00:00"
+    },
+    {
+      "station": "KGLX",
+      "name": "Mississippi Canyon 724, LA, US",
+      "category": "VFR",
+      "gust_kt": 42,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T08:20:00+00:00"
+    },
+    {
+      "station": "KGPI",
+      "name": "Kalispell/Glacier Park Intl, MT, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KONP",
       "name": "Newport Muni, OR, US",
       "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "visibility_mi": 0.5,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "K6S2",
@@ -125,39 +141,23 @@
       "category": "LIFR",
       "gust_kt": 0,
       "visibility_mi": 0.75,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
-      "station": "KGAO",
-      "name": "Galliano/Miller Arpt, LA, US",
-      "category": "VFR",
-      "gust_kt": 39,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "station": "KTMK",
+      "name": "Tillamook Arpt, OR, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
-      "station": "KBQX",
-      "name": "Brazos 538, TX, US",
-      "category": "VFR",
-      "gust_kt": 43,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "K3K3",
-      "name": "Syracuse/Hamilton Cnty, KS, US",
-      "category": "IFR",
-      "gust_kt": 2,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "KVAF",
-      "name": "East Breaks 643, TX, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "station": "KACV",
+      "name": "Arcata Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KEKE",
@@ -165,63 +165,47 @@
       "category": "VFR",
       "gust_kt": 42,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "K3T5",
       "name": "LaGrange/Fayette Rgnl, TX, US",
       "category": "IFR",
-      "gust_kt": 9,
+      "gust_kt": 16,
       "visibility_mi": 1.5,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "KPZZ",
-      "name": "Ship Shoal 241, LA, US",
-      "category": "VFR",
-      "gust_kt": 43,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "K18H",
       "name": "Lucius, LA, US",
       "category": "MVFR",
       "gust_kt": 45,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "KBQX",
+      "name": "Brazos 538, TX, US",
+      "category": "VFR",
+      "gust_kt": 41,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KGYF",
       "name": "Alaminos Canyon Blk 857, TX, US",
-      "category": "MVFR",
-      "gust_kt": 48,
+      "category": "VFR",
+      "gust_kt": 43,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KGHB",
       "name": "Garden Banks 172, LA, US",
       "category": "VFR",
-      "gust_kt": 39,
+      "gust_kt": 41,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "KLNP",
-      "name": "Wise/Lonesome Pine Arpt, VA, US",
-      "category": "IFR",
-      "gust_kt": 14,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
-    },
-    {
-      "station": "K6L4",
-      "name": "Logan Cnty, WV, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-17T07:15:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
       "station": "KEZP",
@@ -229,46 +213,50 @@
       "category": "VFR",
       "gust_kt": 40,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:10:00+00:00"
+      "observed_at": "2026-10-17T08:15:00+00:00"
     },
     {
-      "station": "KGPI",
-      "name": "Kalispell/Glacier Park Intl, MT, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T07:09:00+00:00"
-    },
-    {
-      "station": "KJKL",
-      "name": "Jackson/Carroll Arpt, KY, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T07:09:00+00:00"
-    },
-    {
-      "station": "KUIL",
-      "name": "Quillayute State Arpt, WA, US",
+      "station": "KLNP",
+      "name": "Wise/Lonesome Pine Arpt, VA, US",
       "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T07:07:00+00:00"
+      "gust_kt": 8,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "KSJS",
+      "name": "Prestonburg/Big Sandy Rgnl, KY, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "K6L4",
+      "name": "Logan Cnty, WV, US",
+      "category": "IFR",
+      "gust_kt": 13,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-17T08:15:00+00:00"
+    },
+    {
+      "station": "KCSV",
+      "name": "Crossville/Whitson Fld, TN, US",
+      "category": "IFR",
+      "gust_kt": 5,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-17T08:14:00+00:00"
+    },
+    {
+      "station": "KBLF",
+      "name": "Bluefield/Mercer Cnty, WV, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-10-17T08:14:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-14T08:29:33.481865+00:00",
-      "stations": 1072,
-      "new_observations": 1069,
-      "categories": {
-        "LIFR": 51,
-        "IFR": 51,
-        "MVFR": 191,
-        "VFR": 686
-      },
-      "max_gust_kt": 37
-    },
     {
       "at": "2026-10-14T09:24:27.630504+00:00",
       "stations": 1070,
@@ -1120,6 +1108,18 @@
         "VFR": 879
       },
       "max_gust_kt": 48
+    },
+    {
+      "at": "2026-10-17T08:23:57.249375+00:00",
+      "stations": 1071,
+      "new_observations": 1069,
+      "categories": {
+        "LIFR": 7,
+        "IFR": 11,
+        "MVFR": 90,
+        "VFR": 878
+      },
+      "max_gust_kt": 49
     }
   ],
   "warnings": []
