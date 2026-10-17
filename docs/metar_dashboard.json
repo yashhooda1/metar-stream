@@ -1,179 +1,195 @@
 {
-  "generated_at": "2026-10-17T19:14:07.227000+00:00",
+  "generated_at": "2026-10-17T20:19:21.378201+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1092,
-    "observations_retained": 1143999,
-    "messages_ingested": 1182667,
+    "stations": 1096,
+    "observations_retained": 1145092,
+    "messages_ingested": 1183763,
     "dedupe_pct": 3.3,
-    "runs": 1095
+    "runs": 1096
   },
   "station_mix": {
-    "K": 986,
-    "C": 88,
+    "K": 989,
+    "C": 89,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 3,
-    "IFR": 4,
-    "MVFR": 36,
-    "VFR": 963
+    "LIFR": 1,
+    "IFR": 2,
+    "MVFR": 33,
+    "VFR": 974
   },
   "top_gusts": [
     {
-      "station": "CZPC",
-      "name": "Pincher Creek Arpt, AB, CA",
-      "gust_kt": 46,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "station": "CYQL",
+      "name": "Lethbridge Cnty Arpt, AB, CA",
+      "gust_kt": 53,
+      "observed_at": "2026-10-17T20:00:00+00:00"
     },
     {
-      "station": "CWGM",
-      "name": "Waterton Park Gate, AB, CA",
-      "gust_kt": 42,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "station": "CZPC",
+      "name": "Pincher Creek Arpt, AB, CA",
+      "gust_kt": 47,
+      "observed_at": "2026-10-17T20:00:00+00:00"
     },
     {
       "station": "KGTF",
       "name": "Great Falls Intl, MT, US",
-      "gust_kt": 42,
-      "observed_at": "2026-10-17T18:53:00+00:00"
+      "gust_kt": 45,
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
       "station": "KLVM",
       "name": "Livingston/Mission Fld, MT, US",
       "gust_kt": 41,
-      "observed_at": "2026-10-17T18:53:00+00:00"
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
       "station": "KHVR",
       "name": "Havre/City Arpt, MT, US",
       "gust_kt": 41,
-      "observed_at": "2026-10-17T18:53:00+00:00"
-    },
-    {
-      "station": "CYQL",
-      "name": "Lethbridge Cnty Arpt, AB, CA",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
       "station": "KCTB",
       "name": "Cut Bank Muni, MT, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T18:56:00+00:00"
-    },
-    {
-      "station": "KORF",
-      "name": "Norfolk Intl, VA, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T18:51:00+00:00"
-    },
-    {
-      "station": "KHSE",
-      "name": "Hatteras/Mitchell Fld, NC, US",
-      "gust_kt": 34,
-      "observed_at": "2026-10-17T19:08:00+00:00"
+      "gust_kt": 37,
+      "observed_at": "2026-10-17T19:56:00+00:00"
     },
     {
       "station": "KTUS",
       "name": "Tucson Intl Arpt, AZ, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-17T18:53:00+00:00"
+      "gust_kt": 36,
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
-      "station": "CYDC",
-      "name": "Princeton Arpt, BC, CA",
-      "gust_kt": 33,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "station": "KHSE",
+      "name": "Hatteras/Mitchell Fld, NC, US",
+      "gust_kt": 36,
+      "observed_at": "2026-10-17T20:05:00+00:00"
     },
     {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "station": "CWRY",
+      "name": "Milk River Arpt, AB, CA",
+      "gust_kt": 35,
+      "observed_at": "2026-10-17T20:00:00+00:00"
+    },
+    {
+      "station": "CWGM",
+      "name": "Waterton Park Gate, AB, CA",
+      "gust_kt": 35,
+      "observed_at": "2026-10-17T20:00:00+00:00"
+    },
+    {
+      "station": "CWFJ",
+      "name": "Cardston, AB, CA",
+      "gust_kt": 35,
+      "observed_at": "2026-10-17T20:00:00+00:00"
+    },
+    {
+      "station": "KGYF",
+      "name": "Alaminos Canyon Blk 857, TX, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-17T20:15:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KCEC",
-      "name": "Crescent City/McNama, CA, US",
+      "station": "K1U7",
+      "name": "Paris/Bear Lake Cnty Arpt, ID, US",
+      "category": "IFR",
+      "gust_kt": 3,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-17T20:15:00+00:00"
+    },
+    {
+      "station": "KEND",
+      "name": "Enid/Vance AFB, OK, US",
+      "category": "IFR",
+      "gust_kt": 4,
+      "visibility_mi": 2.25,
+      "observed_at": "2026-10-17T20:10:00+00:00"
+    },
+    {
+      "station": "KHSE",
+      "name": "Hatteras/Mitchell Fld, NC, US",
+      "category": "MVFR",
+      "gust_kt": 36,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-17T20:05:00+00:00"
+    },
+    {
+      "station": "KOTH",
+      "name": "North Bend/SW Oregon Rgnl, OR, US",
       "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "gust_kt": 13,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T20:03:00+00:00"
     },
     {
       "station": "CYQL",
       "name": "Lethbridge Cnty Arpt, AB, CA",
       "category": "VFR",
-      "gust_kt": 35,
+      "gust_kt": 53,
       "visibility_mi": 60.0,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "observed_at": "2026-10-17T20:00:00+00:00"
+    },
+    {
+      "station": "CWRY",
+      "name": "Milk River Arpt, AB, CA",
+      "category": null,
+      "gust_kt": 35,
+      "visibility_mi": null,
+      "observed_at": "2026-10-17T20:00:00+00:00"
+    },
+    {
+      "station": "CZPC",
+      "name": "Pincher Creek Arpt, AB, CA",
+      "category": "VFR",
+      "gust_kt": 47,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-17T20:00:00+00:00"
     },
     {
       "station": "CWGM",
       "name": "Waterton Park Gate, AB, CA",
       "category": null,
-      "gust_kt": 42,
+      "gust_kt": 35,
       "visibility_mi": null,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "observed_at": "2026-10-17T20:00:00+00:00"
     },
     {
-      "station": "CZPC",
-      "name": "Pincher Creek Arpt, AB, CA",
-      "category": "VFR",
-      "gust_kt": 46,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-17T19:00:00+00:00"
+      "station": "CWFJ",
+      "name": "Cardston, AB, CA",
+      "category": null,
+      "gust_kt": 35,
+      "visibility_mi": null,
+      "observed_at": "2026-10-17T20:00:00+00:00"
     },
     {
       "station": "KCTB",
       "name": "Cut Bank Muni, MT, US",
       "category": "VFR",
-      "gust_kt": 35,
+      "gust_kt": 37,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T18:56:00+00:00"
+      "observed_at": "2026-10-17T19:56:00+00:00"
     },
     {
-      "station": "K6S2",
-      "name": "Florence Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-17T18:55:00+00:00"
+      "station": "KTUS",
+      "name": "Tucson Intl Arpt, AZ, US",
+      "category": "VFR",
+      "gust_kt": 36,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
-      "station": "K3W7",
-      "name": "Electric City/Grand Coulee Arpt, WA, US",
-      "category": "IFR",
-      "gust_kt": 19,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-17T18:55:00+00:00"
-    },
-    {
-      "station": "KCPC",
-      "name": "Whiteville/Columbus Cnty, NC, US",
-      "category": "IFR",
-      "gust_kt": 21,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T18:55:00+00:00"
-    },
-    {
-      "station": "KEDE",
-      "name": "Edenton/Northeast Rgnl, NC, US",
-      "category": "IFR",
-      "gust_kt": 21,
+      "station": "KGTF",
+      "name": "Great Falls Intl, MT, US",
+      "category": "VFR",
+      "gust_kt": 45,
       "visibility_mi": 7.0,
-      "observed_at": "2026-10-17T18:55:00+00:00"
-    },
-    {
-      "station": "KACV",
-      "name": "Arcata Arpt, CA, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T18:53:00+00:00"
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
       "station": "KLVM",
@@ -181,7 +197,7 @@
       "category": "VFR",
       "gust_kt": 41,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T18:53:00+00:00"
+      "observed_at": "2026-10-17T19:53:00+00:00"
     },
     {
       "station": "KHVR",
@@ -189,46 +205,10 @@
       "category": "VFR",
       "gust_kt": 41,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T18:53:00+00:00"
-    },
-    {
-      "station": "KGTF",
-      "name": "Great Falls Intl, MT, US",
-      "category": "VFR",
-      "gust_kt": 42,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T18:53:00+00:00"
-    },
-    {
-      "station": "KTPA",
-      "name": "Tampa Intl Arpt, FL, US",
-      "category": "IFR",
-      "gust_kt": 9,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-10-17T18:53:00+00:00"
-    },
-    {
-      "station": "KORF",
-      "name": "Norfolk Intl, VA, US",
-      "category": "MVFR",
-      "gust_kt": 35,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-17T18:51:00+00:00"
+      "observed_at": "2026-10-17T19:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-14T20:20:23.993717+00:00",
-      "stations": 1004,
-      "new_observations": 1000,
-      "categories": {
-        "LIFR": 20,
-        "IFR": 49,
-        "MVFR": 217,
-        "VFR": 640
-      },
-      "max_gust_kt": 36
-    },
     {
       "at": "2026-10-14T21:18:30.574399+00:00",
       "stations": 1096,
@@ -1080,6 +1060,18 @@
         "VFR": 963
       },
       "max_gust_kt": 46
+    },
+    {
+      "at": "2026-10-17T20:19:21.378201+00:00",
+      "stations": 1096,
+      "new_observations": 1093,
+      "categories": {
+        "LIFR": 1,
+        "IFR": 2,
+        "MVFR": 33,
+        "VFR": 974
+      },
+      "max_gust_kt": 53
     }
   ],
   "warnings": []
