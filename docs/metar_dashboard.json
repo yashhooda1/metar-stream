@@ -1,274 +1,246 @@
 {
-  "generated_at": "2026-10-17T15:17:08.445425+00:00",
+  "generated_at": "2026-10-17T16:19:54.689664+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1100,
-    "observations_retained": 1139628,
-    "messages_ingested": 1178281,
+    "stations": 1097,
+    "observations_retained": 1140724,
+    "messages_ingested": 1179378,
     "dedupe_pct": 3.3,
-    "runs": 1091
+    "runs": 1092
   },
   "station_mix": {
-    "K": 993,
+    "K": 990,
     "C": 89,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 5,
-    "IFR": 15,
-    "MVFR": 85,
-    "VFR": 902
+    "LIFR": 4,
+    "IFR": 7,
+    "MVFR": 76,
+    "VFR": 920
   },
   "top_gusts": [
     {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "gust_kt": 40,
-      "observed_at": "2026-10-17T15:00:00+00:00"
-    },
-    {
       "station": "CWGM",
       "name": "Waterton Park Gate, AB, CA",
-      "gust_kt": 39,
-      "observed_at": "2026-10-17T15:00:00+00:00"
+      "gust_kt": 44,
+      "observed_at": "2026-10-17T16:00:00+00:00"
     },
     {
-      "station": "KEKE",
-      "name": "Eugene Island 251A, LA, US",
-      "gust_kt": 37,
-      "observed_at": "2026-10-17T14:55:00+00:00"
+      "station": "CZPC",
+      "name": "Pincher Creek Arpt, AB, CA",
+      "gust_kt": 39,
+      "observed_at": "2026-10-17T16:00:00+00:00"
+    },
+    {
+      "station": "KEZP",
+      "name": "E Cameron 321A, LA, US",
+      "gust_kt": 38,
+      "observed_at": "2026-10-17T16:15:00+00:00"
     },
     {
       "station": "KGRY",
       "name": "Green Canyon 338, LA, US",
       "gust_kt": 37,
-      "observed_at": "2026-10-17T14:50:00+00:00"
+      "observed_at": "2026-10-17T16:10:00+00:00"
     },
     {
-      "station": "CWQV",
-      "name": "Puinte Claveau, QC, CA",
+      "station": "KORF",
+      "name": "Norfolk Intl, VA, US",
       "gust_kt": 37,
-      "observed_at": "2026-10-17T15:00:00+00:00"
+      "observed_at": "2026-10-17T15:51:00+00:00"
     },
     {
       "station": "KTUS",
       "name": "Tucson Intl Arpt, AZ, US",
       "gust_kt": 36,
-      "observed_at": "2026-10-17T14:53:00+00:00"
+      "observed_at": "2026-10-17T15:53:00+00:00"
     },
     {
-      "station": "CZPC",
-      "name": "Pincher Creek Arpt, AB, CA",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T15:00:00+00:00"
-    },
-    {
-      "station": "KEZP",
-      "name": "E Cameron 321A, LA, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KGYF",
-      "name": "Alaminos Canyon Blk 857, TX, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KGHB",
-      "name": "Garden Banks 172, LA, US",
-      "gust_kt": 35,
-      "observed_at": "2026-10-17T14:55:00+00:00"
+      "station": "KMCN",
+      "name": "Macon/Middle Georgia Rgnl, GA, US",
+      "gust_kt": 36,
+      "observed_at": "2026-10-17T15:53:00+00:00"
     },
     {
       "station": "KLVM",
       "name": "Livingston/Mission Fld, MT, US",
       "gust_kt": 34,
-      "observed_at": "2026-10-17T14:53:00+00:00"
+      "observed_at": "2026-10-17T15:53:00+00:00"
     },
     {
-      "station": "KGVW",
-      "name": "Galveston 209B, TX, US",
+      "station": "KBQX",
+      "name": "Brazos 538, TX, US",
       "gust_kt": 34,
-      "observed_at": "2026-10-17T15:00:00+00:00"
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "KMZM",
+      "name": "Main Pass Blk 69P, LA, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "K8D3",
+      "name": "Sisseton Muni, SD, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-17T15:56:00+00:00"
+    },
+    {
+      "station": "KNUW",
+      "name": "Whidbey Island, WA, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-17T15:53:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KECG",
-      "name": "Elizabeth City Rgnl, NC, US",
-      "category": "IFR",
-      "gust_kt": 12,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-17T15:14:00+00:00"
-    },
-    {
-      "station": "KAKQ",
-      "name": "Norfolk Muni, VA, US",
-      "category": "IFR",
-      "gust_kt": 21,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-17T15:13:00+00:00"
-    },
-    {
-      "station": "KORF",
-      "name": "Norfolk Intl, VA, US",
-      "category": "IFR",
-      "gust_kt": 33,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-17T15:12:00+00:00"
-    },
-    {
-      "station": "KMYR",
-      "name": "Myrtle Beach Intl, SC, US",
-      "category": "IFR",
-      "gust_kt": 17,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T15:11:00+00:00"
-    },
-    {
       "station": "KSMP",
       "name": "Stampede Pass, WA, US",
       "category": "LIFR",
-      "gust_kt": null,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-17T15:09:00+00:00"
+      "gust_kt": 7,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-17T16:18:00+00:00"
     },
     {
-      "station": "KBKV",
-      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
+      "station": "KEZP",
+      "name": "E Cameron 321A, LA, US",
+      "category": null,
+      "gust_kt": 38,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "KEDE",
+      "name": "Edenton/Northeast Rgnl, NC, US",
       "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-10-17T15:09:00+00:00"
+      "gust_kt": 16,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "KLNP",
+      "name": "Wise/Lonesome Pine Arpt, VA, US",
+      "category": "IFR",
+      "gust_kt": 19,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "KFKN",
+      "name": "Franklin/Rose Arpt, VA, US",
+      "category": "IFR",
+      "gust_kt": 20,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-17T16:15:00+00:00"
+    },
+    {
+      "station": "KILM",
+      "name": "Wilmington Intl, NC, US",
+      "category": "IFR",
+      "gust_kt": 20,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-17T16:12:00+00:00"
+    },
+    {
+      "station": "KGRY",
+      "name": "Green Canyon 338, LA, US",
+      "category": "MVFR",
+      "gust_kt": 37,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T16:10:00+00:00"
+    },
+    {
+      "station": "KEWN",
+      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
+      "category": "IFR",
+      "gust_kt": 20,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-17T16:05:00+00:00"
+    },
+    {
+      "station": "KCEC",
+      "name": "Crescent City/McNama, CA, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 7.0,
+      "observed_at": "2026-10-17T16:04:00+00:00"
     },
     {
       "station": "KACV",
       "name": "Arcata Arpt, CA, US",
       "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-17T15:05:00+00:00"
+      "gust_kt": 0,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-17T16:00:00+00:00"
     },
     {
       "station": "CZPC",
       "name": "Pincher Creek Arpt, AB, CA",
       "category": "VFR",
-      "gust_kt": 35,
+      "gust_kt": 39,
       "visibility_mi": 9.0,
-      "observed_at": "2026-10-17T15:00:00+00:00"
+      "observed_at": "2026-10-17T16:00:00+00:00"
     },
     {
       "station": "CWGM",
       "name": "Waterton Park Gate, AB, CA",
       "category": null,
-      "gust_kt": 39,
+      "gust_kt": 44,
       "visibility_mi": null,
-      "observed_at": "2026-10-17T15:00:00+00:00"
-    },
-    {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "category": "VFR",
-      "gust_kt": 40,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T15:00:00+00:00"
-    },
-    {
-      "station": "CWQV",
-      "name": "Puinte Claveau, QC, CA",
-      "category": null,
-      "gust_kt": 37,
-      "visibility_mi": null,
-      "observed_at": "2026-10-17T15:00:00+00:00"
-    },
-    {
-      "station": "KOTH",
-      "name": "North Bend/SW Oregon Rgnl, OR, US",
-      "category": "LIFR",
-      "gust_kt": 8,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:56:00+00:00"
+      "observed_at": "2026-10-17T16:00:00+00:00"
     },
     {
       "station": "KSOP",
       "name": "Southern Pines/Moore Cnty, NC, US",
       "category": "IFR",
-      "gust_kt": 7,
+      "gust_kt": 10,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:56:00+00:00"
+      "observed_at": "2026-10-17T15:56:00+00:00"
     },
     {
       "station": "KTMK",
       "name": "Tillamook Arpt, OR, US",
-      "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KS34",
-      "name": "Plains Arpt, MT, US",
       "category": "LIFR",
       "gust_kt": 0,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-17T14:55:00+00:00"
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-17T15:55:00+00:00"
     },
     {
-      "station": "KEKE",
-      "name": "Eugene Island 251A, LA, US",
+      "station": "KTUS",
+      "name": "Tucson Intl Arpt, AZ, US",
       "category": "VFR",
+      "gust_kt": 36,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T15:53:00+00:00"
+    },
+    {
+      "station": "KMCN",
+      "name": "Macon/Middle Georgia Rgnl, GA, US",
+      "category": "VFR",
+      "gust_kt": 36,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T15:53:00+00:00"
+    },
+    {
+      "station": "KMYR",
+      "name": "Myrtle Beach Intl, SC, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-17T15:53:00+00:00"
+    },
+    {
+      "station": "KORF",
+      "name": "Norfolk Intl, VA, US",
+      "category": "MVFR",
       "gust_kt": 37,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KEZP",
-      "name": "E Cameron 321A, LA, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KGYF",
-      "name": "Alaminos Canyon Blk 857, TX, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KGHB",
-      "name": "Garden Banks 172, LA, US",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-17T14:55:00+00:00"
-    },
-    {
-      "station": "KPVW",
-      "name": "Plainview/Hale Cnty, TX, US",
-      "category": "LIFR",
-      "gust_kt": 2,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-17T14:55:00+00:00"
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-17T15:51:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-14T16:23:31.419155+00:00",
-      "stations": 1096,
-      "new_observations": 1000,
-      "categories": {
-        "LIFR": 33,
-        "IFR": 58,
-        "MVFR": 276,
-        "VFR": 642
-      },
-      "max_gust_kt": 39
-    },
     {
       "at": "2026-10-14T17:18:21.096374+00:00",
       "stations": 1098,
@@ -1120,6 +1092,18 @@
         "VFR": 902
       },
       "max_gust_kt": 40
+    },
+    {
+      "at": "2026-10-17T16:19:54.689664+00:00",
+      "stations": 1097,
+      "new_observations": 1096,
+      "categories": {
+        "LIFR": 4,
+        "IFR": 7,
+        "MVFR": 76,
+        "VFR": 920
+      },
+      "max_gust_kt": 44
     }
   ],
   "warnings": []
