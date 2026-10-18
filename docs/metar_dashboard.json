@@ -1,170 +1,142 @@
 {
-  "generated_at": "2026-10-18T20:18:55.968730+00:00",
+  "generated_at": "2026-10-18T21:16:51.320823+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1095,
-    "observations_retained": 1170474,
-    "messages_ingested": 1209693,
+    "stations": 1057,
+    "observations_retained": 1171509,
+    "messages_ingested": 1210750,
     "dedupe_pct": 3.2,
-    "runs": 1120
+    "runs": 1121
   },
   "station_mix": {
-    "K": 988,
+    "K": 950,
     "C": 89,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 1,
+    "LIFR": 0,
     "IFR": 5,
-    "MVFR": 14,
-    "VFR": 989
+    "MVFR": 8,
+    "VFR": 961
   },
   "top_gusts": [
     {
-      "station": "CYXR",
-      "name": "Earlton Arpt, ON, CA",
-      "gust_kt": 35,
-      "observed_at": "2026-10-18T20:00:00+00:00"
-    },
-    {
-      "station": "KERY",
-      "name": "Newberry/Luce Cnty, MI, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-18T20:15:00+00:00"
-    },
-    {
-      "station": "KEWN",
-      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-18T19:54:00+00:00"
-    },
-    {
-      "station": "KPLN",
-      "name": "Pellston Rgnl, MI, US",
-      "gust_kt": 33,
-      "observed_at": "2026-10-18T19:54:00+00:00"
-    },
-    {
-      "station": "KGRY",
-      "name": "Green Canyon 338, LA, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-18T20:10:00+00:00"
-    },
-    {
-      "station": "KRSL",
-      "name": "Russell Muni, KS, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-18T19:53:00+00:00"
-    },
-    {
       "station": "KGCK",
       "name": "Garden City Rgnl, KS, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T19:54:00+00:00"
+      "gust_kt": 34,
+      "observed_at": "2026-10-18T20:54:00+00:00"
+    },
+    {
+      "station": "KMLB",
+      "name": "Melbourne Intl, FL, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-18T20:53:00+00:00"
     },
     {
       "station": "KAMA",
       "name": "Amarillo Intl Arpt, TX, US",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T19:53:00+00:00"
+      "gust_kt": 33,
+      "observed_at": "2026-10-18T20:53:00+00:00"
     },
     {
-      "station": "CYVO",
-      "name": "Val D'Or Arpt, QC, CA",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T20:00:00+00:00"
+      "station": "KANJ",
+      "name": "Sault Ste Marie Muni, MI, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-18T20:55:00+00:00"
     },
     {
-      "station": "KDDC",
-      "name": "Dodge City Arpt, KS, US",
-      "gust_kt": 29,
-      "observed_at": "2026-10-18T19:52:00+00:00"
+      "station": "KMZM",
+      "name": "Main Pass Blk 69P, LA, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T21:00:00+00:00"
     },
     {
-      "station": "KBGD",
-      "name": "Borger/Hutchinson Cnty, TX, US",
-      "gust_kt": 29,
-      "observed_at": "2026-10-18T19:51:00+00:00"
+      "station": "KEKE",
+      "name": "Eugene Island 251A, LA, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T20:55:00+00:00"
     },
     {
-      "station": "CYBR",
-      "name": "Brandon Arpt, MB, CA",
-      "gust_kt": 29,
-      "observed_at": "2026-10-18T20:00:00+00:00"
-    }
-  ],
-  "alerts": [
-    {
-      "station": "KLLR",
-      "name": "Little River Arpt, CA, US",
-      "category": "LIFR",
-      "gust_kt": 8,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-18T20:15:00+00:00"
+      "station": "KESC",
+      "name": "Escanaba/Delta Cnty, MI, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T20:56:00+00:00"
     },
     {
-      "station": "K3K3",
-      "name": "Syracuse/Hamilton Cnty, KS, US",
-      "category": "IFR",
-      "gust_kt": 22,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-18T20:15:00+00:00"
+      "station": "KPLN",
+      "name": "Pellston Rgnl, MI, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T20:54:00+00:00"
     },
     {
-      "station": "KEYW",
-      "name": "Key West Intl, FL, US",
-      "category": "IFR",
-      "gust_kt": 18,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-10-18T20:13:00+00:00"
+      "station": "KGHB",
+      "name": "Garden Banks 172, LA, US",
+      "gust_kt": 31,
+      "observed_at": "2026-10-18T20:55:00+00:00"
+    },
+    {
+      "station": "KERY",
+      "name": "Newberry/Luce Cnty, MI, US",
+      "gust_kt": 31,
+      "observed_at": "2026-10-18T20:55:00+00:00"
+    },
+    {
+      "station": "KECG",
+      "name": "Elizabeth City Rgnl, NC, US",
+      "gust_kt": 31,
+      "observed_at": "2026-10-18T20:54:00+00:00"
     },
     {
       "station": "CYXR",
       "name": "Earlton Arpt, ON, CA",
-      "category": "VFR",
-      "gust_kt": 35,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-18T20:00:00+00:00"
-    },
+      "gust_kt": 31,
+      "observed_at": "2026-10-18T21:00:00+00:00"
+    }
+  ],
+  "alerts": [
     {
       "station": "KCEC",
       "name": "Crescent City/McNama, CA, US",
       "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T19:56:00+00:00"
+      "gust_kt": 4,
+      "visibility_mi": 8.0,
+      "observed_at": "2026-10-18T20:56:00+00:00"
     },
     {
-      "station": "K4S1",
-      "name": "Gold Beach Muni, OR, US",
+      "station": "KLLR",
+      "name": "Little River Arpt, CA, US",
       "category": "IFR",
-      "gust_kt": 7,
+      "gust_kt": 8,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-18T20:55:00+00:00"
+    },
+    {
+      "station": "KDVK",
+      "name": "Danville/Powell Fld, KY, US",
+      "category": "IFR",
+      "gust_kt": 4,
       "visibility_mi": 2.0,
-      "observed_at": "2026-10-18T19:55:00+00:00"
+      "observed_at": "2026-10-18T20:55:00+00:00"
     },
     {
       "station": "KACV",
       "name": "Arcata Arpt, CA, US",
       "category": "IFR",
-      "gust_kt": 3,
+      "gust_kt": 5,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T19:53:00+00:00"
+      "observed_at": "2026-10-18T20:53:00+00:00"
+    },
+    {
+      "station": "K4S1",
+      "name": "Gold Beach Muni, OR, US",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-18T20:35:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-15T21:19:48.807642+00:00",
-      "stations": 1095,
-      "new_observations": 1092,
-      "categories": {
-        "LIFR": 18,
-        "IFR": 57,
-        "MVFR": 177,
-        "VFR": 761
-      },
-      "max_gust_kt": 49
-    },
     {
       "at": "2026-10-15T22:19:54.124480+00:00",
       "stations": 1093,
@@ -1016,6 +988,18 @@
         "VFR": 989
       },
       "max_gust_kt": 35
+    },
+    {
+      "at": "2026-10-18T21:16:51.320823+00:00",
+      "stations": 1057,
+      "new_observations": 1035,
+      "categories": {
+        "LIFR": 0,
+        "IFR": 5,
+        "MVFR": 8,
+        "VFR": 961
+      },
+      "max_gust_kt": 34
     }
   ],
   "warnings": []
