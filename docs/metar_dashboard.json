@@ -1,186 +1,150 @@
 {
-  "generated_at": "2026-10-18T17:16:18.776644+00:00",
+  "generated_at": "2026-10-18T18:21:55.482648+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1085,
-    "observations_retained": 1167223,
-    "messages_ingested": 1206428,
+    "stations": 1084,
+    "observations_retained": 1168301,
+    "messages_ingested": 1207512,
     "dedupe_pct": 3.2,
-    "runs": 1117
+    "runs": 1118
   },
   "station_mix": {
-    "K": 978,
+    "K": 977,
     "C": 89,
     "M": 18
   },
   "flight_categories": {
-    "LIFR": 6,
-    "IFR": 1,
-    "MVFR": 8,
-    "VFR": 990
+    "LIFR": 3,
+    "IFR": 2,
+    "MVFR": 7,
+    "VFR": 992
   },
   "top_gusts": [
     {
       "station": "CYXR",
       "name": "Earlton Arpt, ON, CA",
-      "gust_kt": 36,
-      "observed_at": "2026-10-18T17:00:00+00:00"
-    },
-    {
-      "station": "KHSE",
-      "name": "Hatteras/Mitchell Fld, NC, US",
       "gust_kt": 35,
-      "observed_at": "2026-10-18T16:51:00+00:00"
+      "observed_at": "2026-10-18T18:00:00+00:00"
     },
     {
-      "station": "KRST",
-      "name": "Rochester Intl, MN, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T16:54:00+00:00"
+      "station": "KERY",
+      "name": "Newberry/Luce Cnty, MI, US",
+      "gust_kt": 34,
+      "observed_at": "2026-10-18T18:15:00+00:00"
+    },
+    {
+      "station": "CYVO",
+      "name": "Val D'Or Arpt, QC, CA",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T18:00:00+00:00"
     },
     {
       "station": "KRSL",
       "name": "Russell Muni, KS, US",
       "gust_kt": 31,
-      "observed_at": "2026-10-18T16:53:00+00:00"
+      "observed_at": "2026-10-18T17:53:00+00:00"
     },
     {
-      "station": "KLSE",
-      "name": "La Crosse Muni, WI, US",
+      "station": "KEWN",
+      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
       "gust_kt": 31,
-      "observed_at": "2026-10-18T16:53:00+00:00"
+      "observed_at": "2026-10-18T17:54:00+00:00"
     },
     {
-      "station": "KOSH",
-      "name": "Oshkosh/Wittman Rgnl, WI, US",
+      "station": "CYYU",
+      "name": "Kapuskasing Arpt, ON, CA",
       "gust_kt": 31,
-      "observed_at": "2026-10-18T16:53:00+00:00"
+      "observed_at": "2026-10-18T18:00:00+00:00"
     },
     {
-      "station": "KDAB",
-      "name": "Daytona Beach Intl, FL, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T16:53:00+00:00"
-    },
-    {
-      "station": "KLBL",
-      "name": "Liberal/Mid America Rgnl, KS, US",
+      "station": "KGCK",
+      "name": "Garden City Rgnl, KS, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-18T16:56:00+00:00"
+      "observed_at": "2026-10-18T17:54:00+00:00"
     },
     {
-      "station": "CYWG",
-      "name": "Winnipeg Intl Arpt, MB, CA",
+      "station": "KDDC",
+      "name": "Dodge City Arpt, KS, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-18T17:00:00+00:00"
+      "observed_at": "2026-10-18T17:52:00+00:00"
     },
     {
-      "station": "KERY",
-      "name": "Newberry/Luce Cnty, MI, US",
+      "station": "KSLN",
+      "name": "Salina Rgnl, KS, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-18T16:55:00+00:00"
+      "observed_at": "2026-10-18T17:53:00+00:00"
     },
     {
-      "station": "KBKV",
-      "name": "Brooksville-Tampa Bay Rgnl, FL, US",
+      "station": "KHSE",
+      "name": "Hatteras/Mitchell Fld, NC, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-18T16:53:00+00:00"
+      "observed_at": "2026-10-18T17:51:00+00:00"
     },
     {
-      "station": "KPLN",
-      "name": "Pellston Rgnl, MI, US",
+      "station": "CYSB",
+      "name": "Sudbury Arpt, ON, CA",
       "gust_kt": 30,
-      "observed_at": "2026-10-18T16:54:00+00:00"
+      "observed_at": "2026-10-18T18:00:00+00:00"
+    },
+    {
+      "station": "CYNM",
+      "name": "Matagami Arpt, QC, CA",
+      "gust_kt": 30,
+      "observed_at": "2026-10-18T18:00:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "MYSM",
-      "name": "Cockburn Town Arpt, , BS",
-      "category": "LIFR",
-      "gust_kt": 6,
-      "visibility_mi": 0.81,
-      "observed_at": "2026-10-18T17:14:00+00:00"
-    },
-    {
-      "station": "KOLM",
-      "name": "Olympia Rgnl, WA, US",
-      "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 0.25,
-      "observed_at": "2026-10-18T17:09:00+00:00"
-    },
-    {
-      "station": "KBLI",
-      "name": "Bellingham Intl, WA, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-18T17:09:00+00:00"
-    },
-    {
       "station": "KACV",
       "name": "Arcata Arpt, CA, US",
       "category": "LIFR",
-      "gust_kt": 3,
+      "gust_kt": 4,
       "visibility_mi": 2.0,
-      "observed_at": "2026-10-18T17:00:00+00:00"
-    },
-    {
-      "station": "CYXR",
-      "name": "Earlton Arpt, ON, CA",
-      "category": "VFR",
-      "gust_kt": 36,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-18T17:00:00+00:00"
-    },
-    {
-      "station": "KCEC",
-      "name": "Crescent City/McNama, CA, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-10-18T16:56:00+00:00"
+      "observed_at": "2026-10-18T18:17:00+00:00"
     },
     {
       "station": "KLLR",
       "name": "Little River Arpt, CA, US",
       "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-10-18T16:55:00+00:00"
-    },
-    {
-      "station": "KPDX",
-      "name": "Portland Intl, OR, US",
-      "category": "IFR",
       "gust_kt": 4,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-18T16:53:00+00:00"
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-18T18:15:00+00:00"
     },
     {
-      "station": "KHSE",
-      "name": "Hatteras/Mitchell Fld, NC, US",
+      "station": "KGBK",
+      "name": "Garden Banks 783, LA, US",
+      "category": "IFR",
+      "gust_kt": 26,
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-18T18:15:00+00:00"
+    },
+    {
+      "station": "CYXR",
+      "name": "Earlton Arpt, ON, CA",
       "category": "VFR",
       "gust_kt": 35,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-18T18:00:00+00:00"
+    },
+    {
+      "station": "KCEC",
+      "name": "Crescent City/McNama, CA, US",
+      "category": "LIFR",
+      "gust_kt": 4,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-18T17:56:00+00:00"
+    },
+    {
+      "station": "KOLM",
+      "name": "Olympia Rgnl, WA, US",
+      "category": "IFR",
+      "gust_kt": 4,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T16:51:00+00:00"
+      "observed_at": "2026-10-18T17:54:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-15T18:24:43.719862+00:00",
-      "stations": 1096,
-      "new_observations": 1093,
-      "categories": {
-        "LIFR": 20,
-        "IFR": 75,
-        "MVFR": 217,
-        "VFR": 700
-      },
-      "max_gust_kt": 47
-    },
     {
       "at": "2026-10-15T19:17:09.727283+00:00",
       "stations": 1099,
@@ -1032,6 +996,18 @@
         "VFR": 990
       },
       "max_gust_kt": 36
+    },
+    {
+      "at": "2026-10-18T18:21:55.482648+00:00",
+      "stations": 1084,
+      "new_observations": 1078,
+      "categories": {
+        "LIFR": 3,
+        "IFR": 2,
+        "MVFR": 7,
+        "VFR": 992
+      },
+      "max_gust_kt": 35
     }
   ],
   "warnings": []
