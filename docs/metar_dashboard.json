@@ -1,107 +1,131 @@
 {
-  "generated_at": "2026-10-18T19:15:14.288534+00:00",
+  "generated_at": "2026-10-18T20:18:55.968730+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1086,
-    "observations_retained": 1169382,
-    "messages_ingested": 1208598,
+    "stations": 1095,
+    "observations_retained": 1170474,
+    "messages_ingested": 1209693,
     "dedupe_pct": 3.2,
-    "runs": 1119
+    "runs": 1120
   },
   "station_mix": {
-    "K": 980,
+    "K": 988,
     "C": 89,
-    "M": 17
+    "M": 18
   },
   "flight_categories": {
-    "LIFR": 2,
-    "IFR": 3,
-    "MVFR": 6,
-    "VFR": 995
+    "LIFR": 1,
+    "IFR": 5,
+    "MVFR": 14,
+    "VFR": 989
   },
   "top_gusts": [
     {
-      "station": "KEWN",
-      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
+      "station": "CYXR",
+      "name": "Earlton Arpt, ON, CA",
       "gust_kt": 35,
-      "observed_at": "2026-10-18T18:54:00+00:00"
+      "observed_at": "2026-10-18T20:00:00+00:00"
     },
     {
-      "station": "CYUY",
-      "name": "Rouyn/Noranda Arpt, QC, CA",
+      "station": "KERY",
+      "name": "Newberry/Luce Cnty, MI, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-18T20:15:00+00:00"
+    },
+    {
+      "station": "KEWN",
+      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-18T19:54:00+00:00"
+    },
+    {
+      "station": "KPLN",
+      "name": "Pellston Rgnl, MI, US",
+      "gust_kt": 33,
+      "observed_at": "2026-10-18T19:54:00+00:00"
+    },
+    {
+      "station": "KGRY",
+      "name": "Green Canyon 338, LA, US",
       "gust_kt": 32,
-      "observed_at": "2026-10-18T19:00:00+00:00"
+      "observed_at": "2026-10-18T20:10:00+00:00"
+    },
+    {
+      "station": "KRSL",
+      "name": "Russell Muni, KS, US",
+      "gust_kt": 32,
+      "observed_at": "2026-10-18T19:53:00+00:00"
     },
     {
       "station": "KGCK",
       "name": "Garden City Rgnl, KS, US",
       "gust_kt": 31,
-      "observed_at": "2026-10-18T18:54:00+00:00"
+      "observed_at": "2026-10-18T19:54:00+00:00"
+    },
+    {
+      "station": "KAMA",
+      "name": "Amarillo Intl Arpt, TX, US",
+      "gust_kt": 30,
+      "observed_at": "2026-10-18T19:53:00+00:00"
+    },
+    {
+      "station": "CYVO",
+      "name": "Val D'Or Arpt, QC, CA",
+      "gust_kt": 30,
+      "observed_at": "2026-10-18T20:00:00+00:00"
     },
     {
       "station": "KDDC",
       "name": "Dodge City Arpt, KS, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T18:52:00+00:00"
+      "gust_kt": 29,
+      "observed_at": "2026-10-18T19:52:00+00:00"
     },
     {
-      "station": "KERY",
-      "name": "Newberry/Luce Cnty, MI, US",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T18:55:00+00:00"
+      "station": "KBGD",
+      "name": "Borger/Hutchinson Cnty, TX, US",
+      "gust_kt": 29,
+      "observed_at": "2026-10-18T19:51:00+00:00"
     },
     {
-      "station": "CYYB",
-      "name": "North Bay/Garland Arpt, ON, CA",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T19:00:00+00:00"
-    },
-    {
-      "station": "CYYU",
-      "name": "Kapuskasing Arpt, ON, CA",
-      "gust_kt": 31,
-      "observed_at": "2026-10-18T19:00:00+00:00"
-    },
-    {
-      "station": "KRST",
-      "name": "Rochester Intl, MN, US",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T18:54:00+00:00"
-    },
-    {
-      "station": "KRSL",
-      "name": "Russell Muni, KS, US",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T18:53:00+00:00"
-    },
-    {
-      "station": "CYLD",
-      "name": "Chapleau Arpt, ON, CA",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T19:00:00+00:00"
-    },
-    {
-      "station": "CYSB",
-      "name": "Sudbury Arpt, ON, CA",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T19:00:00+00:00"
-    },
-    {
-      "station": "CYXR",
-      "name": "Earlton Arpt, ON, CA",
-      "gust_kt": 30,
-      "observed_at": "2026-10-18T19:00:00+00:00"
+      "station": "CYBR",
+      "name": "Brandon Arpt, MB, CA",
+      "gust_kt": 29,
+      "observed_at": "2026-10-18T20:00:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KACV",
-      "name": "Arcata Arpt, CA, US",
+      "station": "KLLR",
+      "name": "Little River Arpt, CA, US",
+      "category": "LIFR",
+      "gust_kt": 8,
+      "visibility_mi": 5.0,
+      "observed_at": "2026-10-18T20:15:00+00:00"
+    },
+    {
+      "station": "K3K3",
+      "name": "Syracuse/Hamilton Cnty, KS, US",
       "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T19:11:00+00:00"
+      "gust_kt": 22,
+      "visibility_mi": 2.5,
+      "observed_at": "2026-10-18T20:15:00+00:00"
+    },
+    {
+      "station": "KEYW",
+      "name": "Key West Intl, FL, US",
+      "category": "IFR",
+      "gust_kt": 18,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-10-18T20:13:00+00:00"
+    },
+    {
+      "station": "CYXR",
+      "name": "Earlton Arpt, ON, CA",
+      "category": "VFR",
+      "gust_kt": 35,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-18T20:00:00+00:00"
     },
     {
       "station": "KCEC",
@@ -109,54 +133,26 @@
       "category": "IFR",
       "gust_kt": 5,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T19:10:00+00:00"
-    },
-    {
-      "station": "KSGJ",
-      "name": "St Augustine Arpt, FL, US",
-      "category": "IFR",
-      "gust_kt": 24,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-18T18:56:00+00:00"
-    },
-    {
-      "station": "KLLR",
-      "name": "Little River Arpt, CA, US",
-      "category": "LIFR",
-      "gust_kt": 6,
-      "visibility_mi": 4.0,
-      "observed_at": "2026-10-18T18:55:00+00:00"
+      "observed_at": "2026-10-18T19:56:00+00:00"
     },
     {
       "station": "K4S1",
       "name": "Gold Beach Muni, OR, US",
-      "category": "LIFR",
-      "gust_kt": 6,
+      "category": "IFR",
+      "gust_kt": 7,
       "visibility_mi": 2.0,
-      "observed_at": "2026-10-18T18:55:00+00:00"
+      "observed_at": "2026-10-18T19:55:00+00:00"
     },
     {
-      "station": "KEWN",
-      "name": "New Bern/Coastal Carolina Rgnl, NC, US",
-      "category": "VFR",
-      "gust_kt": 35,
+      "station": "KACV",
+      "name": "Arcata Arpt, CA, US",
+      "category": "IFR",
+      "gust_kt": 3,
       "visibility_mi": 10.0,
-      "observed_at": "2026-10-18T18:54:00+00:00"
+      "observed_at": "2026-10-18T19:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-15T20:19:27.428906+00:00",
-      "stations": 1095,
-      "new_observations": 1090,
-      "categories": {
-        "LIFR": 14,
-        "IFR": 63,
-        "MVFR": 195,
-        "VFR": 741
-      },
-      "max_gust_kt": 54
-    },
     {
       "at": "2026-10-15T21:19:48.807642+00:00",
       "stations": 1095,
@@ -1006,6 +1002,18 @@
         "IFR": 3,
         "MVFR": 6,
         "VFR": 995
+      },
+      "max_gust_kt": 35
+    },
+    {
+      "at": "2026-10-18T20:18:55.968730+00:00",
+      "stations": 1095,
+      "new_observations": 1092,
+      "categories": {
+        "LIFR": 1,
+        "IFR": 5,
+        "MVFR": 14,
+        "VFR": 989
       },
       "max_gust_kt": 35
     }
