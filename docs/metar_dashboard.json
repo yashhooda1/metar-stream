@@ -1,194 +1,174 @@
 {
-  "generated_at": "2026-10-19T02:32:12.223276+00:00",
+  "generated_at": "2026-10-19T03:27:39.755415+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1081,
-    "observations_retained": 1176513,
-    "messages_ingested": 1216188,
+    "stations": 1074,
+    "observations_retained": 1177586,
+    "messages_ingested": 1217262,
     "dedupe_pct": 3.3,
-    "runs": 1126
+    "runs": 1127
   },
   "station_mix": {
-    "K": 980,
+    "K": 977,
     "C": 85,
-    "M": 16
+    "M": 12
   },
   "flight_categories": {
-    "LIFR": 5,
+    "LIFR": 4,
     "IFR": 5,
-    "MVFR": 8,
-    "VFR": 975
+    "MVFR": 9,
+    "VFR": 966
   },
   "top_gusts": [
     {
-      "station": "KGRY",
-      "name": "Green Canyon 338, LA, US",
+      "station": "K0CO",
+      "name": "Berthoud Pass, CO, US",
       "gust_kt": 31,
-      "observed_at": "2026-10-19T02:10:00+00:00"
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
-      "station": "KANR",
-      "name": "Green Canyon Blk 763, LA, US",
+      "station": "KEKE",
+      "name": "Eugene Island 251A, LA, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
-      "station": "CYNM",
-      "name": "Matagami Arpt, QC, CA",
+      "station": "KMTH",
+      "name": "Marathon Arpt, FL, US",
       "gust_kt": 30,
-      "observed_at": "2026-10-19T02:00:00+00:00"
-    },
-    {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "gust_kt": 29,
-      "observed_at": "2026-10-19T02:20:00+00:00"
-    },
-    {
-      "station": "KGBK",
-      "name": "Garden Banks 783, LA, US",
-      "gust_kt": 29,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "observed_at": "2026-10-19T02:53:00+00:00"
     },
     {
       "station": "KGYF",
       "name": "Alaminos Canyon Blk 857, TX, US",
       "gust_kt": 29,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
-      "station": "KEYW",
-      "name": "Key West Intl, FL, US",
-      "gust_kt": 29,
-      "observed_at": "2026-10-19T01:53:00+00:00"
+      "station": "KTAH",
+      "name": "Green Canyon Blk 641, LA, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
-      "station": "K0CO",
-      "name": "Berthoud Pass, CO, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "station": "KGRY",
+      "name": "Green Canyon 338, LA, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-19T03:10:00+00:00"
     },
     {
-      "station": "KEKE",
-      "name": "Eugene Island 251A, LA, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "station": "KERY",
+      "name": "Newberry/Luce Cnty, MI, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
-      "station": "KSUA",
-      "name": "Stuart/Witham Fld, FL, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "station": "KMLB",
+      "name": "Melbourne Intl, FL, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-19T02:53:00+00:00"
     },
     {
-      "station": "KDAB",
-      "name": "Daytona Beach Intl, FL, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-19T01:53:00+00:00"
+      "station": "KAGI",
+      "name": "Garden Banks 426, LA, US",
+      "gust_kt": 26,
+      "observed_at": "2026-10-19T03:15:00+00:00"
+    },
+    {
+      "station": "KATP",
+      "name": "Green Canyon 787, LA, US",
+      "gust_kt": 26,
+      "observed_at": "2026-10-19T03:15:00+00:00"
+    },
+    {
+      "station": "CWKK",
+      "name": "Katatota Island, ON, CA",
+      "gust_kt": 26,
+      "observed_at": "2026-10-19T03:00:00+00:00"
     },
     {
       "station": "KHSE",
       "name": "Hatteras/Mitchell Fld, NC, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-19T01:51:00+00:00"
+      "gust_kt": 26,
+      "observed_at": "2026-10-19T02:51:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "KPTV",
-      "name": "Porterville Muni, CA, US",
-      "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-19T02:25:00+00:00"
-    },
-    {
-      "station": "KP33",
-      "name": "Wilcox/Chocise Cnty, AZ, US",
-      "category": "IFR",
-      "gust_kt": 6,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-19T02:15:00+00:00"
-    },
-    {
-      "station": "K4S1",
-      "name": "Gold Beach Muni, OR, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-19T02:15:00+00:00"
-    },
-    {
       "station": "KLLR",
       "name": "Little River Arpt, CA, US",
-      "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 9.0,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
       "station": "K6S2",
       "name": "Florence Muni, OR, US",
       "category": "LIFR",
-      "gust_kt": 5,
-      "visibility_mi": 8.0,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "gust_kt": 4,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
       "station": "K3T5",
       "name": "LaGrange/Fayette Rgnl, TX, US",
       "category": "IFR",
       "gust_kt": 0,
-      "visibility_mi": 1.75,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "visibility_mi": 1.5,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
       "station": "KGLE",
       "name": "Gainesville Muni, TX, US",
+      "category": "LIFR",
+      "gust_kt": 3,
+      "visibility_mi": 0.25,
+      "observed_at": "2026-10-19T03:15:00+00:00"
+    },
+    {
+      "station": "KDVK",
+      "name": "Danville/Powell Fld, KY, US",
       "category": "IFR",
-      "gust_kt": 4,
+      "gust_kt": 0,
       "visibility_mi": 1.0,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
       "station": "KUNV",
       "name": "State College/Univ Park Arpt, PA, US",
       "category": "LIFR",
-      "gust_kt": 2,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-19T02:15:00+00:00"
+      "gust_kt": 4,
+      "visibility_mi": 0.5,
+      "observed_at": "2026-10-19T03:15:00+00:00"
     },
     {
       "station": "KCEC",
       "name": "Crescent City/McNama, CA, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-19T03:10:00+00:00"
+    },
+    {
+      "station": "KPTV",
+      "name": "Porterville Muni, CA, US",
       "category": "LIFR",
-      "gust_kt": 4,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-19T01:56:00+00:00"
+      "gust_kt": 3,
+      "visibility_mi": 0.5,
+      "observed_at": "2026-10-19T02:56:00+00:00"
     },
     {
       "station": "KACV",
       "name": "Arcata Arpt, CA, US",
       "category": "IFR",
       "gust_kt": 3,
-      "visibility_mi": 7.0,
-      "observed_at": "2026-10-19T01:53:00+00:00"
+      "visibility_mi": 6.0,
+      "observed_at": "2026-10-19T02:53:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-16T03:24:45.164251+00:00",
-      "stations": 1083,
-      "new_observations": 1079,
-      "categories": {
-        "LIFR": 30,
-        "IFR": 65,
-        "MVFR": 139,
-        "VFR": 761
-      },
-      "max_gust_kt": 42
-    },
     {
       "at": "2026-10-16T04:23:42.718937+00:00",
       "stations": 1078,
@@ -1038,6 +1018,18 @@
         "IFR": 5,
         "MVFR": 8,
         "VFR": 975
+      },
+      "max_gust_kt": 31
+    },
+    {
+      "at": "2026-10-19T03:27:39.755415+00:00",
+      "stations": 1074,
+      "new_observations": 1073,
+      "categories": {
+        "LIFR": 4,
+        "IFR": 5,
+        "MVFR": 9,
+        "VFR": 966
       },
       "max_gust_kt": 31
     }
