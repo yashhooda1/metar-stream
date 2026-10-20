@@ -1,100 +1,148 @@
 {
-  "generated_at": "2026-10-20T00:51:32.426429+00:00",
+  "generated_at": "2026-10-20T01:29:07.725449+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1090,
-    "observations_retained": 1200233,
-    "messages_ingested": 1240095,
+    "stations": 1091,
+    "observations_retained": 1201291,
+    "messages_ingested": 1241186,
     "dedupe_pct": 3.2,
-    "runs": 1148
+    "runs": 1149
   },
   "station_mix": {
-    "K": 986,
+    "K": 987,
     "C": 89,
     "M": 15
   },
   "flight_categories": {
-    "LIFR": 3,
-    "IFR": 4,
+    "LIFR": 2,
+    "IFR": 6,
     "MVFR": 11,
     "VFR": 985
   },
   "top_gusts": [
     {
+      "station": "KATP",
+      "name": "Green Canyon 787, LA, US",
+      "gust_kt": 28,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
       "station": "KHSE",
       "name": "Hatteras/Mitchell Fld, NC, US",
-      "gust_kt": 27,
-      "observed_at": "2026-10-19T23:51:00+00:00"
-    },
-    {
-      "station": "KGLX",
-      "name": "Mississippi Canyon 724, LA, US",
-      "gust_kt": 26,
-      "observed_at": "2026-10-20T00:40:00+00:00"
-    },
-    {
-      "station": "KBHK",
-      "name": "Baker Muni, MT, US",
-      "gust_kt": 26,
-      "observed_at": "2026-10-19T23:51:00+00:00"
-    },
-    {
-      "station": "KBIH",
-      "name": "Bishop Rgnl, CA, US",
-      "gust_kt": 25,
-      "observed_at": "2026-10-19T23:56:00+00:00"
+      "gust_kt": 28,
+      "observed_at": "2026-10-20T00:51:00+00:00"
     },
     {
       "station": "KEKE",
       "name": "Eugene Island 251A, LA, US",
-      "gust_kt": 25,
-      "observed_at": "2026-10-20T00:35:00+00:00"
+      "gust_kt": 27,
+      "observed_at": "2026-10-20T01:15:00+00:00"
     },
     {
-      "station": "KBLU",
-      "name": "Blue Canyon/Nyack Arpt, CA, US",
-      "gust_kt": 24,
-      "observed_at": "2026-10-19T23:52:00+00:00"
+      "station": "KFFA",
+      "name": "First Flight Airport, NC, US",
+      "gust_kt": 27,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "KGHB",
+      "name": "Garden Banks 172, LA, US",
+      "gust_kt": 26,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "KGLX",
+      "name": "Mississippi Canyon 724, LA, US",
+      "gust_kt": 25,
+      "observed_at": "2026-10-20T01:20:00+00:00"
+    },
+    {
+      "station": "KGRY",
+      "name": "Green Canyon 338, LA, US",
+      "gust_kt": 25,
+      "observed_at": "2026-10-20T01:10:00+00:00"
     },
     {
       "station": "KMZM",
       "name": "Main Pass Blk 69P, LA, US",
       "gust_kt": 24,
-      "observed_at": "2026-10-20T00:40:00+00:00"
+      "observed_at": "2026-10-20T01:20:00+00:00"
     },
     {
-      "station": "KGBK",
-      "name": "Garden Banks 783, LA, US",
+      "station": "K18H",
+      "name": "Lucius, LA, US",
       "gust_kt": 24,
-      "observed_at": "2026-10-20T00:35:00+00:00"
+      "observed_at": "2026-10-20T01:10:00+00:00"
     },
     {
-      "station": "KCQC",
-      "name": "Clines Corners, NM, US",
+      "station": "KDJT",
+      "name": "Trump Intl, FL, US",
       "gust_kt": 23,
-      "observed_at": "2026-10-19T23:53:00+00:00"
+      "observed_at": "2026-10-20T00:53:00+00:00"
     },
     {
-      "station": "KAAT",
-      "name": "Alturas Muni, CA, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-19T23:55:00+00:00"
+      "station": "KTVL",
+      "name": "Lake Tahoe Arpt, CA, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-20T00:53:00+00:00"
     },
     {
-      "station": "KGCC",
-      "name": "Gillette/Campbell Cnty, WY, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-19T23:53:00+00:00"
-    },
-    {
-      "station": "KBQX",
-      "name": "Brazos 538, TX, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-20T00:35:00+00:00"
+      "station": "KMTH",
+      "name": "Marathon Arpt, FL, US",
+      "gust_kt": 22,
+      "observed_at": "2026-10-20T00:53:00+00:00"
     }
   ],
   "alerts": [
+    {
+      "station": "KNUC",
+      "name": "San Clemente, CA, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-20T01:24:00+00:00"
+    },
+    {
+      "station": "KREG",
+      "name": "Gonzales/Louisiana Rgnl, LA, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "KHEQ",
+      "name": "Holyoke Arpt, CO, US",
+      "category": "IFR",
+      "gust_kt": 7,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "KUNI",
+      "name": "Albany/Ohio Univ Arpt, OH, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "K48I",
+      "name": "Sutton/Braxton Cnty, WV, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
+    {
+      "station": "KPCW",
+      "name": "Port Clinton/Erie-Ottawa Arpt, OH, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-10-20T01:15:00+00:00"
+    },
     {
       "station": "K4S1",
       "name": "Gold Beach Muni, OR, US",
@@ -110,61 +158,9 @@
       "gust_kt": 6,
       "visibility_mi": 0.25,
       "observed_at": "2026-10-20T00:35:00+00:00"
-    },
-    {
-      "station": "KREG",
-      "name": "Gonzales/Louisiana Rgnl, LA, US",
-      "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-20T00:35:00+00:00"
-    },
-    {
-      "station": "KHEQ",
-      "name": "Holyoke Arpt, CO, US",
-      "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 0.5,
-      "observed_at": "2026-10-20T00:35:00+00:00"
-    },
-    {
-      "station": "K48I",
-      "name": "Sutton/Braxton Cnty, WV, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-10-20T00:35:00+00:00"
-    },
-    {
-      "station": "KUNI",
-      "name": "Albany/Ohio Univ Arpt, OH, US",
-      "category": "IFR",
-      "gust_kt": 0,
-      "visibility_mi": 1.5,
-      "observed_at": "2026-10-20T00:35:00+00:00"
-    },
-    {
-      "station": "KPCW",
-      "name": "Port Clinton/Erie-Ottawa Arpt, OH, US",
-      "category": "IFR",
-      "gust_kt": 3,
-      "visibility_mi": 1.0,
-      "observed_at": "2026-10-20T00:35:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-17T01:25:50.256825+00:00",
-      "stations": 1086,
-      "new_observations": 1074,
-      "categories": {
-        "LIFR": 20,
-        "IFR": 16,
-        "MVFR": 74,
-        "VFR": 892
-      },
-      "max_gust_kt": 45
-    },
     {
       "at": "2026-10-17T02:27:29.780439+00:00",
       "stations": 1088,
@@ -1016,6 +1012,18 @@
         "VFR": 985
       },
       "max_gust_kt": 27
+    },
+    {
+      "at": "2026-10-20T01:29:07.725449+00:00",
+      "stations": 1091,
+      "new_observations": 1058,
+      "categories": {
+        "LIFR": 2,
+        "IFR": 6,
+        "MVFR": 11,
+        "VFR": 985
+      },
+      "max_gust_kt": 28
     }
   ],
   "warnings": []
