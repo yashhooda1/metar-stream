@@ -1,163 +1,203 @@
 {
-  "generated_at": "2026-10-29T00:40:00.491053+00:00",
+  "generated_at": "2026-10-29T01:17:18.364222+00:00",
   "source": "scheduled batch refresh (GitHub Actions)",
   "note": "Hourly batch refresh. The Kafka/Spark streaming pipeline in this repo runs separately; its benchmarks are in the README.",
   "stats": {
-    "stations": 1099,
-    "observations_retained": 1428418,
-    "messages_ingested": 1472190,
+    "stations": 1101,
+    "observations_retained": 1429511,
+    "messages_ingested": 1473291,
     "dedupe_pct": 3.0,
-    "runs": 1362
+    "runs": 1363
   },
   "station_mix": {
-    "K": 992,
+    "K": 995,
     "C": 90,
-    "M": 17
+    "M": 16
   },
   "flight_categories": {
-    "LIFR": 5,
-    "IFR": 8,
-    "MVFR": 44,
-    "VFR": 954
+    "LIFR": 7,
+    "IFR": 7,
+    "MVFR": 55,
+    "VFR": 944
   },
   "top_gusts": [
     {
-      "station": "KLVM",
-      "name": "Livingston/Mission Fld, MT, US",
-      "gust_kt": 32,
-      "observed_at": "2026-10-28T23:53:00+00:00"
-    },
-    {
-      "station": "KCPR",
-      "name": "Casper/Natrona Cnty, WY, US",
+      "station": "CYQK",
+      "name": "Kenora Arpt, ON, CA",
       "gust_kt": 28,
-      "observed_at": "2026-10-28T23:53:00+00:00"
-    },
-    {
-      "station": "KFGN",
-      "name": "Flag Island, MN, US",
-      "gust_kt": 28,
-      "observed_at": "2026-10-29T00:35:00+00:00"
-    },
-    {
-      "station": "KLSE",
-      "name": "La Crosse Muni, WI, US",
-      "gust_kt": 27,
-      "observed_at": "2026-10-29T00:05:00+00:00"
+      "observed_at": "2026-10-29T01:00:00+00:00"
     },
     {
       "station": "KEKS",
       "name": "Ennis/Big Sky Arpt, MT, US",
+      "gust_kt": 26,
+      "observed_at": "2026-10-29T00:55:00+00:00"
+    },
+    {
+      "station": "KMLB",
+      "name": "Melbourne Intl, FL, US",
       "gust_kt": 25,
-      "observed_at": "2026-10-29T00:35:00+00:00"
+      "observed_at": "2026-10-29T01:04:00+00:00"
     },
     {
-      "station": "KVOK",
-      "name": "Camp Douglas/Volk Fld, WI, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-28T23:55:00+00:00"
+      "station": "KLSE",
+      "name": "La Crosse Muni, WI, US",
+      "gust_kt": 24,
+      "observed_at": "2026-10-29T00:53:00+00:00"
     },
     {
-      "station": "KRST",
-      "name": "Rochester Intl, MN, US",
-      "gust_kt": 23,
-      "observed_at": "2026-10-28T23:54:00+00:00"
-    },
-    {
-      "station": "KTAH",
-      "name": "Green Canyon Blk 641, LA, US",
+      "station": "K0CO",
+      "name": "Berthoud Pass, CO, US",
       "gust_kt": 22,
-      "observed_at": "2026-10-29T00:35:00+00:00"
+      "observed_at": "2026-10-29T00:55:00+00:00"
     },
     {
-      "station": "KMKT",
-      "name": "Mankato Rgnl, MN, US",
+      "station": "KIWD",
+      "name": "Ironwood/Iron Cnty, MI, US",
       "gust_kt": 22,
-      "observed_at": "2026-10-29T00:31:00+00:00"
-    },
-    {
-      "station": "CYBR",
-      "name": "Brandon Arpt, MB, CA",
-      "gust_kt": 22,
-      "observed_at": "2026-10-29T00:24:00+00:00"
+      "observed_at": "2026-10-29T01:09:00+00:00"
     },
     {
       "station": "KFNB",
       "name": "Falls City/Brenner Fld, NE, US",
       "gust_kt": 22,
-      "observed_at": "2026-10-28T23:53:00+00:00"
+      "observed_at": "2026-10-29T00:53:00+00:00"
     },
     {
-      "station": "KEMP",
-      "name": "Emporia Muni, KS, US",
+      "station": "KVRB",
+      "name": "Vero Beach Muni, FL, US",
       "gust_kt": 22,
-      "observed_at": "2026-10-28T23:53:00+00:00"
+      "observed_at": "2026-10-29T00:53:00+00:00"
+    },
+    {
+      "station": "CWNK",
+      "name": "Carman U Of MB, MB, CA",
+      "gust_kt": 21,
+      "observed_at": "2026-10-29T01:00:00+00:00"
+    },
+    {
+      "station": "KAUW",
+      "name": "Wausau Downtown, WI, US",
+      "gust_kt": 21,
+      "observed_at": "2026-10-29T00:54:00+00:00"
+    },
+    {
+      "station": "KRHI",
+      "name": "Rhinelander/Oneida Cnty, WI, US",
+      "gust_kt": 21,
+      "observed_at": "2026-10-29T00:53:00+00:00"
+    },
+    {
+      "station": "KGLX",
+      "name": "Mississippi Canyon 724, LA, US",
+      "gust_kt": 20,
+      "observed_at": "2026-10-29T01:00:00+00:00"
     }
   ],
   "alerts": [
     {
-      "station": "CZPC",
-      "name": "Pincher Creek Arpt, AB, CA",
-      "category": "IFR",
-      "gust_kt": 7,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-29T00:37:00+00:00"
-    },
-    {
-      "station": "K3K3",
-      "name": "Syracuse/Hamilton Cnty, KS, US",
-      "category": "IFR",
-      "gust_kt": 12,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-29T00:35:00+00:00"
-    },
-    {
-      "station": "KPWC",
-      "name": "Pine River Rgnl, MN, US",
-      "category": "IFR",
-      "gust_kt": 4,
-      "visibility_mi": 2.5,
-      "observed_at": "2026-10-29T00:35:00+00:00"
-    },
-    {
       "station": "KELO",
       "name": "Ely Muni, MN, US",
       "category": "LIFR",
-      "gust_kt": 0,
-      "visibility_mi": 5.0,
-      "observed_at": "2026-10-29T00:35:00+00:00"
+      "gust_kt": 15,
+      "visibility_mi": 4.0,
+      "observed_at": "2026-10-29T01:15:00+00:00"
     },
     {
-      "station": "KRZN",
-      "name": "Siren/Burnett Cnty, WI, US",
+      "station": "CZPC",
+      "name": "Pincher Creek Arpt, AB, CA",
       "category": "IFR",
-      "gust_kt": 5,
-      "visibility_mi": 10.0,
-      "observed_at": "2026-10-29T00:35:00+00:00"
+      "gust_kt": 3,
+      "visibility_mi": 2.25,
+      "observed_at": "2026-10-29T01:13:00+00:00"
     },
     {
       "station": "KFOZ",
       "name": "Bigfork Muni, MN, US",
       "category": "LIFR",
-      "gust_kt": 3,
-      "visibility_mi": 0.75,
-      "observed_at": "2026-10-29T00:33:00+00:00"
+      "gust_kt": 5,
+      "visibility_mi": 0.5,
+      "observed_at": "2026-10-29T01:13:00+00:00"
+    },
+    {
+      "station": "KHIB",
+      "name": "Hibbing/Chisholm Arpt, MN, US",
+      "category": "LIFR",
+      "gust_kt": 0,
+      "visibility_mi": 0.5,
+      "observed_at": "2026-10-29T01:11:00+00:00"
     },
     {
       "station": "KDLH",
       "name": "Duluth Intl Arpt, MN, US",
+      "category": "IFR",
+      "gust_kt": 5,
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-29T01:07:00+00:00"
+    },
+    {
+      "station": "KSMP",
+      "name": "Stampede Pass, WA, US",
       "category": "LIFR",
-      "gust_kt": 3,
+      "gust_kt": null,
       "visibility_mi": 0.5,
-      "observed_at": "2026-10-29T00:31:00+00:00"
+      "observed_at": "2026-10-29T01:02:00+00:00"
+    },
+    {
+      "station": "KMLP",
+      "name": "Mullan Pass, ID, US",
+      "category": "LIFR",
+      "gust_kt": 6,
+      "visibility_mi": 1.0,
+      "observed_at": "2026-10-29T01:01:00+00:00"
+    },
+    {
+      "station": "CYQT",
+      "name": "Thunder Bay Intl, ON, CA",
+      "category": "LIFR",
+      "gust_kt": 5,
+      "visibility_mi": 6.0,
+      "observed_at": "2026-10-29T01:00:00+00:00"
+    },
+    {
+      "station": "CYHD",
+      "name": "Dryden Rgnl, ON, CA",
+      "category": "IFR",
+      "gust_kt": 8,
+      "visibility_mi": 3.0,
+      "observed_at": "2026-10-29T01:00:00+00:00"
     },
     {
       "station": "KMKT",
       "name": "Mankato Rgnl, MN, US",
       "category": "IFR",
+      "gust_kt": 19,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-29T00:56:00+00:00"
+    },
+    {
+      "station": "K4S1",
+      "name": "Gold Beach Muni, OR, US",
+      "category": "IFR",
+      "gust_kt": 0,
+      "visibility_mi": 1.25,
+      "observed_at": "2026-10-29T00:55:00+00:00"
+    },
+    {
+      "station": "KRZN",
+      "name": "Siren/Burnett Cnty, WI, US",
+      "category": "IFR",
+      "gust_kt": 6,
+      "visibility_mi": 10.0,
+      "observed_at": "2026-10-29T00:55:00+00:00"
+    },
+    {
+      "station": "KVRB",
+      "name": "Vero Beach Muni, FL, US",
+      "category": "IFR",
       "gust_kt": 22,
-      "visibility_mi": 9.0,
-      "observed_at": "2026-10-29T00:31:00+00:00"
+      "visibility_mi": 2.0,
+      "observed_at": "2026-10-29T00:53:00+00:00"
     },
     {
       "station": "MMIO",
@@ -165,54 +205,10 @@
       "category": "LIFR",
       "gust_kt": 0,
       "visibility_mi": 1.5,
-      "observed_at": "2026-10-29T00:23:00+00:00"
-    },
-    {
-      "station": "K4S1",
-      "name": "Gold Beach Muni, OR, US",
-      "category": "IFR",
-      "gust_kt": 2,
-      "visibility_mi": 1.25,
-      "observed_at": "2026-10-29T00:15:00+00:00"
-    },
-    {
-      "station": "KSSI",
-      "name": "Brunswick/McKinnon St Simons Arpt, GA, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 6.0,
-      "observed_at": "2026-10-29T00:15:00+00:00"
-    },
-    {
-      "station": "KMLP",
-      "name": "Mullan Pass, ID, US",
-      "category": "LIFR",
-      "gust_kt": 7,
-      "visibility_mi": 3.0,
-      "observed_at": "2026-10-29T00:02:00+00:00"
-    },
-    {
-      "station": "KVRB",
-      "name": "Vero Beach Muni, FL, US",
-      "category": "IFR",
-      "gust_kt": 8,
-      "visibility_mi": 2.0,
-      "observed_at": "2026-10-28T23:53:00+00:00"
+      "observed_at": "2026-10-29T00:40:00+00:00"
     }
   ],
   "trend": [
-    {
-      "at": "2026-10-25T23:17:14.984565+00:00",
-      "stations": 1102,
-      "new_observations": 1098,
-      "categories": {
-        "LIFR": 3,
-        "IFR": 27,
-        "MVFR": 53,
-        "VFR": 932
-      },
-      "max_gust_kt": 35
-    },
     {
       "at": "2026-10-26T00:54:30.029498+00:00",
       "stations": 1090,
@@ -1064,6 +1060,18 @@
         "VFR": 954
       },
       "max_gust_kt": 32
+    },
+    {
+      "at": "2026-10-29T01:17:18.364222+00:00",
+      "stations": 1101,
+      "new_observations": 1093,
+      "categories": {
+        "LIFR": 7,
+        "IFR": 7,
+        "MVFR": 55,
+        "VFR": 944
+      },
+      "max_gust_kt": 28
     }
   ],
   "warnings": []
