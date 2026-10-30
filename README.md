@@ -422,6 +422,66 @@ gold builders, weather join) and `tests/test_refresh_ercot.py` (hourly refresh,
 including partial feed failure). The Delta MERGE itself needs the Delta jars and
 is exercised by running the stream, not in unit tests.
 
+## Preflight briefing agent
+
+The observations this pipeline ingests are the same ones a pilot checks before a
+flight. `preflight_brief.py` turns them into a route brief: METARs, TAFs and
+NOTAMs for each airport, a go / caution / no-go verdict against a pilot's
+minimums, and a written brief in pilot shorthand.
+
+```bash
+python preflight_brief.py KAUS KHOU                                   # now, conservative VFR
+python preflight_brief.py KAUS KCLL KHOU --etd 2026-11-01T15:00Z --ete 1.2
+python preflight_brief.py KAUS KDAL --profile ifr --json
+python preflight_brief.py KAUS KHOU --lake-path ./lake                # METARs from Silver
+python preflight_brief.py KAUS KHOU --no-llm                          # rules only, no API key
+```
+
+The exit code is 0 for GO, 1 for CAUTION and 2 for NO-GO, so a script can use it as a check.
+
+```
+route ──▶ sources.py ──▶ rules.py ──▶ agent.py (tool loop) ──▶ brief
+          AWC METAR/TAF   flags +       find_nearby_taf
+          FAA NOTAM       verdict       use_nearby_taf ──▶ rules re-score
+          or Silver Delta               get_station_weather
+                                        submit_brief
+```
+
+**The rules decide and the model only writes.** `preflight/rules.py` is plain
+Python. Every flag names the METAR or TAF group that triggered it, and
+the same input always gives the same verdict. The model, called through the raw
+Messages API with no framework, has two jobs:
+
+- **Fill gaps.** Many small airports issue no TAF. The agent searches for nearby
+  TAF stations, picks one that represents the airport, and adopts it. The rules
+  engine checks that choice: it accepts a substitute only if the station was
+  actually fetched and is within 50 nm.
+- **Write the brief.** It explains the flags in the Departure / Enroute /
+  Destination / Alternates order a pilot expects. It can't change the verdict. A
+  test feeds it a model that says "GO!" over a 300 ft overcast, and the verdict
+  stays NO-GO.
+
+Details that came from flying:
+
+- **TEMPO and PROB groups** downgrade to caution instead of no-go. You still see
+  them, but they don't count as the main forecast.
+- **Current METAR becomes trend-only** when the ETD or ETA is more than 2 h
+  away. At that range the TAF is what matters.
+- **`6+` / `P6SM` means unrestricted visibility.** A first version read it as
+  exactly 6 sm, which flagged every clear-sky TAF as "near" a 5 sm minimum.
+- **The IFR profile applies the 14 CFR 91.169 1-2-3 alternate rule** at the
+  destination.
+- **Missing NOTAMs are flagged as "not checked"**, never treated as "none".
+  Set `FAA_CLIENT_ID` and `FAA_CLIENT_SECRET` (free at api.faa.gov) to pull them.
+- **Ceiling and flight-category logic match `metar_flight_category.sql` and
+  `int_metar__ceiling.sql`**, so the brief and the dbt marts always agree.
+
+Env: `ANTHROPIC_API_KEY` for the narrative (optional), `PREFLIGHT_MODEL`
+(default `claude-sonnet-5-5`). Tests: `tests/test_preflight.py` covers parsing,
+every rule, TAF substitution limits, and the agent loop with a scripted model.
+
+Not an official briefing. Get a standard brief from 1800wxbrief.com before you fly.
+
 ## Next
 
 - Schema Registry with Avro instead of JSON (Redpanda exposes it on :8081)
