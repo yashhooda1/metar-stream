@@ -44,12 +44,12 @@ UA = {"User-Agent": "metar-stream-ercot/1.0 (github actions; portfolio project)"
 HISTORY_RETENTION_DAYS = 60
 WEATHER_LOOKBACK_HOURS = 6
 # Hubs are trading points; load zones (LZ_*) are what consumers in an area are
-# settled at. LZ_AEN is Austin Energy's zone, LZ_HOUSTON its Houston counterpart.
+# settled at. LZ_HOUSTON is Houston's zone, LZ_AEN (Austin Energy) its Austin counterpart.
 TODAY_HUBS = ["HB_HOUSTON", "HB_NORTH", "HB_WEST", "HB_HUBAVG", "LZ_AEN", "LZ_HOUSTON"]
 
-# Home city for the dashboard: Austin. Contrasted against Houston.
-HOME = {"name": "Austin", "load_zone": "LZ_AEN", "station": "KAUS"}
-HOME_REF = {"name": "Houston", "load_zone": "LZ_HOUSTON", "station": "KIAH"}
+# Home city for the dashboard: Houston. Contrasted against Austin.
+HOME = {"name": "Houston", "load_zone": "LZ_HOUSTON", "station": "KIAH"}
+HOME_REF = {"name": "Austin", "load_zone": "LZ_AEN", "station": "KAUS"}
 FUELS = ["Natural Gas", "Wind", "Solar", "Nuclear", "Coal and Lignite", "Power Storage", "Hydro", "Other"]
 
 

@@ -103,22 +103,24 @@ class RefreshTests(unittest.TestCase):
         self.assertEqual(d["stats"]["records_this_run"]["price"], 18)
         json.dumps(d)  # serialisable
 
-    def test_home_block_austin_vs_houston(self):
+    def test_home_block_houston_vs_austin(self):
         recs = records()
         temps = {"2026-10-09T05:00:00+00:00": {"KAUS": 20.0, "KIAH": 25.0}}
         history, revised = rr.merge_history({}, rr.hourly_rows(recs), temps, NOW)
         d = rr.build_dashboard(recs, [], history, {"runs": 1, "revised": 0}, NOW, revised)
         home = d["home"]
-        self.assertEqual(home["load_zone"], "LZ_AEN")
+        self.assertEqual(home["load_zone"], "LZ_HOUSTON")
+        self.assertEqual(home["ref"]["load_zone"], "LZ_AEN")
         # load zones are kept, not dropped
         self.assertEqual(d["latest"]["rt_prices"]["LZ_AEN"], 47.93)
         self.assertEqual(d["latest"]["rt_prices"]["LZ_HOUSTON"], 40.7)
         self.assertEqual(history["2026-10-09T05:00:00+00:00"]["rt:LZ_AEN"], 47.93)
         z = home["zones_24h"]
         self.assertEqual(z["LZ_AEN"]["avg"], 47.93)
-        self.assertEqual(z["spread_avg"], round(47.93 - 40.7, 2))
-        self.assertEqual(home["temp_now"]["temp_f"], 68.0)
-        self.assertEqual(home["ref_temp_now"]["temp_f"], 77.0)
+        self.assertEqual(z["LZ_HOUSTON"]["avg"], 40.7)
+        self.assertEqual(z["spread_avg"], round(40.7 - 47.93, 2))  # home minus reference
+        self.assertEqual(home["temp_now"]["temp_f"], 77.0)      # KIAH
+        self.assertEqual(home["ref_temp_now"]["temp_f"], 68.0)  # KAUS
         json.dumps(d)
 
     def test_home_block_tolerates_missing_data(self):
